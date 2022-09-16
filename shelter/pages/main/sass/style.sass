@@ -31,12 +31,12 @@ body
 
 .intro
   background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20
-  height: 908px
+  //height: 908px
  
 .header
   height: 60px
   padding-top: 60px
-  margin-bottom: 60px
+  margin-bottom: 53px
 
 .header-wrap
   display: flex
@@ -88,11 +88,13 @@ body
   display: flex
   flex-direction: row
   justify-content: space-between
+ 
 
 .not-only-text
   max-width: 460px /$contentWidth *100%
   color: #FFFFFF
-  padding-top: 163px / $contentWidth *100% 
+  margin-top: 169px / $contentWidth *100% 
+  max-height: 322px / $contentWidth *100% 
   
 h1
   font-family: 'Georgia'
@@ -112,10 +114,10 @@ h1
  
 .not-only-img
   width: auto
-  height: auto
+  height: 100%
   bottom: 0
   right: 0
-  object-fit: contain
+  object-fit: fill 
 
 .button
   width: 207px
@@ -144,7 +146,8 @@ h1
 
 .about
  //height: 588px
- margin-top: 80px 
+ margin-top: $contentWidth*0.0667
+ margin-bottom: $contentWidth*0.0735
  display: flex
  flex-direction: row
  justify-content: center
@@ -158,6 +161,9 @@ h2
   font-size: 35px /$fontdefault*100%
   line-height: 130%
   color: #545454
+  letter-spacing: 0.05em
+  padding-top: 15px
+  
  
 .about__text
   max-width: 430px/ $contentWidth*100%
@@ -170,15 +176,173 @@ h2
   p
     color: #4C4C4C
     margin: 25px 0 
+    text-align: left
 
 .friends
-  height: 877px
-  margin-top: 80px 
+  //height: 877px
+  padding-top: $contentWidth*0.0667 
+  padding-bottom: $contentWidth*0.0834
+  background: #F6F6F6
+
+
+.friends__title, .help__title
+  max-width: $contentWidth*0.333
+  margin: 0 auto
+  text-align: center
+  margin-bottom: $fontdefault*4
+  padding-top: 0 
+
+.animals__container
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+
+ 
+.slider
+  display: flexbox
+  flex-basis: 990px/$contentWidth*100%
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+
+.animals__item
+  background: #FAFAFA
+  border-radius: 9px
+  max-width: $contentWidth*0.225
+  margin-bottom: 60px
+
+.animals__item > button
+  width: 69.4%//187px
+  height: 52px
+  margin: 25px 0px 30px 41px
+  padding: 0px
+
+.item__name
+  font-family: 'Georgia'
+  font-style: normal
+  font-weight: 400
+  font-size: 20px /$fontdefault*100%
+  line-height:  22.72px /$fontdefault*100%
+  color: #545454
+  letter-spacing: 0.06em
+  text-align: center
+  margin: 0 auto
+  margin-top: 19px
+ 
+.arrow-left, .arrow-right
+  background: url('../../../assets/icons/arrow.svg') no-repeat center
+  border: 2px solid #F1CDB3
+  height: 52px
+  width: 52px
+  border-radius: 100%
+  align-self: center
+  margin-top: -60px
+
+.arrow-left:hover, .arrow-right:hover
+  background-color: #F1CDB3
+  border-color:#FFFFFF
+
+=transform($property)
+  -webkit-transform: $property
+  -ms-transform: $property
+  transform: $property
+
+.arrow-right
+  transform: rotate(180deg)
+  
+.getInfo 
+   max-width: 261px/$contentWidth *100%
+   margin: 0 auto
+
+#getBtn
+  width: 100%
+ 
+.help__list
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  column-gap: 120px
+  row-gap: 54px
+  max-width: 1026px / $contentWidth *100%
+  justify-content: space-evenly
+  //align-content: center
+  margin: 0 auto
+
+.help__item
+  height: 113px
+  background-size: 60px 60px
+  
+
+.help__item:nth-child(1)
+  background: url('../../../assets/icons/icon-pet-food.svg') no-repeat top center
+.help__item:nth-child(2)
+  background: url('../../../assets/icons/Transportation.svg') no-repeat top center
+.help__item:nth-child(3)
+  background: url('../../../assets/icons/Toys.svg') no-repeat top center
+.help__item:nth-child(4)
+  background: url('../../../assets/icons/icon-bowls-and-cups.svg') no-repeat top center
+.help__item:nth-child(5)
+  background: url('../../../assets/icons/icon-shampoos.svg') no-repeat top center
+.help__item:nth-child(6)
+  background: url('../../../assets/icons/icon-vitamins.svg') no-repeat top center
+.help__item:nth-child(7)
+  background: url('../../../assets/icons/icon-medicines.svg') no-repeat top center
+.help__item:nth-child(8) 
+  background: url('../../../assets/icons/collars-or-leashes.svg') no-repeat top center
+.help__item:nth-child(9) 
+  background: url('../../../assets/icons/icon-sleeping-area.svg') no-repeat top center
+
+.help__item-title
+  font-family: 'Georgia'
+  font-style: normal
+  font-weight: 400
+  font-size: 20px
+  line-height: 115%
+  color: #545454
+  letter-spacing: 0.06em
+  padding-top: 90px
 
 .help
-  height: 611px
-  margin-top: 80px 
+  //height: 611px
+  margin-top: $contentWidth*0.0667  
+  margin-bottom: $contentWidth*0.0834
 
 .donation
-  height: 462px
-  margin-top: 80px 
+  //height: 462px
+  padding-top: $contentWidth*0.0667 
+  padding-bottom: $contentWidth*0.0834
+  background: #F6F6F6
+
+.donation__container 
+  max-width: 915px /$contentWidth *100%
+  display: flex
+  flex-direction: row
+  justify-content: center
+  column-gap: 30px
+
+.donation__text
+   max-width: 430px/ $contentWidth*100%
+   text-align: left
+
+.donation__text > *
+  margin-bottom: 20px
+
+.credit-card
+  background: url('../../../assets/icons/credit-card.svg') no-repeat
+  background-position: left 15px center
+  background-color: #F1CDB3
+  max-width: 349px
+  height: 43px
+  border-radius: 9px
+ // padding-left: 60px
+
+.card-number
+  padding: 15px 10px
+  font-family: 'Georgia' 
+  font-style: normal 
+  font-weight: 400 
+  font-size: 20px 
+  line-height: 115% 
+  letter-spacing: 0.06em 
+  color: #545454 
+  padding-left: 40px
