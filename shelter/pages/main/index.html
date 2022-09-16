@@ -9,59 +9,72 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+  <main class="main">
     <div class="intro">
-      <header class="head wrapper">
-      <div class="logo">
-        <p class="logo-text">Cozy House</p>
-        <p class="logo-text small">Shelter for pets in Boston</p>
-      </div>
-      <nav class="navigation">
-        <ul class="nav-list">
-          <li class="nav__item">About the shelter</li>
-          <li class="nav__item">Our pets</li>
-          <li class="nav__item">Help the shelter</li>
-          <li class="nav__item">Contacts</li>
-        </ul>
-      </nav>
+      <header class="header _content">
+        <div class="header-wrap">
+           <div class="logo">
+            <p class="logo-title">Cozy House</p>
+            <p class="logo-subtitle">Shelter for pets in Boston</p>
+          </div>
+          <nav class="navigation">
+            <div class="nav-wrap">
+              <ul class="nav-list">
+                <li class="nav__item"><a href=#about>About the shelter</a></li>
+                <li class="nav__item"><a href=#friends>Our pets</a></li>
+                <li class="nav__item"><a href=#help>Help the shelter</a></li>
+                <li class="nav__item"><a href=#contact>Contacts</a></li>
+              </ul>
+              </div>
+            </nav>              
+            </div> 
     </header>
-  <section class="not-only wrapper">
+  <section class="not-only _content">
     <div class="not-only-text">
       <h1>Not only people need a house</h1>
-      <p>We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p></div>
-      <button class="button-pink">Make a friend</button>
-    </section>
-  </div>
-  <section class="about wrapper">
-    <figure></figure>
-    <h2>About the shelter “Cozy House”</h2>
-    <p>Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find a family. The others will continue to live with us and will be waiting for a lucky chance to become dearly loved.
-      We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill levels. About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become attached to the pets and would hardly ever leave them alone.</p>
-  </section>
-  <section class="friends wrapper">
-    <h2>Our friends who are looking for a house</h2>
-    <div class="animals wrapper">
-      <div class="animals__item">
-        <div class="animals__item__pic"></div>
-        <div class="item__name"></div>
-        <button class="button-pink empty">Learn more</button>
-      </div>
-      <div class="animals__item">
-        <div class="animals__item__pic"></div>
-        <div class="item__name"></div>
-        <button class="button-pink empty">Learn more</button>
-      </div>
-      <div class="animals__item">
-        <div class="animals__item__pic"></div>
-        <div class="item__name"></div>
-        <button class="button-pink empty">Learn more</button>
-      </div>
-      <button class="button-pink">Get to know the rest</button>
+      <p>We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
+      <button class="button _pink">Make a friend</button>
+    </div>
+    <div class="not-only-bg">
+      <img src="../../../assets/img/start-screen-puppy.png" alt="puppy" class="not-only-img">
     </div>
   </section>
-  <section class="help wrapper">
+</div>
+  <section class="about _content" id="about">
+    <div>
+      <img src="../../../assets/img/about-pets.png" alt="dogs">
+    </div>
+    <div class="about__text">
+      <h2 class="about__title">About the shelter “Cozy House”</h2>
+      <p>Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find a family.The others will continue to live with us and will be waiting for a lucky chance to become dearly loved.</p>
+      <p>We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill levels. About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become attached to the pets and would hardly ever leave them alone.</p>  
+    </div>
+  </section>
+  <section class="friends _content"  id="friends">
+    <h2>Our friends who are looking for a house</h2>
+    <div class="animals _content">
+      <div class="animals__item">
+        <div class="animals__item__pic"></div>
+        <div class="item__name"></div>
+        <button class="button _empty">Learn more</button>
+      </div>
+      <div class="animals__item">
+        <div class="animals__item__pic"></div>
+        <div class="item__name"></div>
+        <button class="button _empty">Learn more</button>
+      </div>
+      <div class="animals__item">
+        <div class="animals__item__pic"></div>
+        <div class="item__name"></div>
+        <button class="button _empty">Learn more</button>
+      </div>
+      <button class="button _pink">Get to know the rest</button>
+    </div>
+  </section>
+  <section class="help _content"  id="help">
     <h2>How you can help our shelter</h2>
   </section>
-  <section class="donation wrapper">
+  <section class="donation _content">
     <div class="donation__pic"></div>
     <div class="donation__text">
       <h2>You can also make a donation.</h2>
@@ -69,10 +82,10 @@
         8380 2880 8028 8791 7435
         Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus</p>
     </div>
-  </section>
+  </section>    
 </main>
-  <footer class="footer">
-    <div class="wrapper">
+  <footer class="footer" id="contact">
+    <div class="footer__wrapper _content">
     <div class="question">
       <h2>For questions and suggestions</h2>
     </div>
