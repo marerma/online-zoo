@@ -26,6 +26,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: 100%;
 }
 
 ._content {
@@ -182,10 +183,6 @@ h1 {
 ._empty {
   border: 2px solid #F1CDB3;
   background: #FFFFFF;
-}
-
-.footer {
-  background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
 .about {
@@ -412,8 +409,8 @@ h2 {
 }
 
 .donation {
-  padding-top: 80.04px;
-  padding-bottom: 100.08px;
+  padding-top: 90px;
+  padding-bottom: 47.88px;
   background: #F6F6F6;
 }
 
@@ -429,18 +426,16 @@ h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-column-gap: 30px;
-     -moz-column-gap: 30px;
-          column-gap: 30px;
+  margin: 0 auto;
 }
 
 .donation__text {
-  max-width: 35.8333333333%;
+  max-width: 31.6666666667%;
   text-align: left;
 }
 
 .donation__text > * {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .credit-card {
@@ -450,7 +445,6 @@ h2 {
   max-width: 349px;
   height: 43px;
   border-radius: 9px;
-  padding-left: 60px;
 }
 
 .card-number {
@@ -462,5 +456,61 @@ h2 {
   line-height: 115%;
   letter-spacing: 0.06em;
   color: #545454;
-  padding-left: 60px;
+  padding-left: 50px;
+}
+
+.donation__pic {
+  max-width: 505px;
+}
+
+.subtext {
+  font-family: "Arial";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 80%;
+  line-height: 18px;
+  color: #B2B2B2;
+  max-width: 80%;
+}
+
+.footer {
+  background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  padding-top: 42px;
+}
+
+.footer__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.address__title, .qa__title {
+  color: #FFFFFF;
+}
+
+.locations__list, .contacts__list {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #F1CDB3;
+}
+
+.location-link:hover, .location-link:visited {
+  text-decoration: underline;
+  color: #FFFFFF;
+  font-style: italic;
+}
+
+.address__pic {
+  width: auto;
+  height: auto;
+  bottom: 0;
+  right: 0;
 }

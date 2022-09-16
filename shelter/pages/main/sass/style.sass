@@ -21,7 +21,7 @@ body
   display: flex
   flex-direction: column
   justify-content: space-between
-
+  height: 100%
  
 ._content
   max-width: $contentWidth
@@ -138,11 +138,6 @@ h1
 ._empty
   border: 2px solid #F1CDB3
   background: #FFFFFF
-
-.footer 
-  background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20
-
-  //height: 350px
 
 .about
  //height: 588px
@@ -309,8 +304,8 @@ h2
 
 .donation
   //height: 462px
-  padding-top: $contentWidth*0.0667 
-  padding-bottom: $contentWidth*0.0834
+  padding-top: $contentWidth*0.075 
+  padding-bottom: $contentWidth*0.0399
   background: #F6F6F6
 
 .donation__container 
@@ -318,14 +313,15 @@ h2
   display: flex
   flex-direction: row
   justify-content: center
-  column-gap: 30px
+  margin: 0 auto
 
 .donation__text
-   max-width: 430px/ $contentWidth*100%
+   max-width: 380px/ $contentWidth*100%
    text-align: left
+   
 
 .donation__text > *
-  margin-bottom: 20px
+  margin-bottom: 15px
 
 .credit-card
   background: url('../../../assets/icons/credit-card.svg') no-repeat
@@ -334,7 +330,6 @@ h2
   max-width: 349px
   height: 43px
   border-radius: 9px
- // padding-left: 60px
 
 .card-number
   padding: 15px 10px
@@ -345,4 +340,49 @@ h2
   line-height: 115% 
   letter-spacing: 0.06em 
   color: #545454 
-  padding-left: 40px
+  padding-left: 50px
+
+.donation__pic
+  max-width: 505px
+
+.subtext
+  font-family: 'Arial' 
+  font-style: italic 
+  font-weight: 400 
+  font-size: 12px /$fontdefault*100%
+  line-height: 18px 
+  color: #B2B2B2 
+  max-width: 80%
+
+.footer 
+  background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20
+  padding-top: 42px
+  //height: 350px
+
+.footer__wrapper
+  display: flex
+  flex-direction: row
+  
+
+.address__title, .qa__title
+  color: #FFFFFF
+
+.locations__list, .contacts__list
+  font-family: 'Georgia' 
+  font-style: normal 
+  font-weight: 400 
+  font-size: 20px 
+  line-height: 115% 
+  letter-spacing: 0.06em 
+  color: #F1CDB3
+
+.location-link:hover, .location-link:visited
+  text-decoration: underline
+  color: #FFFFFF
+  font-style: italic
+
+.address__pic
+  width: auto
+  height: auto
+  bottom: 0
+  right: 0
