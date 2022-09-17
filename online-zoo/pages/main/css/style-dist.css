@@ -32,12 +32,17 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
 ._content {
   max-width: 1160px;
   margin: 0 auto;
 }
 
-.header-wrap {
+.header {
   background: #000000;
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
@@ -50,4 +55,232 @@ html {
   font-size: 16px;
   line-height: 140%;
   color: #FFFFFF;
+}
+
+.header-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 58px;
+}
+
+.design-text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: #FFFFFF;
+  text-align: center;
+  padding-top: 1.2em;
+}
+
+.logo_title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 118.840625%;
+  line-height: 120%;
+  text-align: center;
+  color: #FFFFFF;
+  max-width: 73px;
+  border: 1px solid #FFFFFF;
+  border-radius: 2px;
+}
+
+.watch-wrap {
+  background: url("../../../assets/img/giant_panda.jpg") no-repeat center;
+  position: relative;
+}
+
+.watch_text {
+  max-width: 43.1034482759%;
+  padding-bottom: 100px;
+  position: relative;
+  left: 50%;
+}
+
+.motto {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 665.625%;
+  line-height: 75%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding-top: 85.92px;
+  padding-bottom: 60px;
+}
+
+/*.motto:before
+ * content: ''
+ * position: absolute 
+ * width: $contentWidth *0.401
+ * height:  $contentWidth *0.401
+ * border-radius: 100%
+ * background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%) 
+ * position: absolute
+ * left: -20px
+ * z-index: 2 */
+.orange-text {
+  color: #FFEE2E;
+}
+
+.button {
+  width: 298.12px;
+  height: 54.056px;
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+._round {
+  border-radius: 25px;
+}
+
+._rect {
+  border-radius: 5px;
+}
+
+.backstage {
+  background: url("../../../assets/img/flower_foto1.png") no-repeat;
+  background-position-x: 109%;
+  background-position-y: 0%;
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.backstage-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  gap: 87px;
+  padding-top: 140px;
+  padding-bottom: 180px;
+}
+
+.backstage__title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+  color: #333B41;
+  padding-bottom: 20px;
+}
+
+.backstage__text-block > p:not(.backstage__subtitle) {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #333B41;
+}
+
+.backstage__subtitle {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  color: #333B41;
+  padding-top: 54px;
+  padding-bottom: 34px;
+}
+
+.item__name {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.item__place {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 120%;
+  color: #000000;
+}
+
+.pick__title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+  text-align: center;
+  color: #FE9013;
+}
+
+._subtitle {
+  font-size: 24px;
+  color: #333B41;
+}
+
+.pick__text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #333B41;
+}
+
+._bold {
+  font-weight: 500;
+}
+
+.hiw__title, .testimonials__title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+  color: #333B41;
 }
