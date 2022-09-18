@@ -60,6 +60,7 @@ body
   flex-direction: row
   align-content: center 
   justify-content: space-between
+  padding-top: 1.2em
 
 .nav-list
   display: flex
@@ -76,7 +77,7 @@ body
   line-height: 140% 
   color: #FFFFFF 
   text-align: center
-  padding-top: 1.2em
+  
 
 .logo_title
   font-family: 'Roboto' 
@@ -111,10 +112,10 @@ body
   color: #FFFFFF 
   padding-top: $fontdefault * 5.37 //86px
   padding-bottom: $fontdefault * 3.75//60px
+  position: relative
+  z-index: 1
 
-
-
-/*.motto:before
+.motto:before
   content: ''
   position: absolute 
   width: $contentWidth *0.401
@@ -122,15 +123,17 @@ body
   border-radius: 100%
   background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%) 
   position: absolute
-  left: -20px
-  z-index: 2
+  left: -100px
+  
+  top: 10px
+  z-index: -1
 
 .orange-text
    color:#FFEE2E
 
 .button
-  width: $contentWidth * 0.257
-  height: $contentWidth * 0.0466
+  width: $contentWidth * 0.209
+  height: $contentWidth * 0.0375
   background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%) 
   font-family: 'Roboto' 
   font-style: normal 
@@ -139,7 +142,8 @@ body
   line-height: 140% 
   text-align: center 
   text-transform: uppercase 
-  color: #FFFFFF 
+  color: #FFFFFF
+  padding: 0 
 
 ._round
   border-radius: 25px
@@ -191,14 +195,26 @@ body
 
 
 .item__name
-    font-family: 'Roboto' 
-    font-style: normal 
-    font-weight: 500 
-    font-size: 16px 
-    line-height: 140% 
-    text-transform: uppercase 
-    color: #000000 
-  
+  font-family: 'Roboto' 
+  font-style: normal 
+  font-weight: 500 
+  font-size: 100% 
+  line-height: 140% 
+  text-transform: uppercase 
+  color: #000000 
+  padding-top: 0.5em
+  padding-left: 1em
+
+._veggy
+  background: url('../../../assets/icons/veggy.svg') no-repeat
+  background-position-x: 96% 
+  background-position-y: 96% 
+
+._meat 
+  background: url('../../../assets/icons/meat.svg') no-repeat
+  background-position-x: 96% 
+  background-position-y: 96% 
+
 .item__place
   font-family: 'Roboto' 
   font-style: normal 
@@ -206,8 +222,74 @@ body
   font-size: 15px 
   line-height: 120% 
   color: #000000 
+  padding-bottom: 1em
+  padding-left: $fontdefault
+
+.slider
+  display: flex 
+  flex-direction: row 
+  justify-content: space-between
+  flex-wrap: wrap
+  gap: 26px
+
+.pets__item 
+  border: 1px solid #F9804B
+  border-radius: 5px 
+
+.pets__container
+   display: flex 
+   flex-direction: row 
+   justify-content: space-between
+   padding: 0px 140px
+   padding-bottom: 65px
+
+.arrow-left, .arrow-right 
+  border: none
+  height: 50px 
+  width: 50px 
+  background: url("../../../assets/icons/slider-arrow.svg") no-repeat center 
+  background-color: #F9804B
+  border-radius: 100%
+  align-self: center
+
+.arrow-left:hover, .arrow-right:hover 
+  background-color: #4B9200
+
+.arrow-left 
+  transform: rotate(180deg) 
 
 
+
+.choose
+  padding-bottom: 5rem//81px
+  padding-left: 43%
+
+.pets
+  background: url("../../../assets/img/palm_foto.jpg") no-repeat bottom left, url("../../../assets/img/flower_2.jpg") no-repeat bottom right 
+  
+  
+
+SASS SYNTAX
+=transform($property)
+  -webkit-transform: $property
+  -ms-transform: $property
+  transform: $property
+
+.pick
+  background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%)  
+  opacity: 0.9  
+  padding-top: 56px
+  padding-bottom: 81px
+  margin-bottom: 113px
+
+
+.how-it-works
+  background: rgba(253, 253, 255, 0.52)  
+  backdrop-filter: blur(1.62625px)  
+  border-radius: 16.2625px  
+  padding-top: 33px
+  padding-bottom: 47px
+ 
 .pick__title
   font-family: 'Roboto' 
   font-style: normal 
@@ -216,10 +298,14 @@ body
   line-height: 120% 
   text-align: center 
   color: #FE9013 
+  padding-bottom: 0.5em
 
 ._subtitle
-  font-size: 24px 
+  font-size: 19.5px 
   color: #333B41 
+  padding-bottom: 2rem
+  text-align: left
+  padding-left: 80px
 
 .pick__text
   font-family: 'Roboto' 
@@ -228,9 +314,22 @@ body
   font-size: 16px 
   line-height: 130% 
   color: #333B41 
+  padding: 0 210px 0.5rem 80px
+  
+.pick__text
+  a
+    text-decoration: underline
+    text-decoration-color: #FE9013
+
+.pick__text
+  a:hover 
+    text-decoration: underline
+    text-decoration-color: #4B9200
+    color: #4B9200
 
 ._bold
   font-weight: 500 
+  padding-right: 0
 
 .hiw__title,.testimonials__title
   font-family: 'Roboto' 
@@ -239,3 +338,107 @@ body
   font-size: 36px 
   line-height: 130% 
   color: #333B41 
+  text-align: center 
+
+.hiw__title
+  padding: 48px 0 32px 0
+
+.hiw__process
+  display: flex
+  flex-direction: row
+  justify-content: space-evenly
+  align-content: center
+  padding: 0 161px 48.8px 161px 
+
+.hiw__item
+  max-width: 136px
+
+.hiw__subtitle
+  font-family: 'Roboto' 
+  font-style: normal 
+  font-weight: 400 
+  font-size: 13px 
+  line-height: 140% 
+  color: #333B41 
+
+.hiw__arrow
+  background: url("../../../assets/icons/arrow.svg") no-repeat center
+  background-color: black
+
+.hiw__icon
+  border-radius: 4.06563px
+  border: 0.81px solid orange
+  width: 136px
+  height: 136px
+  margin-bottom: 24px
+
+._pay
+  background: url("../../../assets/icons/pay.svg") no-repeat center, #FFFFFF
+  background-size: 87px 48px
+
+._zoo
+  background: url("../../../assets/icons/zoo.svg") no-repeat center, #FFFFFF
+  background-size: 69px 77px
+
+._anim
+  background: url("../../../assets/icons/monkey.svg") no-repeat center, #FFFFFF
+  background-size: 101px 58px
+
+.feed__btn
+  padding-left: 40%
+
+.testimonials__title
+  padding-bottom: 38px
+
+.testimonials__item__title
+  font-family: 'Roboto' 
+  font-style: normal 
+  font-weight: 500 
+  font-size: 13px 
+  line-height: 120% 
+  color: #000000 
+
+.testimonials__item__subtitle,.testimonials__item__text
+  font-family: 'Roboto' 
+  font-style: normal 
+  font-weight: 300 
+  font-size: 12.1969px 
+  line-height: 120% 
+  color: #BDBDBD 
+
+.testimonials__item__text
+  color: #ABABAB
+  padding-top: 7px
+
+.testimonials-wrapper
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  gap: 24px
+  
+
+.testimonials__item
+  background: #F1F3F2 
+  border-radius: 16.2625px 
+  border: 1.63px solid
+  border-color: gradient($direction, $list) 
+  max-height: 317px
+  padding: 12px 12px 15px 13px
+  overflow: hidden
+  width: 272px
+  
+$pink: rgba(254, 189, 171, 0.74)
+$purple:rgba(243, 169, 248, 0.66) 
+$lightpink:#E0D8F0 
+$white: #EAF7FE
+$direction: 315.75deg
+
+$list: $pink 30.06%, $purple 50.74%, $lightpink 80.49%, $white 127.9%, $white 149.54%
+
+
+@mixin gradient($direction, $list) 
+  background: -webkit-linear-gradient($direction, $list) 
+  background: -moz-linear-gradient($direction, $list) 
+  background: -o-linear-gradient($direction, $list) 
+  background: linear-gradient($direction, $list)   
+
