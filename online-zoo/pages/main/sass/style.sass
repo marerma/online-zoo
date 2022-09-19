@@ -284,6 +284,7 @@ body
   border: 1px solid #F9804B
   border-radius: 5px 
   overflow: hidden
+ 
 
 .pets__item__pic
   img
@@ -544,6 +545,7 @@ $list: $pink 30.06%, $purple 50.74%, $lightpink 80.49%, $white 127.9%, $white 14
   position: relative
   
   
+  
 
 @mixin progress-bar-color($valueColor: #FE9013, $backgroundColor: #F5F7F6) 
   background-color: $backgroundColor 
@@ -639,10 +641,11 @@ progress
    font-style: normal 
 
 .email:invalid
-  border-color: rgba(249, 128, 75, 1) 
+  border-color: #D31414
+  color: #D31414 
 
 .email:valid 
-  border-color: green
+  border-color: rgba(249, 128, 75, 1) 
 
 .email::placeholder
   font-family: 'Roboto' 

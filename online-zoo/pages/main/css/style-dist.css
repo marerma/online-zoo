@@ -748,11 +748,12 @@ progress::-webkit-progress-value {
 }
 
 .email:invalid {
-  border-color: rgb(249, 128, 75);
+  border-color: #D31414;
+  color: #D31414;
 }
 
 .email:valid {
-  border-color: green;
+  border-color: rgb(249, 128, 75);
 }
 
 .email::-webkit-input-placeholder {
