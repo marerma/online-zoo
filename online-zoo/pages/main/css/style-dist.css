@@ -51,17 +51,17 @@ body {
 .navigation {
   font-family: "Roboto";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1rem;
   line-height: 140%;
   color: #FFFFFF;
 }
 
-.nav__item:first-child {
+.active {
   color: #F9804B;
 }
 
-.nav__item:first-child:hover {
+.active:hover {
   color: #FFFFFF;
 }
 
@@ -104,14 +104,14 @@ body {
 .design-text {
   font-family: "Roboto";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
   color: #FFFFFF;
   text-align: center;
 }
 
-.design-text a:hover, .nav__item:not(.nav__item:first-child) a:hover, .logo a:hover {
+.design-text a:hover, .nav__item:not(.active) a:hover {
   color: #F9804B;
 }
 
@@ -126,12 +126,16 @@ body {
 .logo_title {
   font-family: "Roboto";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 1.19rem;
   line-height: 1.43rem;
   text-align: center;
   color: #FFFFFF;
   padding: 3.55px 4.75px 2px 4.7px;
+}
+
+.logo_title a:active, .logo_title-footer a:active {
+  color: white;
 }
 
 .bamboo {
@@ -141,7 +145,6 @@ body {
 }
 
 .watch-wrap {
-  max-width: 1600px;
   margin: 0 auto;
   background: url("../../../assets/img/giant_panda.jpg") no-repeat;
   background-position: 0px -80px;
@@ -201,6 +204,7 @@ body {
   text-transform: uppercase;
   color: #FFFFFF;
   padding: 0;
+  display: block;
 }
 
 .button:hover {
@@ -226,8 +230,8 @@ body {
 
 .backstage {
   background: url("../../../assets/img/flower_foto1.png") no-repeat;
-  background-position-x: 109%;
-  background-position-y: 0%;
+  background-position-x: 107.5%;
+  background-position-y: 10%;
   -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
           filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
@@ -347,6 +351,13 @@ body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transform: all ease-in 2s;
+          transform: all ease-in 2s;
+}
+
+.pets__item__pic img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .pets__container {
@@ -630,7 +641,7 @@ body {
   border-style: solid;
   background: #F1F3F2;
   border-radius: 16.2625px;
-  border: 1.63px solid;
+  border: 1.63px solid rgba(254, 189, 171, 0.74);
   max-height: 390px;
   overflow: hidden;
   width: 268px;
@@ -727,10 +738,21 @@ progress::-webkit-progress-value {
   background: black;
   border: 0.7px solid rgb(249, 128, 75);
   border-radius: 2px;
-  padding: 10px 20px 10px 12px;
+  padding: 10px 30px 10px 12px;
   display: inline-block;
   margin-right: 5px;
   margin-left: 5px;
+  color: #BDBDBD;
+  font-family: "Roboto";
+  font-style: normal;
+}
+
+.email:invalid {
+  border-color: rgb(249, 128, 75);
+}
+
+.email:valid {
+  border-color: green;
 }
 
 .email::-webkit-input-placeholder {
@@ -865,7 +887,7 @@ progress::-webkit-progress-value {
 .logo_title-footer {
   font-family: "Roboto";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 1.19rem;
   line-height: 1.43rem;
   text-align: center;
@@ -922,4 +944,261 @@ progress::-webkit-progress-value {
   margin-right: 15px;
   position: relative;
   top: 5px;
+}
+
+.donation__bg {
+  height: 385px;
+  margin: 0 auto;
+  background: url("../../../assets/img/panda_bg.jpg") no-repeat;
+  background-position: center center;
+  position: relative;
+  background-size: cover;
+}
+
+.donate__intro-title, .donate__introtext {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+  color: #FFFFFF;
+  padding-top: 40px;
+}
+
+.donate__introtext {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  padding-top: 10px;
+}
+
+._big {
+  color: #FE9013;
+  padding-top: 45px;
+  margin-bottom: 60px;
+}
+
+.donate {
+  background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+  opacity: 0.9;
+  padding-bottom: 180px;
+}
+
+.diet-amount, .diet-progress, .payment-wrapper {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #000000;
+}
+
+.diet-amount {
+  padding-top: 19%;
+}
+
+.pick-todonate {
+  background: rgba(253, 253, 255, 0.52);
+  -webkit-backdrop-filter: blur(1.62625px);
+          backdrop-filter: blur(1.62625px);
+  border-radius: 20px;
+  padding-bottom: 60px;
+  padding-top: 40px;
+}
+
+.pick-container {
+  max-width: 976px;
+  margin: 0 auto;
+}
+
+.number {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 72px;
+  line-height: 80%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+  padding-bottom: 11px;
+}
+
+.diet-wrapper {
+  padding-top: 20px;
+  max-width: 545px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-bottom: 41px;
+}
+
+.diet-wrapper > img {
+  display: inline-block;
+  max-height: 240px;
+}
+
+.x-icon {
+  background: url("../../../assets/icons/x_icon.svg") no-repeat;
+  width: 24px;
+  background-position-x: 10px;
+  background-position-y: 127px;
+  margin-right: 66px;
+}
+
+.pick-todonate__title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+  text-align: left;
+  color: #FE9013;
+  padding-bottom: 0.5em;
+  padding-left: 340px;
+}
+
+.pick-todonate__subtitle {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+  text-align: center;
+  color: #FE9013;
+  padding-bottom: 0.5em;
+  font-size: 24px;
+  color: #333B41;
+  padding-bottom: 2.5rem;
+  text-align: left;
+}
+
+.payment-wrapper {
+  width: 298px;
+}
+
+.cash {
+  display: block;
+  width: 87%;
+  background-color: transparent;
+  border: 0.7px solid #929699;
+  border-radius: 2px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+.cash:hover {
+  background-color: transparent;
+  border: 0.7px solid #FE9013;
+  border-radius: 2px;
+  display: block;
+  border-color: #FE9013;
+}
+
+.cash::-webkit-input-placeholder {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #929699;
+}
+
+.cash::-moz-placeholder {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #929699;
+}
+
+.cash:-ms-input-placeholder {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #929699;
+}
+
+.cash::-ms-input-placeholder {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #929699;
+}
+
+.cash::placeholder {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #929699;
+}
+
+.period {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.pay-period {
+  padding-left: 42px;
+  padding-bottom: 28px;
+}
+
+.pay-period > label {
+  margin-right: 45px;
+}
+
+.pay-period > label:last-child {
+  margin-right: 0px;
+}
+
+.share {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #333B41;
+  padding-left: 37.2%;
+  padding-top: 30px;
+}
+
+input[type=radio] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  font: inherit;
+  color: #FE9013;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid #FE9013;
+  border-radius: 50%;
+  -webkit-transform: translateY(-0.004rem);
+          transform: translateY(-0.004rem);
+}
+
+input[type=radio]:checked {
+  background-color: #FE9013;
+}
+
+input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.progress__bar {
+  padding-top: 10px;
+  padding-bottom: 45px;
 }
