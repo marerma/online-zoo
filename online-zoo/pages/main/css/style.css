@@ -506,6 +506,22 @@ body {
 
 .hiw__item {
   max-width: 168px;
+  position: relative;
+}
+
+.hiw__item:after {
+  content: "";
+  background: url("../../../assets/icons/arrow.svg") no-repeat center;
+  display: block;
+  width: 69px;
+  height: 39px;
+  position: absolute;
+  right: -60%;
+  top: 25%;
+}
+
+.hiw__item:last-child:after {
+  visibility: hidden;
 }
 
 .hiw__subtitle {
@@ -515,11 +531,6 @@ body {
   font-size: 16px;
   line-height: 140%;
   color: #333B41;
-}
-
-.hiw__arrow {
-  background: url("../../../assets/icons/arrow.svg") no-repeat center;
-  background-color: black;
 }
 
 .hiw__icon {
