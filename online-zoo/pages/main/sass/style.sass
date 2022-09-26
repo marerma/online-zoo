@@ -37,8 +37,8 @@ $contentWidth: 1160px
 $fontdefault: 16px
 
 body
-  
   margin: 0 auto
+
 
 ._content
   max-width: 1160px
@@ -59,8 +59,8 @@ body
 .active
   color: #F9804B 
 
-.active:hover
-  color:#FFFFFF
+.nav__item:hover:not(.active)
+  color: #F9804B 
 
 .header-wrap
   display: flex
@@ -89,7 +89,7 @@ body
   color: #FFFFFF 
   text-align: center
  
-.design-text, .nav__item:not(.active)
+.design-text
   a:hover 
     color: #F9804B
 
@@ -119,7 +119,7 @@ body
   left: 0.8em
 
 .watch-wrap
-  //max-width: 1600px
+
   margin: 0 auto
   background: url('../../../assets/img/giant_panda.jpg') no-repeat
   background-position: 0px -80px
@@ -180,6 +180,7 @@ body
 
 .button:hover
    background: #E47209
+   cursor: pointer 
 
 .button:active
    background: #4B9200
@@ -252,6 +253,9 @@ body
   color: #000000 
   padding-top: 0.28em
   padding-left: 1em
+  position: relative
+  z-index: 3
+
 
 ._veggy
   background: url('../../../assets/icons/veggy.svg') no-repeat
@@ -269,9 +273,11 @@ body
   font-weight: 300 
   font-size: 15px 
   line-height: 120% 
-  color: #000000 
+  color: black
   padding-bottom: 0.5rem
   padding-left: $fontdefault
+  position: relative
+  z-index: 3
 
 .slider
   display: flex 
@@ -284,6 +290,7 @@ body
   border: 1px solid #F9804B
   border-radius: 5px 
   overflow: hidden
+  position: relative
  
 
 .pets__item__pic
@@ -291,12 +298,34 @@ body
     display: inline-block
     width: 100%
     height: 100%
-    object-fit: cover
     transform: all ease-in 2s
+  
+  
+.item__text
+  background: black
+  opacity: 0
+  width: 100%
+  height: 422px
+  position: absolute
+  z-index: 2
+  top: 100%
+  color: black
+  transition: all ease-in 0.3s
+  
+.pets__item:hover .item__text
+  opacity: 0.7
+  top: 0
 
-.pets__item__pic
-  img:hover
-    transform: scale(1.1)
+.pets__item:hover .item__name, .pets__item:hover .item__place
+  transform: translateY(-150%)
+  transition: all ease-in 0.3s
+  color: white
+
+.pets__item:hover img
+  transform: scale(1.05)
+  transition: all ease-in 0.3s
+
+   
 
 .pets__container
    display: flex 
@@ -453,7 +482,7 @@ SASS SYNTAX
   background-size: 108px 60px
 
 ._zoo
-  background: url("../../../assets/icons/zoo.svg") no-repeat center, #FFFFFF
+  background: url("../../../assets/icons/zoo.png") no-repeat center, #FFFFFF
   background-size: 85px 95px
 
 ._anim
@@ -520,13 +549,15 @@ SASS SYNTAX
 .testimonials__item__text
   color: #ABABAB
   padding: 0px 10px 0px 15px
+  overflow: hidden
 
 .testimonials-wrapper
-  display: flex
-  flex-direction: row
+  display: grid
+  grid-template-columns: repeat(4, 268px)
+  gap: 0 30px
   justify-content: space-between
-  gap: 35px
   padding-bottom: 14px
+  position: relative
   
 $pink: rgba(254, 189, 171, 0.74)
 $purple:rgba(243, 169, 248, 0.66) 
@@ -545,17 +576,30 @@ $list: $pink 30.06%, $purple 50.74%, $lightpink 80.49%, $white 127.9%, $white 14
   border-width: 1.63px
   border-style: solid  
 
-.testimonials__item
-  @include gradient($direction, $list) 
-  background: #F1F3F2 
-  border-radius: 16.2625px 
-  border: 1.63px solid $pink
-  max-height: 390px
-  overflow: hidden
-  width: 268px
+@mixin gradientBorder($direction, $list) 
+  background: -webkit-linear-gradient($direction, $list) 
+  background: -moz-linear-gradient($direction, $list) 
+  background: -o-linear-gradient($direction, $list) 
+  background: linear-gradient($direction, $list)
+
+.item__background  
+  @include gradientBorder($direction, $list)
   position: relative
-  
-  
+  z-index: -1
+  height: 390px
+  padding: 0
+  border-radius: 20px 
+  overflow: hidden
+
+.testimonials__item
+  background: #F1F3F2 
+  border-radius: 18px 
+  border: 2px solid transparent
+  margin: 2px
+  overflow: hidden
+  position: absolute
+  max-height: 382px
+    
   
 
 @mixin progress-bar-color($valueColor: #FE9013, $backgroundColor: #F5F7F6) 
@@ -586,10 +630,66 @@ $list: $pink 30.06%, $purple 50.74%, $lightpink 80.49%, $white 127.9%, $white 14
 .progress
   width: 599px
   margin: 0 auto
+  padding-top: 4px
   padding-bottom: 27px
 
 progress
   @include progress-bar-color($valueColor: #FE9013, $backgroundColor: #F5F7F6)
+
+
+
+
+
+@mixin slider-bar($thumb_color:#FE9013, $track_color: #F5F7F6, $bg-color:#F5F7F6) 
+  -webkit-appearance: none
+  border: 1px solid $pink
+  background-color: transparent
+  width: 600px 
+  border-radius: 5px
+
+  &::-webkit-slider-runnable-track 
+    width: 600px
+    height: 8px
+    background: $track_color
+    border: none
+    border-radius: 5px
+
+  &::-webkit-slider-thumb 
+    @include input_range_thumb($thumb_color)
+    margin-top: 1px
+
+  &:focus 
+      outline: none
+
+  &:focus::-webkit-slider-runnable-track 
+      
+  &::-moz-range-track 
+    width: 600px
+    height: 8px
+    background: $track_color
+    border: none
+    border-radius: 5px
+
+  &::-moz-range-thumb 
+    @include input_range_thumb($thumb_color)
+
+@mixin input_range_thumb($thumb_color) 
+  -webkit-appearance: none
+  border: none
+  height: 6px
+  width: 115px
+  border-radius: 5px
+  background: $thumb_color
+  border: 1px solid #FE9013
+  &:active 
+    border: 1px solid green
+  &:hover 
+    background: green
+    cursor: pointer
+
+.range
+  @include slider-bar
+  transition: all ease 0.3s
 
 .feedback__btn
   padding-bottom: 146px
@@ -623,7 +723,8 @@ progress
   line-height: 140% 
   color: #FFFFFF 
   position: relative
-  padding-bottom: 2px
+  padding-bottom: 15px
+  padding-left: 40px
 
 .social_media > li > a 
   display: inline-block
@@ -633,6 +734,17 @@ progress
 .social_media > li > a:hover, a:active 
   color: #4B9200
 
+.media
+  img
+    display: inline-block
+    width: 26px
+    height: 26px
+    position: absolute
+    left: 0
+
+.media
+  img:hover
+    filter: invert(59%) sepia(72%) saturate(4911%) hue-rotate(58deg) brightness(89%) contrast(104%)
 
 ._footer
   font-size: 16px
@@ -673,7 +785,10 @@ progress
   display: inline-block
 
 .submit-btn:active
- border: 1px solid #4B9200
+  border: 1px solid #4B9200
+
+.submit-btn:hover
+  cursor: pointer  
 
 .submit-btn[value]
   font-family: 'Roboto' 
@@ -752,9 +867,9 @@ progress
   bottom: 0.7em
   left: 0.5rem
 
-._twitter:before
+/*._twitter:before
   content: ''
-  background: url('../../../assets/icons/icon-twitter.svg') no-repeat center
+  background: url('../../../assets/icons/icon_twitter.svg') no-repeat center
   display: inline-block
   width: 26px
   height: 26px
@@ -762,9 +877,9 @@ progress
   position: relative
   top: 5px
 
-._fb:before
+/*._fb:before
   content: ''
-  background: url('../../../assets/icons/icon-fb.svg') no-repeat center
+  background: url('../../../assets/icons/icon_fb.svg') no-repeat center
   display: inline-block
   width: 26px
   height: 26px
@@ -772,9 +887,9 @@ progress
   position: relative
   top: 5px
 
-._insta:before
+/*._insta:before
   content: ''
-  background: url('../../../assets/icons/icon-insta.svg') no-repeat center
+  background: url('../../../assets/icons/icon_insta.svg') no-repeat center
   display: inline-block
   width: 26px
   height: 26px
@@ -782,9 +897,9 @@ progress
   position: relative
   top: 5px
 
-._youtube:before
+/*._youtube:before
   content: ''
-  background: url('../../../assets/icons/icon-youtube.svg') no-repeat center
+  background: url('../../../assets/icons/icon_youtube.svg') no-repeat center
   display: inline-block
   width: 26px
   height: 26px
@@ -795,9 +910,11 @@ progress
 
 //donate-page
 
+
+
+
 .donation__bg
-  //max-width: 1600px
-  height: 385px
+  height: 386px
   margin: 0 auto
   background: url('../../../assets/img/panda_bg.jpg') no-repeat
   background-position: center center
@@ -815,10 +932,11 @@ progress
 
 
 .donate__introtext
-  font-weight: 500 
+  font-weight: 400 
   font-size: 16px 
   line-height: 140% 
   padding-top: 10px
+  padding-right: 10px
 
 ._big
   color: #FE9013
@@ -947,6 +1065,18 @@ progress
   line-height: 140% 
   color: #929699 
 
+.cash-wrapper 
+  position: relative
+
+.cash-wrapper:after
+  content: ''
+  background: url('../../../assets/icons/dollar_light.svg') no-repeat center
+  position: absolute
+  width: 10px
+  height: 20px
+  right: 26px
+  top: 16px
+  
 
 .period
   display: inline-block
@@ -974,8 +1104,7 @@ progress
   padding-left: 37.2%
   padding-top: 30px
 
-
-input[type="radio"] 
+.period
   appearance: none
   font: inherit 
   color:#FE9013
@@ -984,105 +1113,71 @@ input[type="radio"]
   border: 0.15em solid #FE9013
   border-radius: 50% 
   transform: translateY(-0.004rem)
-
-
-input[type="radio"]:checked
+  
+.period:checked
   background-color: #FE9013
-
- 
+  
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button
   -webkit-appearance: none
-  
-.progress__bar
-  padding-top: 20px
-  padding-bottom: 25px
 
+
+
+.progress__bar
+  padding-top: 18px
+  padding-bottom: 25px
 
 
 .progress_wrap 
   background: #404950
-  background-image: url('../../../assets/icons/ellipse.png'), url('../../../assets/icons/ellipse.png'), url('../../../assets/icons/ellipse.png'), url('../../../assets/icons/ellipse.png'), url('../../../assets/icons/ellipse.png'), url('../../../assets/icons/ellipse.png'), url('../../../assets/icons/ellipse.png'), url('../../../assets/icons/ellipse.png')  
-  background-repeat: no-repeat
-  background-position: 30px 9px, 160px 9px, 290px 9px, 419px 9px, 546px 9px, 675px 9px, 805px 9px, 935px 9px
-  border-radius: 2px
   height: 27px
   width: 976px
+  position: relative
+  border-radius: 2px
    
-
-input[type="range"] 
-  -webkit-appearance: none
-  appearance: none
-  background: transparent
-  cursor: pointer
-  width: 915px
-  padding-left: calc((976px - 915px)/2)
-
-
-input[type="range"]::-webkit-slider-runnable-track 
- 
+.progress-line
   background: #72828E
   height: 2px
-  
+  width: 94%
+  position: absolute
+  top: 12px
+  left: 30px
 
-  
+.chose-amount-container
+  width: 94%
+  height: 27px
+  position: absolute
+  z-index: 2
+  top: -1px
+  left: 11px
+  display: grid
+  grid-template-columns: repeat(8, 40px)
+  justify-content: space-between
+  align-items: center
+  justify-items: center
+  column-gap: 90px
  
 
-
-input[type="range"]::-moz-range-track 
-  background: #404950
-
-
-input[type="range"]::-webkit-slider-thumb 
-  -webkit-appearance: none 
+.chose-amount-item
   appearance: none
-  margin-top: -15px
-  border: none 
-  border-radius: 0 
   background-color: #FFEE2E
-  height: 10px
   width: 10px 
-  border-radius: 50%  
-  margin-top: -5px 
-
-
-input[type="range"]::-moz-range-thumb 
-  border: none 
-  border-radius: 0 
-  background-color: #FFEE2E
-  height: 10px
-  width: 10px 
-  border-radius: 50%  
-  margin-top: -5px 
-
-
-input[type="range"]:focus 
-  outline: none
-
-
-input[type="range"]:hover::-webkit-slider-thumb 
-  background-image:  url('../../assets/icons/roller_icon.png')
-  background-repeat: no-repeat
-  background-position: center
-  margin-right: -20px 
-  background-size: 40px 40px
- 
- 
-
-
-input[type="range"]:focus::-webkit-slider-thumb 
-  outline: 1px double #FE9013
-  outline-offset: 20px
-  border: 1px solid #FE9013
+  height: 10px 
+  border-radius: 50% 
+  position: relative
   
+  
+  &:hover
+    cursor: pointer
+    background-color: #4B9200
 
 
-
-input[type="range"]:focus::-moz-range-thumb 
-  outline: 1px double #FE9013
-  outline-offset: 20px
-  border: 1px solid #FE9013    
-
-
+  &:checked
+    background: url('../../../assets/icons/roller_icon.png') no-repeat center,  url('../../../assets/icons/ellipse.png') no-repeat center
+    width: 40px
+    height: 40px
+ 
+    
+  
 .value_list 
   list-style: none
   font-family: 'Roboto'
@@ -1092,17 +1187,30 @@ input[type="range"]:focus::-moz-range-thumb
   line-height: 140%
   text-transform: uppercase
   color: #333B41
-  display: flex
-  flex-direction: row
+  display: grid
+  grid-template-columns: repeat(8, 1fr)
   align-content: center
+  justify-items: center
   justify-content: space-between
-  padding: 10px 20px 25px 0px
+  padding: 12px 20px 25px 0px
 
-option
-  display: block
-  border: none 
-  background-color: #FFEE2E
-  height: 10px
-  width: 10px 
-  border-radius: 50%  
-  margin-top: -15px   
+.value_list > li:before
+  content: ''
+  background: url('../../../assets/icons/dollar.svg') no-repeat center
+  position: absolute
+  width: 10px
+  height: 20px
+  top: 7px
+  left: 0px
+  
+    
+.value_list > li
+  position: relative
+  padding-left: 15px
+  
+.value_list > li:first-child, li:nth-child(2)
+  justify-self: start
+
+
+.value_list > li:nth-child(6),li:nth-child(7), li:nth-child(8)
+  justify-self: end
