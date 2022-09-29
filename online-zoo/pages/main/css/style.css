@@ -35,7 +35,6 @@ html {
 
 body {
   margin: 0 auto;
-  overflow: hidden;
 }
 
 ._content {
@@ -90,7 +89,7 @@ body {
   color: #FFFFFF;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .header .navigation {
     display: none;
   }
@@ -209,7 +208,7 @@ body {
   color: #FFFFFF;
   text-align: center;
 }
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .design-text {
     display: none;
   }
@@ -454,6 +453,7 @@ body {
 
 .button:active {
   background: #4B9200;
+  color: white;
 }
 
 .watch_text .button {
