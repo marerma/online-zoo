@@ -135,11 +135,13 @@ body
   padding-right: 0.3775*$contentWidth - 63px
   @media all and (max-width: 1399px)
     gap: 48px
-    padding-right: 19vw
+    padding-right: 15vw
   @media all and (max-width: 1000px)
     padding-right: 19.5vw
   @media all and (max-width: 950px)
     padding-right: 15vw
+  @media all and (max-width: 875px)
+    padding-right: 3vw
   @media all and (max-width: 768px)
     padding-right: 0
     gap: 20px
@@ -1230,7 +1232,7 @@ SASS SYNTAX
 .footer__wrapper
   padding-top: 40px
   @media all and (max-width: 1000px)
-    padding-left: 25px
+    //padding-left: 25px
   @media all and (max-width: 640px)
     padding-left: 0px
     padding-top: 12px
@@ -1369,8 +1371,8 @@ SASS SYNTAX
   padding-bottom: 42px
   @media(max-width: 1000px)
     padding-bottom: 47px
-  @media(max-width: 1000px)
-    padding-bottom: 70px
+  @media(max-width: 640px)
+    padding-bottom: 70px 
   @media all and (max-width: 320px)
     padding-bottom: 30px
 
@@ -1398,7 +1400,7 @@ SASS SYNTAX
   padding-left: 120px
   line-height: 140%
   @media all and (max-width: 1000px)
-    padding-left: 90px
+    padding-left: 110px
   @media all and (max-width: 768px)
     padding-left: 10px
     gap:10px
@@ -1514,6 +1516,25 @@ SASS SYNTAX
   background-position: center center
   position: relative
   background-size: cover
+  @media all and (max-width: 1000px)
+    height: 390px
+    background-position: -170px center
+  @media all and (max-width: 640px)
+    height: 334px
+    background-size: 220% auto
+    background-position: 37% bottom
+    padding-top: 35px
+  @media all and (max-width: 625px)
+    height: 185px
+    background-size: 180% auto
+    background-position: 37% bottom
+    padding-top: 35px
+  @media all and (max-width: 430px)
+    background-size: cover
+  @media all and (max-width: 320px)
+    background-size: 240% auto
+    background-position: 34% bottom
+
 
 .donate__intro-title,.donate__introtext
   font-family: 'Roboto' 
@@ -1523,7 +1544,18 @@ SASS SYNTAX
   line-height: 130% 
   color: #FFFFFF 
   padding-top: 40px
-
+  @media all and (max-width: 1000px)
+    padding-right: 15vw
+  @media all and (max-width: 950px)
+    padding-left: 2vw
+    padding-right: 2vw
+  @media all and (max-width: 640px)
+    font-size: 24px 
+    line-height: 120% 
+    padding-top: 30px
+    padding-left: 0
+    padding-right: 0
+ 
 
 .donate__introtext
   font-weight: 400 
@@ -1531,17 +1563,40 @@ SASS SYNTAX
   line-height: 140% 
   padding-top: 10px
   padding-right: 10px
+  @media all and (max-width: 1000px)
+    padding-top: 30px
+  @media all and (max-width: 640px)
+    padding-top: 20px
+    padding-right: 5px
 
 ._big
   color: #FE9013
   padding-top: 45px
   margin-bottom: 60px
+  @media all and (max-width: 1000px)
+    margin-bottom: 40px
+  @media all and (max-width: 640px)
+    margin-bottom: 30px
+    padding-top: 30px
+    font-size: 36px 
+  @media all and (max-width: 320px)
+    margin-bottom: 29px
+    padding-top: 28px
+    font-size: 24px 
 
 .donate
   background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%)  
   opacity: 0.9  
   padding-bottom: 180px
-  
+  @media all and (max-width: 1000px)
+    padding-bottom: 30px
+  @media all and (max-width: 640px)
+    padding-bottom: 46px
+  @media all and (max-width: 320px)
+    padding-bottom: 21px
+    
+
+
 %font-donate
   font-family: 'Roboto' 
   font-style: normal 
@@ -1554,6 +1609,26 @@ SASS SYNTAX
   @extend %font-donate
 
 .diet-amount
+  @media all and (max-width: 320px)
+    font-size: 9px 
+
+.diet-progress
+  p
+    @media all and (max-width: 1000px)
+      padding-left: 65px
+      padding-top: 5px
+    @media all and (max-width: 900px)
+      padding-left: 5vw
+    @media all and (max-width: 640px)
+      padding-left: 10px
+      padding-top: 15px
+    @media all and (max-width: 320px)
+      padding-left: 0px
+      padding-top: 0px
+      
+      
+
+.diet-amount
   padding-top: 19%
   
 
@@ -1564,43 +1639,20 @@ SASS SYNTAX
   border-radius: 20px  
   padding-bottom: 60px
   padding-top: 40px
+  @media all and (max-width: 1000px)
+    padding-top: 20px
+    padding-bottom: 45px
+  @media all and (max-width: 640px)
+    padding-top: 30px
+    padding-bottom: 30px
+  @media all and (max-width: 320px)
+    padding-top: 20px
+    padding-bottom: 18px
 
 .pick-container
   max-width: 976px
   margin: 0 auto
 
-.number
-  font-family: 'Roboto' 
-  font-style: normal 
-  font-weight: 500 
-  font-size: 72px 
-  line-height: 80% 
-  text-align: center 
-  text-transform: uppercase 
-  color: #000000 
-  padding-bottom: 11px
- 
-
-.diet-wrapper
-  padding-top: 20px
-  max-width: 545px
-  margin: 0 auto
-  display: flex
-  flex-direction: row
-  padding-bottom: 41px
-
-.diet-wrapper > img
-  display: inline-block
-  max-height: 240px
-  
-
-.x-icon
-  background: url('../../../assets/icons/x_icon.svg') no-repeat
-  width: 24px
-  background-position-x: 10px
-  background-position-y: 127px
-  margin-right: 66px
-    
 
 .pick-todonate__title
   font-family: 'Roboto' 
@@ -1612,9 +1664,22 @@ SASS SYNTAX
   color: #FE9013 
   padding-bottom: 0.5em
   padding-left: 340px
+  @media all and (max-width: 1400px)
+    padding-left: 0px
+    text-align: center
+  @media all and (max-width: 1000px)
+    text-align: justify
+    padding-left: 24.5%
+    padding-bottom: 10px
+  @media all and (max-width: 640px)
+    padding-left: 0
+    text-align: center
+    padding-bottom: 20px
+  @media all and (max-width: 320px)
+    font-size: 24px 
+    padding-bottom: 10px
+    
   
-  
-
 .pick-todonate__subtitle
   font-family: 'Roboto' 
   font-style: normal 
@@ -1628,22 +1693,101 @@ SASS SYNTAX
   color: #333B41 
   padding-bottom: 2.5rem
   text-align: left
+  @media all and (max-width: 1400px)
+    text-align: center
+  @media all and (max-width: 640px)
+    padding-bottom: 35px
+  @media all and (max-width: 320px)
+    font-size: 16px 
+    line-height: 140% 
+    padding-bottom: 10px
+
+.number
+  font-family: 'Roboto' 
+  font-style: normal 
+  font-weight: 500 
+  font-size: 72px 
+  line-height: 80% 
+  text-align: center 
+  text-transform: uppercase 
+  color: #000000 
+  padding-bottom: 11px
+  @media all and (max-width: 320px)
+    font-size: 40px 
  
+
+.diet-wrapper
+  padding-top: 20px
+  max-width: 545px
+  margin: 0 auto
+  display: flex
+  flex-direction: row
+  padding-bottom: 41px
+  @media all and (max-width: 640px)
+    padding-bottom: 21px
+  @media all and (max-width: 320px)
+    max-width: 300px
+    padding-top: 0px
+    padding-bottom: 0px
+
+.diet-wrapper > img
+  display: inline-block
+  max-height: 240px
+ 
+.animal-icon 
+  img
+    width: 100%
+    height: auto
+    @media all and (max-width: 475px)
+      max-width: 160px
+    
+    
+
+.x-icon
+  background: url('../../../assets/icons/x_icon.svg') no-repeat
+  width: 24px
+  background-position-x: 10px
+  background-position-y: 127px
+  margin-right: 66px
+  @media all and (max-width: 550px)
+    margin-right: 4%
+    background-size: 15px 15px
+    width: 50px
+  @media all and (max-width: 475px)
+    margin-right: 0px
+    background-position-x: 0px
+    background-position-y: 77px
+    
+  @media all and (max-width: 320px)
+    width: 50px
+    background-size: 10px 10px
+    background-position-y: 72px
+    background-position-x: 5px
+
+
 .payment-wrapper
   width: 298px
 
 .cash
-   display: block
-   width: 87%
-   background-color: transparent
-   border: 0.7px solid #929699
-   border-radius: 2px 
-   padding-top: 16px 
-   padding-bottom: 16px 
-   display: block
-   margin: 0 auto
-   margin-bottom: 25px
-
+  display: block
+  width: 87%
+  background-color: transparent
+  border: 0.7px solid #929699
+  border-radius: 2px 
+  padding-top: 16px 
+  padding-bottom: 16px 
+  display: block
+  margin: 0 auto
+  margin-bottom: 25px
+  @media all and (max-width: 640px)
+    width: 175px
+    padding-top: 10px 
+    padding-bottom: 11px 
+    margin-bottom: 31px
+  @media all and (max-width: 320px)
+    padding-top: 12px 
+    margin-bottom: 23px
+  
 .cash:hover
    background-color: transparent
    border: 0.7px solid #FE9013
@@ -1670,11 +1814,9 @@ SASS SYNTAX
   height: 20px
   right: 26px
   top: 16px
-  
-
-.period
-  display: inline-block
-  margin-right: 5px
+  @media all and (max-width: 640px)
+    right: 70px
+    top: 10px
   
 
 .pay-period
@@ -1697,7 +1839,12 @@ SASS SYNTAX
   color: #333B41 
   padding-left: 37.2%
   padding-top: 30px
-
+  @media all and (max-width: 1000px)
+    padding-left: 0
+    text-align: center
+  @media all and (max-width: 320px)
+    text-align: left
+    width: 301px
 .period
   appearance: none
   font: inherit 
@@ -1707,6 +1854,11 @@ SASS SYNTAX
   border: 0.15em solid #FE9013
   border-radius: 50% 
   transform: translateY(-0.004rem)
+  display: inline-block
+  margin-right: 5px
+  @media all and (max-width: 640px)
+    width: 16px
+    height: 16px
   
 .period:checked
   background-color: #FE9013
@@ -1719,7 +1871,14 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .progress__bar
   padding-top: 18px
   padding-bottom: 25px
-
+  @media all and (max-width: 1000px)
+    padding-top: 15px
+  @media all and (max-width: 640px)
+    padding-top: 6px
+    padding-bottom: 30px
+  @media all and (max-width: 320px)
+    padding-top: 9px
+    padding-bottom: 5px
 
 .progress_wrap 
   background: #404950
@@ -1727,6 +1886,21 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   width: 976px
   position: relative
   border-radius: 2px
+  @media all and (max-width: 1400px)
+    max-width: 900px
+    margin: 0 auto
+  @media all and (max-width: 1000px)
+    max-width: 810px
+  @media all and (max-width: 900px)
+    max-width: 686px
+  @media all and (max-width: 768px)
+    max-width: 600px
+  @media all and (max-width: 621px)
+    width: 100%
+    max-width: 500px
+  @media all and (max-width: 320px)
+    max-width: 300px
+    height: 13px
    
 .progress-line
   background: #72828E
@@ -1735,6 +1909,21 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   position: absolute
   top: 12px
   left: 30px
+  @media all and (max-width: 1000px)
+    width: 96.9%
+    left: 16px
+  @media all and (max-width: 640px)
+    width: 520px
+    left: 41px
+  @media all and (max-width: 621px)
+    width: 90%
+    max-width: 500px
+    left: 25px
+  @media all and (max-width: 320px)
+    max-width: 262px
+    top: 6px
+    left: 20px
+    height: 1px
 
 .chose-amount-container
   width: 94%
@@ -1749,7 +1938,37 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   align-items: center
   justify-items: center
   column-gap: 90px
- 
+  @media all and (max-width: 1400px)
+    column-gap: 9.5%
+  @media all and (max-width: 1000px)
+    left: -4px
+    grid-template-columns: repeat(7, 40px)
+    column-gap: 90px    
+  @media all and (max-width: 900px)
+    column-gap: 70px  
+  @media all and (max-width: 768px)
+    column-gap: 56px
+  @media all and (max-width: 640px)
+    left: 0px
+    width: 530px
+    margin-left: 20px
+    grid-template-columns: repeat(5, 40px)
+    column-gap: 90px
+  @media all and (max-width: 621px)
+    width: 100%
+    column-gap: 35px
+    margin-left: 0px
+    
+
+  @media all and (max-width: 320px)
+    height: 20px
+    max-width: 300px
+    column-gap: 0px
+    top: -14px
+    margin-left: 0px
+    
+    
+  
 
 .chose-amount-item
   appearance: none
@@ -1758,6 +1977,21 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   height: 10px 
   border-radius: 50% 
   position: relative
+  @media all and (max-width: 1000px)
+    &:first-child
+      display: none
+  @media all and (max-width: 640px)
+    &:nth-child(3), &:nth-child(2)
+      display: none
+    &:nth-child(6)
+      background: url('../../../assets/icons/roller_icon.png') no-repeat center,  url('../../../assets/icons/ellipse.png') no-repeat center
+      width: 40px
+      height: 40px
+  @media all and (max-width: 320px)
+    width: 5px 
+    height: 5px 
+    &:nth-child(6)
+      background-size: 20px 20px, 5px 5px 
   
   
   &:hover
@@ -1765,11 +1999,12 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
     background-color: #4B9200
 
 
-  &:checked
+  &:checked, .chosen
     background: url('../../../assets/icons/roller_icon.png') no-repeat center,  url('../../../assets/icons/ellipse.png') no-repeat center
     width: 40px
     height: 40px
- 
+    @media all and (max-width: 320px)
+      background-size: 20px 20px, 5px 5px 
     
   
 .value_list 
@@ -1787,6 +2022,36 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   justify-items: center
   justify-content: space-between
   padding: 12px 20px 25px 0px
+  @media all and (max-width: 1400px)
+    padding: 15px 15px 25px 15px
+  @media all and (max-width: 1000px)
+    max-width: 88%
+    margin: 0 auto
+    grid-template-columns: repeat(7, 70px)
+    padding: 13px 15px 25px 20px
+  @media all and (max-width: 900px)
+    max-width: 686px
+    grid-template-columns: repeat(7, 50px)
+  @media all and (max-width: 768px)
+    max-width: 600px
+  @media all and (max-width: 640px)
+    max-width: 550px
+    grid-template-columns: repeat(5, 40px)
+    padding: 12px 0px 20px 0px
+  @media all and (max-width: 621px)
+    max-width: 500px
+    padding-left: 5px
+    padding-top: 5px
+    padding-right: 10px
+
+  @media all and (max-width: 320px)
+    max-width: 300px
+    font-size: 13px
+    padding-left: 2px
+    padding-top: 5px
+    padding-right: 10px
+ 
+ 
 
 .value_list > li:before
   content: ''
@@ -1796,11 +2061,30 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   height: 20px
   top: 7px
   left: 0px
-  
+  @media all and (max-width: 1000px)
+    top: 7px
+    left: 5px
+  @media all and (max-width: 320px)
+    width: 5px
+    height: 10px
+    background-size: contain
+    top: 3px
+    left: 0px
+
+#fiveD
+  @media all and (max-width: 1000px)
+    display: none
     
+#twoD, #oneD
+  @media all and (max-width: 640px)
+    display: none
+
+
 .value_list > li
   position: relative
   padding-left: 15px
+  @media all and (max-width: 320px)
+    padding-left: 5px
   
 .value_list > li:first-child, li:nth-child(2)
   justify-self: start
