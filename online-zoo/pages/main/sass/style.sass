@@ -218,14 +218,14 @@ body
   @media all and (max-width: 1399px)
     padding-bottom: 80px
   @media all and (max-width: 1000px)
-    padding-bottom: 45px
+    padding-bottom: 46px
     background-position: center -80px
     background-size: 120% auto
   @media all and (max-width: 768px)
     padding-bottom: 15px
   @media all and (max-width: 640px)
     background-position: center 0px
-    padding-bottom: 28px
+    padding-bottom: 29px
   @media all and (max-width: 320px)
     background-size: 120% auto
     background-position: center 34px
@@ -357,7 +357,7 @@ body
 
 .button
   width: 298px
-  height: 3.4rem
+  height: 54px
   background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%) 
   font-family: 'Roboto' 
   font-style: normal 
@@ -470,7 +470,8 @@ body
     min-width: 38vw
   @media all and (max-width: 1000px)
     min-width: 48.5%
-    background-size: 135% 95%
+    background-size: 136% 95.6%
+    background-position: cover
   @media all and (max-width: 950px)
     background-size: contain
   @media all and (max-width: 950px)
@@ -583,6 +584,7 @@ body
     gap: 95px 0px
   @media all and (max-width: 320px)
     gap: 20px 0px
+    justify-content: center
 
 
 .pets__item 
@@ -590,8 +592,13 @@ body
   border-radius: 5px 
   overflow: hidden
   position: relative
-  flex-basis: 31%
+  flex-basis: 366px //31%
+  max-height: 426px
   flex-shrink: 1
+  @media all and (max-width: 1399px)
+    flex-basis: 31%
+  @media all and (max-width: 1000px)
+    flex-basis: 31%
   @media all and (max-width: 640px)
     flex-basis: 47%
   @media all and (max-width: 320px)
@@ -673,6 +680,11 @@ body
   @media all and (max-width: 640px)
     font-size: 11.7px 
     padding-left: 1em
+  @media all and (max-width: 480px)
+    padding-right: 20px
+  @media all and (max-width: 320px)
+    padding-right: 0px
+    padding-bottom: 8px
 
   
 .item__text
@@ -756,12 +768,12 @@ body
     padding-top: 5.2rem//81px
   @media all and (max-width: 1000px)
     padding-bottom: 14vw//140px
-    padding-top: 8vw//80px
+    padding-top: 8.1vw//80px
   @media all and (max-width: 640px)
-    padding-top: 62px
-    padding-bottom: 100px
+    padding-top: 63px
+    padding-bottom: 99px
   @media all and (max-width: 320px)
-    padding-top: 22px
+    padding-top: 20px
     padding-bottom: 60px
 
 
@@ -779,7 +791,7 @@ SASS SYNTAX
   padding-bottom: 100px
   @media all and (max-width: 1000px)
     padding-top: 30px
-    padding-bottom: 49px
+    padding-bottom: 50px
   @media all and (max-width: 640px)
     padding-top: 20px
     padding-bottom: 20px
@@ -906,7 +918,7 @@ SASS SYNTAX
   @media all and (max-width: 640px)
     padding: 17px 0 18px 0
   @media all and (max-width: 320px)
-    padding: 20px 0 18px 0
+    padding: 20px 0 17px 0
 
 .hiw__process
   display: flex
@@ -924,6 +936,8 @@ SASS SYNTAX
     max-width: 600px
     margin: 0 32px 0 20px
     padding-bottom: 40px
+    position: relative
+    z-index: -1
   @media all and (max-width: 639px)
     margin: 0 auto
     max-width: 550px
@@ -940,7 +954,6 @@ SASS SYNTAX
 .hiw__item
   max-width: 168px
   position: relative
-  z-index: 1
   @media all and (max-width: 550px)
     max-width: 32%
   @media all and (max-width: 430px)
@@ -961,10 +974,10 @@ SASS SYNTAX
     right: -40%
   @media all and (max-width: 640px)
     background: url('../../../assets/icons/arrow-green.svg') no-repeat center
-    width: 85px
+    width: 89px
     right: -32%
     top: -8.5%
-    z-index: 5
+    z-index: 3
   @media all and (max-width: 430px)
     transform: rotate(85deg)
     width: 85px
@@ -1005,6 +1018,9 @@ SASS SYNTAX
   width: 168px
   height: 168px
   margin-bottom: 30px
+  @media all and (max-width: 640px)
+    position: relative
+    z-index: 2
   @media all and (max-width: 550px)
      max-width: 100%
   @media all and (max-width: 430px)
@@ -1026,7 +1042,8 @@ SASS SYNTAX
 .feed__btn
   max-width: $contentWidth*0.256
   margin: 0 auto
-  
+  @media all and (max-width: 320px)
+    max-width: 100%
 
 
 .testimonials
@@ -1125,12 +1142,20 @@ SASS SYNTAX
   color: #ABABAB
   padding: 0px 10px 0px 15px
   overflow: hidden
+  @media all and (max-width: 1000px)
+   display: -webkit-box
+   -webkit-line-clamp: 16 
+           line-clamp: 16 
+   -webkit-box-orient: vertical
+   @media all and (max-width: 640px)
+    -webkit-line-clamp: 2 
+           line-clamp: 2 
   
 
 
 .testimonials-wrapper
   display: grid
-  grid-template-columns: repeat(4, 0.2315*$contentWidth)
+  grid-template-columns: repeat(4, 268px)
   gap: 0 30px
   justify-content: space-between
   padding-bottom: 14px
@@ -1166,6 +1191,7 @@ SASS SYNTAX
   position: relative
   z-index: -1
   height: 390px
+  width: 99.5%
   padding: 0
   border-radius: 20px 
   overflow: hidden
@@ -1196,7 +1222,7 @@ SASS SYNTAX
   @media all and (max-width: 1000px)
     width: 390px
     margin-left: 269px
-    padding-bottom: 47px
+    padding-bottom: 48px
   @media all and (max-width: 999px)
     margin: 0 auto
   @media all and (max-width: 640px)
@@ -1210,16 +1236,17 @@ SASS SYNTAX
 .feedback__btn
   padding-bottom: 146px
   @media all and (max-width: 1000px)
-    padding-bottom: 140px
+    padding-bottom: 139px
   @media all and (max-width: 640px)
-    padding-bottom: 79px
+    padding-bottom: 80px
     margin: 0 auto
     width: 240px
   @media all and (max-width: 320px)
-    padding-bottom: 59px
-  .button
+    padding-bottom: 60px
+.feedback__btn
+  button
     @media all and (max-width: 640px)
-    width: 240px
+      width: 240px
 
 
 .footer
@@ -1284,6 +1311,8 @@ SASS SYNTAX
   flex-direction: row
   justify-content: space-between
   padding-bottom: 37px
+  @media all and (max-width: 1000px)
+    padding-bottom: 35px
   @media all and (max-width: 640px)
     padding-bottom: 31px
   @media all and (max-width: 430px)
@@ -1360,7 +1389,7 @@ SASS SYNTAX
   font-size: 16px 
   line-height: 140% 
   color: black 
-  padding: 8px 38px
+  padding: 9px 38px
 
 .submit-btn[value]:active
   color: #4B9200 
@@ -1370,7 +1399,7 @@ SASS SYNTAX
 .donate-btn
   padding-bottom: 42px
   @media(max-width: 1000px)
-    padding-bottom: 47px
+    padding-bottom: 50px
   @media(max-width: 640px)
     padding-bottom: 70px 
   @media all and (max-width: 320px)
@@ -1400,7 +1429,7 @@ SASS SYNTAX
   padding-left: 120px
   line-height: 140%
   @media all and (max-width: 1000px)
-    padding-left: 110px
+    padding-left: 90px
   @media all and (max-width: 768px)
     padding-left: 10px
     gap:10px
@@ -1424,7 +1453,7 @@ SASS SYNTAX
   padding-bottom: 15px
   padding-left: 40px
   @media all and (max-width: 1000px)
-    padding-bottom: 14px
+    padding-bottom: 13px
   @media all and (max-width: 640px)
     padding-bottom: 22.5px
     color: transparent
@@ -1532,6 +1561,7 @@ SASS SYNTAX
   @media all and (max-width: 430px)
     background-size: cover
   @media all and (max-width: 320px)
+    padding-top: 36px
     background-size: 240% auto
     background-position: 34% bottom
 
@@ -1581,7 +1611,7 @@ SASS SYNTAX
     font-size: 36px 
   @media all and (max-width: 320px)
     margin-bottom: 29px
-    padding-top: 28px
+    padding-top: 26px
     font-size: 24px 
 
 .donate
@@ -1591,7 +1621,7 @@ SASS SYNTAX
   @media all and (max-width: 1000px)
     padding-bottom: 30px
   @media all and (max-width: 640px)
-    padding-bottom: 46px
+    padding-bottom: 47px
   @media all and (max-width: 320px)
     padding-bottom: 21px
     
@@ -1629,7 +1659,9 @@ SASS SYNTAX
       
 
 .diet-amount
-  padding-top: 19%
+  padding-top: 105px//19%
+  @media all and (max-width: 320px)
+    padding-top: 60px
   
 
 
@@ -1647,7 +1679,7 @@ SASS SYNTAX
     padding-bottom: 30px
   @media all and (max-width: 320px)
     padding-top: 20px
-    padding-bottom: 18px
+    padding-bottom: 20px
 
 .pick-container
   max-width: 976px
@@ -1662,7 +1694,7 @@ SASS SYNTAX
   line-height: 120% 
   text-align: left
   color: #FE9013 
-  padding-bottom: 0.5em
+  padding-bottom: 20px
   padding-left: 340px
   @media all and (max-width: 1400px)
     padding-left: 0px
@@ -1674,7 +1706,7 @@ SASS SYNTAX
   @media all and (max-width: 640px)
     padding-left: 0
     text-align: center
-    padding-bottom: 20px
+    padding-bottom: 25px
   @media all and (max-width: 320px)
     font-size: 24px 
     padding-bottom: 10px
@@ -1696,7 +1728,7 @@ SASS SYNTAX
   @media all and (max-width: 1400px)
     text-align: center
   @media all and (max-width: 640px)
-    padding-bottom: 35px
+    padding-bottom: 27px
   @media all and (max-width: 320px)
     font-size: 16px 
     line-height: 140% 
@@ -1714,6 +1746,7 @@ SASS SYNTAX
   padding-bottom: 11px
   @media all and (max-width: 320px)
     font-size: 40px 
+    padding-bottom: 7px
  
 
 .diet-wrapper
@@ -1722,9 +1755,11 @@ SASS SYNTAX
   margin: 0 auto
   display: flex
   flex-direction: row
-  padding-bottom: 41px
+  padding-bottom: 45px//41px
+  @media all and (max-width: 1000px)
+    padding-bottom: 41px
   @media all and (max-width: 640px)
-    padding-bottom: 21px
+    padding-bottom: 24px
   @media all and (max-width: 320px)
     max-width: 300px
     padding-top: 0px
@@ -1786,7 +1821,7 @@ SASS SYNTAX
     margin-bottom: 31px
   @media all and (max-width: 320px)
     padding-top: 12px 
-    margin-bottom: 23px
+    margin-bottom: 25px
   
 .cash:hover
    background-color: transparent
@@ -1822,6 +1857,8 @@ SASS SYNTAX
 .pay-period
   padding-left: 42px
   padding-bottom: 28px
+  @media all and (max-width: 640px)
+    padding-bottom: 25px
 
 
 .pay-period  > label
@@ -1878,7 +1915,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
     padding-bottom: 30px
   @media all and (max-width: 320px)
     padding-top: 9px
-    padding-bottom: 5px
+    padding-bottom: 6px
 
 .progress_wrap 
   background: #404950

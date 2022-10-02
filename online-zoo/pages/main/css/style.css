@@ -330,7 +330,7 @@ body {
 }
 @media all and (max-width: 1000px) {
   .watch-wrap {
-    padding-bottom: 45px;
+    padding-bottom: 46px;
     background-position: center -80px;
     background-size: 120% auto;
   }
@@ -343,7 +343,7 @@ body {
 @media all and (max-width: 640px) {
   .watch-wrap {
     background-position: center 0px;
-    padding-bottom: 28px;
+    padding-bottom: 29px;
   }
 }
 @media all and (max-width: 320px) {
@@ -542,7 +542,7 @@ body {
 
 .button {
   width: 298px;
-  height: 3.4rem;
+  height: 54px;
   background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   font-family: "Roboto";
   font-style: normal;
@@ -717,7 +717,8 @@ body {
 @media all and (max-width: 1000px) {
   .backstage-img {
     min-width: 48.5%;
-    background-size: 135% 95%;
+    background-size: 136% 95.6%;
+    background-position: cover;
   }
 }
 @media all and (max-width: 950px) {
@@ -918,6 +919,9 @@ body {
 @media all and (max-width: 320px) {
   .slider {
     gap: 20px 0px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -926,10 +930,23 @@ body {
   border-radius: 5px;
   overflow: hidden;
   position: relative;
-  -ms-flex-preferred-size: 31%;
-      flex-basis: 31%;
+  -ms-flex-preferred-size: 366px;
+      flex-basis: 366px;
+  max-height: 426px;
   -ms-flex-negative: 1;
       flex-shrink: 1;
+}
+@media all and (max-width: 1399px) {
+  .pets__item {
+    -ms-flex-preferred-size: 31%;
+        flex-basis: 31%;
+  }
+}
+@media all and (max-width: 1000px) {
+  .pets__item {
+    -ms-flex-preferred-size: 31%;
+        flex-basis: 31%;
+  }
 }
 @media all and (max-width: 640px) {
   .pets__item {
@@ -1052,6 +1069,17 @@ body {
   .item__place {
     font-size: 11.7px;
     padding-left: 1em;
+  }
+}
+@media all and (max-width: 480px) {
+  .item__place {
+    padding-right: 20px;
+  }
+}
+@media all and (max-width: 320px) {
+  .item__place {
+    padding-right: 0px;
+    padding-bottom: 8px;
   }
 }
 
@@ -1184,18 +1212,18 @@ body {
 @media all and (max-width: 1000px) {
   .choose {
     padding-bottom: 14vw;
-    padding-top: 8vw;
+    padding-top: 8.1vw;
   }
 }
 @media all and (max-width: 640px) {
   .choose {
-    padding-top: 62px;
-    padding-bottom: 100px;
+    padding-top: 63px;
+    padding-bottom: 99px;
   }
 }
 @media all and (max-width: 320px) {
   .choose {
-    padding-top: 22px;
+    padding-top: 20px;
     padding-bottom: 60px;
   }
 }
@@ -1209,7 +1237,7 @@ body {
 @media all and (max-width: 1000px) {
   .pick {
     padding-top: 30px;
-    padding-bottom: 49px;
+    padding-bottom: 50px;
   }
 }
 @media all and (max-width: 640px) {
@@ -1413,7 +1441,7 @@ body {
 }
 @media all and (max-width: 320px) {
   .hiw__title {
-    padding: 20px 0 18px 0;
+    padding: 20px 0 17px 0;
   }
 }
 
@@ -1448,6 +1476,8 @@ body {
     max-width: 600px;
     margin: 0 32px 0 20px;
     padding-bottom: 40px;
+    position: relative;
+    z-index: -1;
   }
 }
 @media all and (max-width: 639px) {
@@ -1483,7 +1513,6 @@ body {
 .hiw__item {
   max-width: 168px;
   position: relative;
-  z-index: 1;
 }
 @media all and (max-width: 550px) {
   .hiw__item {
@@ -1516,10 +1545,10 @@ body {
 @media all and (max-width: 640px) {
   .hiw__item:after {
     background: url("../../../assets/icons/arrow-green.svg") no-repeat center;
-    width: 85px;
+    width: 89px;
     right: -32%;
     top: -8.5%;
-    z-index: 5;
+    z-index: 3;
   }
 }
 @media all and (max-width: 430px) {
@@ -1574,6 +1603,12 @@ body {
   height: 168px;
   margin-bottom: 30px;
 }
+@media all and (max-width: 640px) {
+  .hiw__icon {
+    position: relative;
+    z-index: 2;
+  }
+}
 @media all and (max-width: 550px) {
   .hiw__icon {
     max-width: 100%;
@@ -1603,6 +1638,11 @@ body {
 .feed__btn {
   max-width: 296.96px;
   margin: 0 auto;
+}
+@media all and (max-width: 320px) {
+  .feed__btn {
+    max-width: 100%;
+  }
 }
 
 .testimonials {
@@ -1739,12 +1779,26 @@ body {
   padding: 0px 10px 0px 15px;
   overflow: hidden;
 }
+@media all and (max-width: 1000px) {
+  .testimonials__item__text {
+    display: -webkit-box;
+    -webkit-line-clamp: 16;
+    -webkit-line-clamp-line-clamp: 16;
+    -webkit-box-orient: vertical;
+  }
+}
+@media all and (max-width: 1000px) and (max-width: 640px) {
+  .testimonials__item__text {
+    -webkit-line-clamp: 2;
+    -webkit-line-clamp-line-clamp: 2;
+  }
+}
 
 .testimonials-wrapper {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 268.54px 30px 268.54px 30px 268.54px 30px 268.54px;
-  grid-template-columns: repeat(4, 268.54px);
+  -ms-grid-columns: 268px 30px 268px 30px 268px 30px 268px;
+  grid-template-columns: repeat(4, 268px);
   gap: 0 30px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -1820,6 +1874,7 @@ body {
   position: relative;
   z-index: -1;
   height: 390px;
+  width: 99.5%;
   padding: 0;
   border-radius: 20px;
   overflow: hidden;
@@ -1861,7 +1916,7 @@ body {
   .progress {
     width: 390px;
     margin-left: 269px;
-    padding-bottom: 47px;
+    padding-bottom: 48px;
   }
 }
 @media all and (max-width: 999px) {
@@ -1940,24 +1995,28 @@ body {
 }
 @media all and (max-width: 1000px) {
   .feedback__btn {
-    padding-bottom: 140px;
+    padding-bottom: 139px;
   }
 }
 @media all and (max-width: 640px) {
   .feedback__btn {
-    padding-bottom: 79px;
+    padding-bottom: 80px;
     margin: 0 auto;
     width: 240px;
   }
 }
 @media all and (max-width: 320px) {
   .feedback__btn {
-    padding-bottom: 59px;
+    padding-bottom: 60px;
   }
 }
-.feedback__btn .button {
-  width: 240px;
+
+@media all and (max-width: 640px) {
+  .feedback__btn button {
+    width: 240px;
+  }
 }
+
 .footer {
   background: black;
 }
@@ -2040,6 +2099,11 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-bottom: 37px;
+}
+@media all and (max-width: 1000px) {
+  .subscribe {
+    padding-bottom: 35px;
+  }
 }
 @media all and (max-width: 640px) {
   .subscribe {
@@ -2184,7 +2248,7 @@ body {
   font-size: 16px;
   line-height: 140%;
   color: black;
-  padding: 8px 38px;
+  padding: 9px 38px;
 }
 
 .submit-btn[value]:active {
@@ -2196,7 +2260,7 @@ body {
 }
 @media (max-width: 1000px) {
   .donate-btn {
-    padding-bottom: 47px;
+    padding-bottom: 50px;
   }
 }
 @media (max-width: 640px) {
@@ -2265,7 +2329,7 @@ body {
 }
 @media all and (max-width: 1000px) {
   ._footer-menu {
-    padding-left: 110px;
+    padding-left: 90px;
   }
 }
 @media all and (max-width: 768px) {
@@ -2305,7 +2369,7 @@ body {
 }
 @media all and (max-width: 1000px) {
   .media {
-    padding-bottom: 14px;
+    padding-bottom: 13px;
   }
 }
 @media all and (max-width: 640px) {
@@ -2457,6 +2521,7 @@ body {
 }
 @media all and (max-width: 320px) {
   .donation__bg {
+    padding-top: 36px;
     background-size: 240% auto;
     background-position: 34% bottom;
   }
@@ -2531,7 +2596,7 @@ body {
 @media all and (max-width: 320px) {
   ._big {
     margin-bottom: 29px;
-    padding-top: 28px;
+    padding-top: 26px;
     font-size: 24px;
   }
 }
@@ -2548,7 +2613,7 @@ body {
 }
 @media all and (max-width: 640px) {
   .donate {
-    padding-bottom: 46px;
+    padding-bottom: 47px;
   }
 }
 @media all and (max-width: 320px) {
@@ -2597,7 +2662,12 @@ body {
 }
 
 .diet-amount {
-  padding-top: 19%;
+  padding-top: 105px;
+}
+@media all and (max-width: 320px) {
+  .diet-amount {
+    padding-top: 60px;
+  }
 }
 
 .pick-todonate {
@@ -2623,7 +2693,7 @@ body {
 @media all and (max-width: 320px) {
   .pick-todonate {
     padding-top: 20px;
-    padding-bottom: 18px;
+    padding-bottom: 20px;
   }
 }
 
@@ -2640,7 +2710,7 @@ body {
   line-height: 120%;
   text-align: left;
   color: #FE9013;
-  padding-bottom: 0.5em;
+  padding-bottom: 20px;
   padding-left: 340px;
 }
 @media all and (max-width: 1400px) {
@@ -2660,7 +2730,7 @@ body {
   .pick-todonate__title {
     padding-left: 0;
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
   }
 }
 @media all and (max-width: 320px) {
@@ -2691,7 +2761,7 @@ body {
 }
 @media all and (max-width: 640px) {
   .pick-todonate__subtitle {
-    padding-bottom: 35px;
+    padding-bottom: 27px;
   }
 }
 @media all and (max-width: 320px) {
@@ -2716,6 +2786,7 @@ body {
 @media all and (max-width: 320px) {
   .number {
     font-size: 40px;
+    padding-bottom: 7px;
   }
 }
 
@@ -2730,11 +2801,16 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  padding-bottom: 41px;
+  padding-bottom: 45px;
+}
+@media all and (max-width: 1000px) {
+  .diet-wrapper {
+    padding-bottom: 41px;
+  }
 }
 @media all and (max-width: 640px) {
   .diet-wrapper {
-    padding-bottom: 21px;
+    padding-bottom: 24px;
   }
 }
 @media all and (max-width: 320px) {
@@ -2817,7 +2893,7 @@ body {
 @media all and (max-width: 320px) {
   .cash {
     padding-top: 12px;
-    margin-bottom: 23px;
+    margin-bottom: 25px;
   }
 }
 
@@ -2897,6 +2973,11 @@ body {
 .pay-period {
   padding-left: 42px;
   padding-bottom: 28px;
+}
+@media all and (max-width: 640px) {
+  .pay-period {
+    padding-bottom: 25px;
+  }
 }
 
 .pay-period > label {
@@ -2978,7 +3059,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 @media all and (max-width: 320px) {
   .progress__bar {
     padding-top: 9px;
-    padding-bottom: 5px;
+    padding-bottom: 6px;
   }
 }
 
