@@ -2314,7 +2314,7 @@ body {
 }
 @media all and (max-width: 1000px) {
   ._footer-menu {
-    padding-left: 90px;
+    padding-left: 115px;
   }
 }
 @media all and (max-width: 768px) {
@@ -3397,6 +3397,15 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .value_list > li:nth-child(6), li:nth-child(7), li:nth-child(8) {
   -ms-grid-column-align: end;
       justify-self: end;
+}
+
+.burger_bg {
+  display: none;
+}
+@media all and (max-width: 640px) {
+  .burger_bg {
+    display: block;
+  }
 }
 
 .burger_icon {
