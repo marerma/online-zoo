@@ -1,0 +1,112 @@
+$pink: rgba(254, 189, 171, 0.74)
+$purple:rgba(243, 169, 248, 0.66) 
+$lightpink:#E0D8F0 
+$white: #EAF7FE
+$direction: 315.75deg
+
+$list: $pink 30.06%, $purple 50.74%, $lightpink 80.49%, $white 127.9%, $white 149.54%
+
+
+//градиентная граница testimonials  
+
+@mixin gradientBorder($direction, $list) 
+  background: -webkit-linear-gradient($direction, $list) 
+  background: -moz-linear-gradient($direction, $list) 
+  background: -o-linear-gradient($direction, $list) 
+  background: linear-gradient($direction, $list)
+
+
+
+//слайдер под testimonials
+
+@mixin slider-bar($thumb_color:#FE9013, $track_color: #F5F7F6, $bg-color:#F5F7F6) 
+  -webkit-appearance: none
+  border: 1px solid $pink
+  background-color: transparent
+  width: 99%
+  border-radius: 5px
+  
+
+  &::-webkit-slider-runnable-track 
+    width: 100% //600px
+    height: 8px
+    background: $track_color
+    border: none
+    border-radius: 5px
+  
+
+  &::-webkit-slider-thumb 
+    @include input_range_thumb($thumb_color)
+    margin-top: 1px
+
+  &:focus 
+      outline: none
+
+  &:focus::-webkit-slider-runnable-track 
+      
+  &::-moz-range-track 
+    width: 100% 
+    height: 8px
+    background: $track_color
+    border: none
+    border-radius: 5px
+
+  &::-moz-range-thumb 
+    @include input_range_thumb($thumb_color)
+
+@mixin input_range_thumb($thumb_color) 
+  -webkit-appearance: none
+  border: none
+  height: 6px
+  width: 20% //115px
+  border-radius: 5px
+  background: $thumb_color
+  border: 1px solid #FE9013
+  &:active 
+    border: 1px solid green
+  &:hover 
+    background: green
+    cursor: pointer
+
+
+
+
+
+
+
+
+
+
+
+
+@mixin progress-bar-color($valueColor: #FE9013, $backgroundColor: #F5F7F6) 
+  background-color: $backgroundColor 
+  color: $valueColor 
+  width: 100%
+  height: 8px
+  border-radius: 5px
+  &::-moz-progress-bar 
+    background-color: $valueColor 
+    height: 8px
+    border-radius: 5px
+
+  &::-webkit-progress-bar 
+    background-color: $backgroundColor 
+    border-radius: 5px
+    border: 0.4px solid
+    position: relative
+    
+  &::-webkit-progress-value 
+    background-color: $valueColor 
+    border-radius: 5px
+    height: 6px
+    position: absolute
+
+
+@mixin gradient($direction, $list) 
+  border-image: -webkit-linear-gradient($direction, $list) 
+  border-image: -moz-linear-gradient($direction, $list) 
+  border-image: -o-linear-gradient($direction, $list) 
+  border-image: linear-gradient($direction, $list)
+  border-width: 1.63px
+  border-style: solid  

@@ -32,21 +32,51 @@
 html
   scroll-behavior: smooth
   font-size: 16px
+  
 
 $contentWidth: 1160px
 $fontdefault: 16px
 
 body
   margin: 0 auto
+  
 
 
 ._content
   max-width: 1160px
   margin: 0 auto
+  overflow: hidden
+  @media all and (max-width: 1399px)
+    max-width: 950px
+  @media all and (max-width: 1000px)
+    max-width: 940px
+  @media all and (max-width: 950px)
+    max-width: 900px
+  @media all and (max-width: 768px)
+    max-width: 760px
+  @media all and (max-width: 640px)
+    max-width: 600px
+  @media all and (max-width: 620px)
+    max-width: 550px
+  @media all and (max-width: 550px)
+    max-width: 500px
+  @media all and (max-width: 430px)
+    max-width: 400px
+  @media all and (max-width: 320px)
+    max-width: 300px
+    
 
 .header
   background: #000000
   backdrop-filter: blur(2px)
+  @media all and (max-width: 1399px)
+    position: relative
+    z-index: 2
+  @media all and (max-width: 640px)
+    position: fixed
+    width: 100vw
+    z-index: 2
+  
 
 .navigation
   font-family: 'Roboto' 
@@ -56,12 +86,27 @@ body
   line-height: 140% 
   color: #FFFFFF 
 
+.header
+  .navigation
+    @media all and (max-width: 640px)
+      display: none
+
+.burger_container
+  display: none
+  @media all and (max-width: 640px)
+    display: block
+
+.burger_icon
+  background: url('../../../assets/icons/burger_menu.png') no-repeat center
+  width: 18px
+  height: 10px
+
 .active
   color: #F9804B 
 
 .nav__item:hover:not(.active)
   color: #F9804B 
-
+  
 .header-wrap
   display: flex
   flex-direction: row
@@ -70,6 +115,16 @@ body
   gap: 63px
   padding-top: 0.875rem
   padding-bottom: 0.81rem
+  @media all and (max-width: 1399px)
+    gap: 40px
+  @media all and (max-width: 1000px)
+    gap: 63px
+  @media all and (max-width: 768px)
+    padding-top: 0
+    padding-bottom: 0
+  @media all and (max-width: 640px)
+    justify-content: space-between
+  
 
 .nav-list
   display: flex
@@ -78,6 +133,18 @@ body
   justify-content: space-between
   gap: 58px
   padding-right: 0.3775*$contentWidth - 63px
+  @media all and (max-width: 1399px)
+    gap: 48px
+    padding-right: 15vw
+  @media all and (max-width: 1000px)
+    padding-right: 19.5vw
+  @media all and (max-width: 950px)
+    padding-right: 15vw
+  @media all and (max-width: 875px)
+    padding-right: 3vw
+  @media all and (max-width: 768px)
+    padding-right: 0
+    gap: 20px
 
 
 .design-text
@@ -88,6 +155,8 @@ body
   line-height: 140% 
   color: #FFFFFF 
   text-align: center
+  @media all and (max-width: 640px)
+    display: none
  
 .design-text
   a:hover 
@@ -99,39 +168,99 @@ body
   max-width: 80px
   border: 1px solid #FFFFFF
   border-radius: 2px
-  
+  @media all and (max-width: 768px)
+     border: none
+  @media all and (max-width: 640px)
+    width: 50px
+    
+     
 .logo_title
   font-family: 'Roboto' 
   font-style: normal 
-  font-weight: 300 
+  font-weight: 400 
   font-size: 1.19rem //19.0145px 
   line-height: 1.43rem //120% or 23px
   text-align: center 
   color: #FFFFFF 
   padding: 3.55px 4.75px 2px 4.70px
+  @media all and (max-width: 768px)
+    font-size: 12px
+  @media all and (max-width: 640px)
+    line-height: 120%
+    padding: 3.55px 4.75px 2px 0
+   
 
 .logo_title, .logo_title-footer
   a:active
     color: white
+
 .bamboo
   position: absolute
   bottom: 0.8em
   left: 0.8em
+  @media all and (max-width: 768px)
+    bottom: 1em
+    left: 1.8em
+  @media all and (max-width: 640px)
+    display: block
+    width: 6px
+    height: 19px
+    bottom: 0.2em
+    left: 0.4em
 
 .watch-wrap
-
   margin: 0 auto
   background: url('../../../assets/img/giant_panda.jpg') no-repeat
   background-position: 0px -80px
   position: relative
   background-size: cover
+  padding-bottom: 100px
+  @media all and (max-width: 1399px)
+    padding-bottom: 80px
+  @media all and (max-width: 1000px)
+    padding-bottom: 46px
+    background-position: center -80px
+    background-size: 120% auto
+  @media all and (max-width: 768px)
+    padding-bottom: 15px
+  @media all and (max-width: 640px)
+    background-position: center 0px
+    padding-bottom: 29px
+  @media all and (max-width: 320px)
+    background-size: 120% auto
+    background-position: center 34px
+    padding-bottom: 10px
 
+
+.watch-online
+  @media all and (max-width: 320px)
+    background: url('../../../assets/img/flower_foto1.png') no-repeat
+    background-size: 105px 217px
+    background-position-x: 289px
+    background-position-y: 260px
   
+
 .watch_text
   max-width: 500px /$contentWidth *100% 
-  padding-bottom: 100px
   position: relative
   left: 57%
+  @media all and (max-width: 1000px)
+    left: 51.3%
+  @media all and (max-width: 950px)
+    max-width: 30%
+  @media all and (max-width: 640px)
+    left: 59%
+    max-width: 40%
+    margin-top: 34px
+  @media all and (max-width: 620px)
+    left: 50%
+  @media all and (max-width: 320px)
+    max-width: 100%
+    margin: 0 auto
+    left: 0
+    padding-top: 34px
+    
+
 
 .motto
   font-family: 'Roboto' 
@@ -146,6 +275,37 @@ body
   padding-bottom: $fontdefault * 3.75//60px
   position: relative
   z-index: 1
+  @media all and (max-width: 1399px)
+     font-size: 85px
+     padding-top: 0.8em
+     padding-bottom: 0.8em
+  @media all and (max-width: 1000px)
+    padding-top: 0.5em
+    padding-bottom: 0.5em
+  @media all and (max-width: 950px)
+     padding-bottom: 1em
+     font-size: 3.375rem
+  @media all and (max-width: 768px)
+    padding-bottom: 0.1em
+  @media all and (max-width: 640px)
+    padding-top: 0.9em
+  @media all and (max-width: 620px)
+    font-size: 48px
+    padding-top: 0.5em
+    padding-bottom: 0.5em
+  @media all and (max-width: 560px)
+    font-size: 38px
+    padding-bottom: 1.5em
+  @media all and (max-width: 430px)
+    font-size: 28px
+    padding-bottom: 1.5em
+  @media all and (max-width: 320px)
+    padding: 0
+    padding-left: 57%
+    padding-top: 40px
+    padding-bottom: 62px
+  
+  
 
 .motto:before
   content: ''
@@ -158,13 +318,46 @@ body
   left: -74px
   top: 12px
   z-index: -1
+  @media all and (max-width: 1399px)
+    width: $contentWidth *0.350
+    height:  $contentWidth *0.350
+    left: -34px
+    top: -10px
+    z-index: -1
+  @media all and (max-width: 1000px)
+    width: 36.7vw //367px //4.349em
+    height: 36.7vw//367px//4.349em
+    left: -57px
+    top: -10px
+  @media all and (max-width: 950px)
+    width: 30vw//367px //4.349em
+    height: 30vw//367px//4.349em
+    left: -57px
+    top: -10px
+  @media all and (max-width: 640px)
+    width: 237px
+    height: 237px
+    left: -43px
+    top: 10.5px
+  @media all and (max-width: 620px)
+    width: 200px
+    height: 200px
+    left: -43px
+  @media all and (max-width: 430px)
+    width: 119px
+    height: 119px
+    left: 10px
+  @media all and (max-width: 320px)
+    left: 51%
+    top: 11%
+
 
 .orange-text
    color:#FFEE2E
 
 .button
-  width: $contentWidth * 0.257
-  height: 3.4rem
+  width: 298px
+  height: 54px
   background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%) 
   font-family: 'Roboto' 
   font-style: normal 
@@ -178,18 +371,32 @@ body
   display: block
 
 
+
 .button:hover
    background: #E47209
    cursor: pointer 
 
 .button:active
    background: #4B9200
+   color: white
 
 
 .watch_text
-  button
+  .button
     display: block
     margin: 0 auto
+    @media all and (max-width: 768px)
+      position: relative
+      left: -150%
+    @media all and (max-width: 640px)
+      left: -147%
+      top: -12px
+    @media all and (max-width: 620px)
+      left: -120%
+      top: -10%
+    @media all and (max-width: 320px)
+      left: 0
+      top: 0
 
 ._round
   border-radius: 25px
@@ -199,10 +406,35 @@ body
 
 .backstage
   background: url('../../../assets/img/flower_foto1.png') no-repeat
-  background-position-x: 107.5%
-  background-position-y: 10%
+  background-position-x: 106.8%
+  background-position-y: 13%
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
-
+  background-size: 18vw 38vw
+  @media all and (max-width: 1399px)
+     background: none
+  @media all and (max-width: 640px)
+    background: url('../../../assets/img/flower_foto1.png') no-repeat
+    background-position-x: 125%
+    background-position-y: -10%
+    background-size: 231px 476px
+  @media all and (max-width: 620px)
+    background-size: 171px 416px
+    background-position-x: 120%
+    background-position-y: 10%
+  @media all and (max-width: 550px)
+    background-size: 121px 366px
+    background-position-x: 110%
+    background-position-y: 10%
+  @media all and (max-width: 430px)
+    background-size: 121px 286px
+    background-position-x: 128%
+    background-position-y: 10%
+  @media all and (max-width: 320px)
+    background-size: 105px 217px
+    background-position-x: 289px
+    background-position-y: -45px
+    position: relative
+  
 .backstage-wrapper
   display: flex
   flex-direction: row
@@ -211,7 +443,53 @@ body
   gap: 86px
   padding-top: 140px
   padding-bottom: 175px
+  @media all and (max-width: 1599px)
+    gap: 5vw 
+    padding-top: 5vw
+    padding-bottom: 10vw
+  @media all and (max-width: 1000px)
+    gap: 31px
+    padding-top: 10vw
+    padding-bottom: 14vw
+  @media all and (max-width: 640px)
+    padding-top: 60px
+    padding-bottom: 80px
+  @media all and (max-width: 620px)
+    padding-top: 5.6%
+    padding-bottom: 5.6%
+  @media all and (max-width: 320px)
+    padding-top: 20px
+    padding-bottom: 35px
+    
 
+.backstage-img
+  background: url('../../../assets/img/bamboo-cap.jpg') no-repeat center
+  background-size: cover
+  min-width: 609px
+  @media all and (max-width: 1599px)
+    min-width: 38vw
+  @media all and (max-width: 1000px)
+    min-width: 48.5%
+    background-size: 136% 95.6%
+    background-position: cover
+  @media all and (max-width: 950px)
+    background-size: contain
+  @media all and (max-width: 950px)
+    display: none
+ 
+  
+.backstage__text-block
+  @media all and (max-width: 1599px)
+    padding-right: 3em
+  @media all and (max-width: 1000px)
+    min-width: 2.202vw// 454px
+    padding-right: 0em
+  @media all and (max-width: 640px)
+    max-width: 82%
+  @media all and (max-width: 320px)
+    max-width: 98%
+    
+  
 .backstage__title
   font-family: 'Roboto' 
   font-style: normal 
@@ -220,17 +498,28 @@ body
   line-height: 120% 
   color: #333B41 
   padding-bottom: 21px
+  @media all and (max-width: 640px)
+    padding-left: 4px
+  @media all and (max-width: 620px)
+    font-size: 1.5rem
+    line-height: 130% 
+  @media all and (max-width: 320px)
+    padding-left: 0px
+    line-height: 120% 
+    padding-bottom: 11px
 
 .backstage__title_text, .backstage__subtitle_text
-    font-family: 'Roboto' 
-    font-style: normal 
-    font-weight: 400 
-    font-size: 1rem 
-    line-height: 130% 
-    color: #333B41 
+  font-family: 'Roboto' 
+  font-style: normal 
+  font-weight: 400 
+  font-size: 1rem 
+  line-height: 130% 
+  color: #333B41 
+  @media all and (max-width: 320px)
+    padding-left: 1px
 
 .backstage__subtitle_text
-    line-height: 140% 
+  line-height: 140% 
 
 .backstage__subtitle
   font-family: 'Roboto' 
@@ -241,7 +530,92 @@ body
   color: #333B41 
   padding-top: 3.4375rem
   padding-bottom: 34px
+  @media all and (max-width: 640px)
+    padding-top: 30px
+    padding-bottom: 20px
+    padding-left: 4px
+  @media all and (max-width: 320px)
+    padding-left: 2px
+    padding-bottom: 10px
+    padding-top: 21px
 
+.pets
+  background: url("../../../assets/img/palm_foto.jpg") no-repeat bottom left, url("../../../assets/img/flower_2.jpg") no-repeat bottom right 
+  @media all and (max-width: 1599px)
+    background: url("../../../assets/img/palm_foto_small_desktop.jpg") no-repeat bottom left, url("../../../assets/img/flower_2_small_desktop.jpg") no-repeat bottom right 
+  @media all and (max-width: 640px)
+    background-size: auto 202px, 175px auto
+    background-position: -60px bottom, bottom right
+  @media all and (max-width: 620px)
+    background-size: auto 150px, 105px auto
+    background-position: -60px bottom, bottom right
+  @media all and (max-width: 320px)
+    background-size: auto 72px, 85px auto
+    background-position: -10px bottom, 107% 100.08%
+
+.pets__container
+   display: flex 
+   flex-direction: row 
+   justify-content: space-between
+   padding: 0px 140px
+   padding-bottom: 80px
+   max-width: $contentWidth*1.14
+   margin: 0 auto
+   @media all and (max-width: 1599px)
+     padding: 0px 4%
+   @media all and (max-width: 1399px)
+     max-width: 950px
+     position: relative
+   @media all and (max-width: 1000px)
+     width: 100%
+     padding: 0px
+
+.slider
+  display: flex 
+  flex-direction: row 
+  justify-content: space-between
+  flex-wrap: wrap
+  gap: 25px 10px
+  @media all and (max-width: 1399px)
+    gap: 100px 10px
+  @media all and (max-width: 1000px)
+    gap: 92px 0px
+  @media all and (max-width: 640px)
+    gap: 95px 0px
+  @media all and (max-width: 320px)
+    gap: 20px 0px
+    justify-content: center
+
+
+.pets__item 
+  border: 1px solid #F9804B
+  border-radius: 5px 
+  overflow: hidden
+  position: relative
+  flex-basis: 366px //31%
+  max-height: 426px
+  flex-shrink: 1
+  @media all and (max-width: 1399px)
+    flex-basis: 31%
+  @media all and (max-width: 1000px)
+    flex-basis: 31%
+  @media all and (max-width: 640px)
+    flex-basis: 47%
+  @media all and (max-width: 320px)
+    flex-basis: 95%
+
+  
+.pets__item:nth-child(5), .pets__item:nth-child(6)  
+  @media all and (max-width: 640px)
+    display: none
+
+.pets__item__pic
+  img
+    display: inline-block
+    width: 100%
+    height: auto
+    transform: all ease-in 2s
+    
 
 .item__name
   font-family: 'Roboto' 
@@ -255,17 +629,40 @@ body
   padding-left: 1em
   position: relative
   z-index: 3
+  @media all and (max-width: 1000px)
+    padding-top: 0.5em
+  @media all and (max-width: 640px)
+    font-size: 12.5px 
+    padding-top: 3px
 
 
 ._veggy
   background: url('../../../assets/icons/veggy.svg') no-repeat
   background-position-x: 96% 
   background-position-y: 97% 
+  @media all and (max-width: 1000px)
+    background-position-y: 95% 
+  @media all and (max-width: 640px)
+    background-position-x: 97% 
+    background-position-y: 98% 
+    background-size: 25px 28px
+  @media all and (max-width: 320px)
+    background-position-x: 96% 
+    background-position-y: 97% 
 
 ._meat 
   background: url('../../../assets/icons/meat.svg') no-repeat
   background-position-x: 97% 
   background-position-y: 97% 
+  @media all and (max-width: 1000px)
+    background-position-y: 96% 
+  @media all and (max-width: 640px)
+    background-position-x: 98% 
+    background-position-y: 97% 
+    background-size: 37px 29px
+  @media all and (max-width: 320px)
+    background-position-x: 97% 
+    background-position-y: 97% 
 
 .item__place
   font-family: 'Roboto' 
@@ -278,28 +675,17 @@ body
   padding-left: $fontdefault
   position: relative
   z-index: 3
+  @media all and (max-width: 1000px)
+     padding-bottom: 0.6em
+  @media all and (max-width: 640px)
+    font-size: 11.7px 
+    padding-left: 1em
+  @media all and (max-width: 480px)
+    padding-right: 20px
+  @media all and (max-width: 320px)
+    padding-right: 0px
+    padding-bottom: 8px
 
-.slider
-  display: flex 
-  flex-direction: row 
-  justify-content: space-between
-  flex-wrap: wrap
-  gap: 25px 26px
-
-.pets__item 
-  border: 1px solid #F9804B
-  border-radius: 5px 
-  overflow: hidden
-  position: relative
- 
-
-.pets__item__pic
-  img
-    display: inline-block
-    width: 100%
-    height: 100%
-    transform: all ease-in 2s
-  
   
 .item__text
   background: black
@@ -325,42 +711,72 @@ body
   transform: scale(1.05)
   transition: all ease-in 0.3s
 
-   
-
-.pets__container
-   display: flex 
-   flex-direction: row 
-   justify-content: space-between
-   padding: 0px 140px
-   padding-bottom: 80px
-   max-width: $contentWidth*1.14
-   margin: 0 auto
 
 .arrow-left, .arrow-right 
   border: none
   height: 62px 
-  width: 62px 
+  width: 62px
   background: url("../../../assets/icons/slider-arrow.svg") no-repeat center 
   background-color: #F9804B
   border-radius: 100%
   align-self: center
+  @media all and (max-width: 1599px)
+    height: 50px
+    width: 50px
+  @media all and (max-width: 1399px)
+    position: absolute
+    top: 46%
+    left: 55%
+    height: 62px 
+    width: 62px
+  @media all and (max-width: 1000px)
+    top: 46%
+    left: 59%
+  @media all and (max-width: 640px)
+    top: 45.5%
+    left: 52.4%
+  @media all and (max-width: 550px)
+    height: 45px
+    width: 45px
+    left: 55%
+  @media all and (max-width: 320px)
+    display: none
+  
 
 .arrow-left:hover, .arrow-right:hover 
   background-color: #4B9200
+  cursor: pointer
 
 .arrow-left 
-  transform: rotate(180deg) 
+  transform: rotate(180deg)
+  @media all and (max-width: 1399px)
+    left: 40%
+  @media all and (max-width: 1000px)
+    left: 34.5%
+  @media all and (max-width: 640px)
+    top: 45.5%
+    left: 38%
+  @media all and (max-width: 550px)
+    left: 35%
 
 .choose
   display: block
-  max-width: $contentWidth*0.256
+  max-width: 298px
   margin: 0 auto
   padding-bottom: 6.2rem//81px
+  @media all and (max-width: 1599px)
+    padding-top: 5.2rem//81px
+  @media all and (max-width: 1000px)
+    padding-bottom: 14vw//140px
+    padding-top: 8.1vw//80px
+  @media all and (max-width: 640px)
+    padding-top: 63px
+    padding-bottom: 99px
+  @media all and (max-width: 320px)
+    padding-top: 20px
+    padding-bottom: 60px
 
-.pets
-  background: url("../../../assets/img/palm_foto.jpg") no-repeat bottom left, url("../../../assets/img/flower_2.jpg") no-repeat bottom right 
-  
-  
+
 
 SASS SYNTAX
 =transform($property)
@@ -373,7 +789,18 @@ SASS SYNTAX
   opacity: 0.9  
   padding-top: 69px
   padding-bottom: 100px
- 
+  @media all and (max-width: 1000px)
+    padding-top: 30px
+    padding-bottom: 50px
+  @media all and (max-width: 640px)
+    padding-top: 20px
+    padding-bottom: 20px
+  
+.pick-wrapper
+  @media all and (max-width: 640px)
+    max-width: 640px
+  @media all and (max-width: 320px)
+    max-width: 300px
 
 .how-it-works
   background: rgba(253, 253, 255, 0.52)  
@@ -381,6 +808,16 @@ SASS SYNTAX
   border-radius: 20px  
   padding-top: 40px
   padding-bottom: 59px
+  @media all and (max-width: 1000px)
+    padding-top: 30px
+    padding-bottom: 50px
+  @media all and (max-width: 640px)
+    padding-top: 10px
+    padding-bottom: 60px
+  @media all and (max-width: 320px)
+    padding-top: 20px
+    padding-bottom: 40px
+
  
 .pick__title
   font-family: 'Roboto' 
@@ -391,6 +828,15 @@ SASS SYNTAX
   text-align: center 
   color: #FE9013 
   padding-bottom: 2rem
+  @media all and (max-width: 1000px)
+     padding-bottom: 1.25rem
+  @media all and (max-width: 640px)
+    font-size: 42px
+  @media all and (max-width: 430px)
+    font-size: 24px
+  @media all and (max-width: 320px)
+    padding-bottom: 10px
+
 
 ._subtitle
   font-size: 24px 
@@ -398,6 +844,22 @@ SASS SYNTAX
   padding-bottom: 2.5rem
   text-align: left
   padding-left: 100px
+  @media all and (max-width: 1000px)
+     padding-left: 0px
+     text-align: center
+     padding-bottom: 0.833em
+  @media all and (max-width: 640px)
+    max-width: 600px
+    margin: 0 auto
+    font-size: 22px 
+    text-align: justify
+  @media all and (max-width: 430px)
+    font-size: 18px
+    padding: 0em 0.87em 0.8em 0.9em
+  @media all and (max-width: 320px)
+    text-align: center
+    padding: 0
+    
 
 .pick__text
   font-family: 'Roboto' 
@@ -407,6 +869,16 @@ SASS SYNTAX
   line-height: 130% 
   color: #333B41 
   padding: 0 190px 0.8rem 100px
+  @media all and (max-width: 1000px)
+    padding: 0em 4.87em 0.9em 3.06em
+  @media all and (max-width: 640px)
+    max-width: 600px
+    margin: 0 auto
+    padding: 0em 0.87em 0.8em 0.9em
+  @media all and (max-width: 430px)
+    font-size: 18px
+  @media all and (max-width: 320px)
+    display: none
   
 .pick__text
   a
@@ -422,6 +894,11 @@ SASS SYNTAX
 ._bold
   font-weight: 500 
   padding-right: 0
+  @media all and (max-width: 1000px)
+    padding-right: 4.87em
+  @media all and (max-width: 640px)
+    padding: 0em 0.87em 0.8em .9em
+ 
 
 .hiw__title,.testimonials__title
   font-family: 'Roboto' 
@@ -431,9 +908,17 @@ SASS SYNTAX
   line-height: 130% 
   color: #333B41 
   text-align: center 
+  @media all and (max-width: 430px)
+    font-size: 24px
 
 .hiw__title
   padding: 48px 0 35px 0
+  @media all and (max-width: 1000px)
+    padding: 24px 0 38px 0
+  @media all and (max-width: 640px)
+    padding: 17px 0 18px 0
+  @media all and (max-width: 320px)
+    padding: 20px 0 17px 0
 
 .hiw__process
   display: flex
@@ -442,11 +927,37 @@ SASS SYNTAX
   align-content: center
   margin: 0 auto
   max-width: 1020px
-  padding-bottom: 61px 
+  padding-bottom: 61px
+  @media all and (max-width: 1000px)
+    max-width: 764px
+    justify-content: space-between
+    padding-bottom: 70px
+  @media all and (max-width: 640px)
+    max-width: 600px
+    margin: 0 32px 0 20px
+    padding-bottom: 40px
+    position: relative
+    z-index: -1
+  @media all and (max-width: 639px)
+    margin: 0 auto
+    max-width: 550px
+  @media all and (max-width: 550px)
+    max-width: 500px
+  @media all and (max-width: 430px)
+    flex-direction: column
+    align-items: center
+    gap: 20px
+  @media all and (max-width: 320px)
+    gap: 40px
+    padding-bottom: 35px
 
 .hiw__item
   max-width: 168px
   position: relative
+  @media all and (max-width: 550px)
+    max-width: 32%
+  @media all and (max-width: 430px)
+    max-width: 170px
 
 .hiw__item:after
   content:''
@@ -457,10 +968,40 @@ SASS SYNTAX
   position: absolute
   right: -60%
   top: 25%
-  
+  @media all and (max-width: 768px)
+    background-size: contain
+    width: 49px
+    right: -40%
+  @media all and (max-width: 640px)
+    background: url('../../../assets/icons/arrow-green.svg') no-repeat center
+    width: 89px
+    right: -32%
+    top: -8.5%
+    z-index: 3
+  @media all and (max-width: 430px)
+    transform: rotate(85deg)
+    width: 85px
+    right: -35%
+    top: 95%
+    z-index: 5
+  @media all and (max-width: 320px)
+    height: 99px
+    right: -34%
+    top: 78%
 
+.hiw__item:nth-child(2):after
+  @media all and (max-width: 320px)
+    height: 99px
+    right: -34%
+    top: 73%
+ 
+    
 .hiw__item:last-child:after
   visibility: hidden
+
+.hiw__item:last-child
+  @media all and (max-width: 320px) 
+    margin-top: -12px
 
 .hiw__subtitle
   font-family: 'Roboto' 
@@ -477,6 +1018,14 @@ SASS SYNTAX
   width: 168px
   height: 168px
   margin-bottom: 30px
+  @media all and (max-width: 640px)
+    position: relative
+    z-index: 2
+  @media all and (max-width: 550px)
+     max-width: 100%
+  @media all and (max-width: 430px)
+    margin-bottom: 10px
+       
 
 ._pay
   background: url("../../../assets/icons/pay.svg") no-repeat center, #FFFFFF
@@ -493,12 +1042,53 @@ SASS SYNTAX
 .feed__btn
   max-width: $contentWidth*0.256
   margin: 0 auto
-  
+  @media all and (max-width: 320px)
+    max-width: 100%
+
+
+.testimonials
+  padding-top: 80px
+  background: url('../../../assets/img/leav_foto.jpg') no-repeat
+  background-position-x: 100%
+  background-position-y: 125%
+  @media all and (max-width: 1599px)
+    padding-top: 30px
+    background: url('../../../assets/img/leav_foto_small_desktop.jpg') no-repeat
+    background-position-x: 100%
+    background-position-y: 116.5%
+  @media all and (max-width: 640px)
+    background: url('../../../assets/img/leav_foto.png') no-repeat
+    background-position-x: 100%
+    background-position-y: 114.5%
+    padding-top: 0px
+  @media all and (max-width: 430px)
+    background-position-x: 100%
+    background-position-y: 125%
+  @media all and (max-width: 320px)
+    background-size: 55px auto   
+    background-position-x: 99%
+    background-position-y: 106%
+
+.testimonials__container
+  padding-bottom: 34px
+  @media all and (max-width: 1000px)
+    padding-bottom: 0px
+
 
 .testimonials__title
   padding-top: 60px
   padding-bottom: 47px
+  @media all and (max-width: 1000px)
+    padding-top: 70px
+    padding-bottom: 30px
+  @media all and (max-width: 640px)
+    padding-top: 60px
+  @media all and (max-width: 320px)
+    padding-top: 30px
+    padding-bottom: 18px
   
+
+
 .testimonials__item__title
   font-family: 'Roboto' 
   font-style: normal 
@@ -509,7 +1099,13 @@ SASS SYNTAX
   position: relative
   top: -10px
   left: 10px
-  
+  @media all and (max-width: 640px)
+    top: -10px
+    left: 5px
+  @media all and (max-width: 320px)
+    top: -16px
+    left: 2px
+    
 
 .user-pic
   display: inline-block
@@ -519,19 +1115,10 @@ SASS SYNTAX
   width: 37px
   height: 37px
   margin-right: 10px
-
-.item_head
-  display: flex
-  flex-direction: row
-
-.testimonials__container
-  padding-bottom: 34px
-
-.testimonials
-  padding-top: 80px
-  background: url('../../../assets/img/leav_foto.jpg') no-repeat
-  background-position-x: 100%
-  background-position-y: 125%
+  @media all and (max-width: 320px)
+    top: 20px
+    left: 6px
+    
 
 .testimonials__item__subtitle,.testimonials__item__text
   font-family: 'Roboto' 
@@ -540,17 +1127,31 @@ SASS SYNTAX
   font-size: 15px 
   line-height: 120% 
   color: #BDBDBD 
-
+ 
 .testimonials__item__subtitle
   padding-left: 30px
   position: relative
   left: 31px
   top: -10px
+  @media all and (max-width: 320px)
+    left: 22px
+    top: -13px
+
 
 .testimonials__item__text
   color: #ABABAB
   padding: 0px 10px 0px 15px
   overflow: hidden
+  @media all and (max-width: 1000px)
+   display: -webkit-box
+   -webkit-line-clamp: 16 
+           line-clamp: 16 
+   -webkit-box-orient: vertical
+   @media all and (max-width: 640px)
+    -webkit-line-clamp: 2 
+           line-clamp: 2 
+  
+
 
 .testimonials-wrapper
   display: grid
@@ -559,38 +1160,44 @@ SASS SYNTAX
   justify-content: space-between
   padding-bottom: 14px
   position: relative
+  @media all and (max-width: 1399px)
+    grid-template-columns: repeat(3, 1fr)
+    gap: 10px 40px
+    grid-template-rows: 1fr
+    grid-auto-rows: 0
+    overflow-y: hidden
+  @media all and (max-width: 1000px)
+    gap: 10px 30px
+    padding-bottom: 4px
+  @media all and (max-width: 640px)
+    grid-template-columns: 1fr
+    grid-template-rows: repeat(3, 109px)
+    gap: 15px 0px
+    padding-bottom: 25px
+  @media all and (max-width: 320px)
+    padding-bottom: 15px
   
-$pink: rgba(254, 189, 171, 0.74)
-$purple:rgba(243, 169, 248, 0.66) 
-$lightpink:#E0D8F0 
-$white: #EAF7FE
-$direction: 315.75deg
+    
 
-$list: $pink 30.06%, $purple 50.74%, $lightpink 80.49%, $white 127.9%, $white 149.54%
+.item__background:last-child
+  @media all and (max-width: 1399px)
+    visibility: hidden
 
+@import mixin
 
-@mixin gradient($direction, $list) 
-  border-image: -webkit-linear-gradient($direction, $list) 
-  border-image: -moz-linear-gradient($direction, $list) 
-  border-image: -o-linear-gradient($direction, $list) 
-  border-image: linear-gradient($direction, $list)
-  border-width: 1.63px
-  border-style: solid  
-
-@mixin gradientBorder($direction, $list) 
-  background: -webkit-linear-gradient($direction, $list) 
-  background: -moz-linear-gradient($direction, $list) 
-  background: -o-linear-gradient($direction, $list) 
-  background: linear-gradient($direction, $list)
 
 .item__background  
   @include gradientBorder($direction, $list)
   position: relative
   z-index: -1
   height: 390px
+  width: 99.5%
   padding: 0
   border-radius: 20px 
   overflow: hidden
+  @media all and (max-width: 640px)
+    height: 109px
+    
 
 .testimonials__item
   background: #F1F3F2 
@@ -600,32 +1207,11 @@ $list: $pink 30.06%, $purple 50.74%, $lightpink 80.49%, $white 127.9%, $white 14
   overflow: hidden
   position: absolute
   max-height: 382px
-    
-  
-
-@mixin progress-bar-color($valueColor: #FE9013, $backgroundColor: #F5F7F6) 
-  background-color: $backgroundColor 
-  color: $valueColor 
-  width: 100%
-  height: 8px
-  border-radius: 5px
-  &::-moz-progress-bar 
-    background-color: $valueColor 
-    height: 8px
-    border-radius: 5px
-
-  &::-webkit-progress-bar 
-    background-color: $backgroundColor 
-    border-radius: 5px
-    border: 0.4px solid
-    position: relative
-    
-  &::-webkit-progress-value 
-    background-color: $valueColor 
-    border-radius: 5px
-    height: 6px
-    position: absolute
-    
+  height: 100%
+  @media all and (max-width: 640px)
+    height: 92%
+  @media all and (max-width: 320px)
+    height: 93.5%
     
   
 .progress
@@ -633,60 +1219,15 @@ $list: $pink 30.06%, $purple 50.74%, $lightpink 80.49%, $white 127.9%, $white 14
   margin: 0 auto
   padding-top: 4px
   padding-bottom: 27px
-
-progress
-  @include progress-bar-color($valueColor: #FE9013, $backgroundColor: #F5F7F6)
-
-
-
-
-
-@mixin slider-bar($thumb_color:#FE9013, $track_color: #F5F7F6, $bg-color:#F5F7F6) 
-  -webkit-appearance: none
-  border: 1px solid $pink
-  background-color: transparent
-  width: 600px 
-  border-radius: 5px
-
-  &::-webkit-slider-runnable-track 
-    width: 600px
-    height: 8px
-    background: $track_color
-    border: none
-    border-radius: 5px
-
-  &::-webkit-slider-thumb 
-    @include input_range_thumb($thumb_color)
-    margin-top: 1px
-
-  &:focus 
-      outline: none
-
-  &:focus::-webkit-slider-runnable-track 
-      
-  &::-moz-range-track 
-    width: 600px
-    height: 8px
-    background: $track_color
-    border: none
-    border-radius: 5px
-
-  &::-moz-range-thumb 
-    @include input_range_thumb($thumb_color)
-
-@mixin input_range_thumb($thumb_color) 
-  -webkit-appearance: none
-  border: none
-  height: 6px
-  width: 115px
-  border-radius: 5px
-  background: $thumb_color
-  border: 1px solid #FE9013
-  &:active 
-    border: 1px solid green
-  &:hover 
-    background: green
-    cursor: pointer
+  @media all and (max-width: 1000px)
+    width: 390px
+    margin-left: 269px
+    padding-bottom: 48px
+  @media all and (max-width: 999px)
+    margin: 0 auto
+  @media all and (max-width: 640px)
+    display: none
+    
 
 .range
   @include slider-bar
@@ -694,13 +1235,91 @@ progress
 
 .feedback__btn
   padding-bottom: 146px
+  @media all and (max-width: 1000px)
+    padding-bottom: 139px
+  @media all and (max-width: 640px)
+    padding-bottom: 80px
+    margin: 0 auto
+    width: 240px
+  @media all and (max-width: 320px)
+    padding-bottom: 60px
+.feedback__btn
+  button
+    @media all and (max-width: 640px)
+      width: 240px
+
 
 .footer
   background: black
 
+._footer
+  font-size: 16px
+  line-height: 140%
+
 .footer__wrapper
   padding-top: 40px
+  @media all and (max-width: 1000px)
+    //padding-left: 25px
+  @media all and (max-width: 640px)
+    padding-left: 0px
+    padding-top: 12px
+  @media all and (max-width: 320px)
+    padding-top: 20px
 
+
+.logo-footer
+  position: relative
+  font-size: 10px
+  max-width: 82px
+  max-height: 52px
+  border: 1px solid #FFFFFF
+  border-radius: 2px
+  margin-right: 30px
+  @media all and (max-width: 320px)
+    max-width: 128px
+    border: none
+    margin: 0 auto
+  
+.logo_title-footer
+  font-family: 'Roboto' 
+  font-style: normal 
+  font-weight: 300 
+  font-size: 1.19rem //19.0145px 
+  line-height: 1.43rem //120% or 23px
+  text-align: center 
+  color: #FFFFFF 
+  padding: 0.55px 4.75px 6.55px 4.75px
+  position: relative
+  @media all and (max-width: 320px)
+    padding: 0
+
+.bamboo-footer
+  position: absolute
+  bottom: 0.7em
+  left: 0.5rem
+  @media all and (max-width: 320px)
+    bottom: 4px
+    left: 72px
+
+    
+    
+ 
+
+
+.subscribe
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  padding-bottom: 37px
+  @media all and (max-width: 1000px)
+    padding-bottom: 35px
+  @media all and (max-width: 640px)
+    padding-bottom: 31px
+  @media all and (max-width: 430px)
+    padding-bottom: 61px   
+  @media all and (max-width: 320px) 
+    padding-bottom: 86px   
+  
 .sub__text 
   font-family: 'Roboto' 
   font-style: normal 
@@ -715,42 +1334,12 @@ progress
 .subscribe_text_item
   flex-grow: 2
   max-width: 32%
- 
-.media
-  font-family: 'Roboto' 
-  font-style: normal 
-  font-weight: 400 
-  font-size: 1rem 
-  line-height: 140% 
-  color: #FFFFFF 
-  position: relative
-  padding-bottom: 15px
-  padding-left: 40px
-
-.social_media > li > a 
-  display: inline-block
-  text-decoration: none
-
-
-.social_media > li > a:hover, a:active 
-  color: #4B9200
-
-.media
-  img
-    display: inline-block
-    width: 26px
-    height: 26px
-    position: absolute
-    left: 0
-
-.media
-  img:hover
-    filter: invert(59%) sepia(72%) saturate(4911%) hue-rotate(58deg) brightness(89%) contrast(104%)
-
-._footer
-  font-size: 16px
-  line-height: 140%
-
+  @media all and (max-width: 1399px)
+    min-width: 40%
+  @media all and (max-width: 1000px)
+    min-width: 43%
+  @media all and (max-width: 640px)
+    display: none
  
 .email
    background: black 
@@ -763,6 +1352,8 @@ progress
    color: #BDBDBD 
    font-family: 'Roboto' 
    font-style: normal 
+   @media all and (max-width: 1000px)
+     padding: 10px 33px 10px 12px
 
 .email:invalid
   border-color: #D31414
@@ -798,20 +1389,122 @@ progress
   font-size: 16px 
   line-height: 140% 
   color: black 
-  padding: 8px 38px
+  padding: 9px 38px
 
 .submit-btn[value]:active
   color: #4B9200 
 
-.subscribe
-  display: flex
-  flex-direction: row
-  justify-content: space-between
-  padding-bottom: 37px
+
 
 .donate-btn
   padding-bottom: 42px
+  @media(max-width: 1000px)
+    padding-bottom: 50px
+  @media(max-width: 640px)
+    padding-bottom: 70px 
+  @media all and (max-width: 320px)
+    padding-bottom: 30px
+
+.footer__downs
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: flex-end 
+  padding-bottom: 85px
+  @media all and (max-width: 1000px)
+    padding-bottom: 30px
+  @media all and (max-width: 640px)
+    padding-bottom: 0px
+    position: relative
+  @media all and (max-width: 550px)
+    flex-direction: column-reverse
+  @media all and (max-width: 320px)
+    gap: 25px
+    align-items: flex-end
+ 
+._footer-menu
+  padding: 0
+  padding-bottom: 15px
+  flex-grow: 2
+  padding-left: 120px
+  line-height: 140%
+  @media all and (max-width: 1000px)
+    padding-left: 90px
+  @media all and (max-width: 768px)
+    padding-left: 10px
+    gap:10px
+  @media all and (max-width: 640px)
+    padding-left: 0px
+    gap:37px
+    padding-bottom: 10px
+  @media all and (max-width: 620px)
+    gap:30px
+  @media all and (max-width: 320px)
+    padding-right: 10px
+
+.media
+  font-family: 'Roboto' 
+  font-style: normal 
+  font-weight: 400 
+  font-size: 1rem 
+  line-height: 140% 
+  color: #FFFFFF 
+  position: relative
+  padding-bottom: 15px
+  padding-left: 40px
+  @media all and (max-width: 1000px)
+    padding-bottom: 13px
+  @media all and (max-width: 640px)
+    padding-bottom: 22.5px
+    color: transparent
+  @media all and (max-width: 430px)
+    font-size: 0px
+ 
+
+.social_media > li > a 
+  display: inline-block
+  text-decoration: none  
+  
+.social_media > li
+  @media all and (max-width: 430px)
+    display: inline
+  @media all and (max-width: 320px)
+      margin-right: 12px    
+  
+.social
+  @media all and (max-width: 640px)
+    position: absolute
+    right: -85px
+    bottom: 85px
+  @media all and (max-width: 430px)
+    right: 0
+    left: 10px
+    bottom: 245px
+  @media all and (max-width: 320px)
+    right: 0
+    left: 18%
+    bottom: 245px
+
+.social_media > li > a:hover, a:active 
+  color: #4B9200
+  @media all and (max-width: 640px)
+  color: transparent
+ 
+.media
+  img
+    display: inline-block
+    width: 26px
+    height: 26px
+    position: absolute
+    left: 0
+    @media all and (max-width: 1000px)
+      top: -5px
     
+
+.media
+  img:hover
+    filter: invert(59%) sepia(72%) saturate(4911%) hue-rotate(58deg) brightness(89%) contrast(104%)
+
 
 .credentials
   font-family: 'Roboto' 
@@ -821,94 +1514,23 @@ progress
   line-height: 130% 
   color: #FFFFFF 
   padding-bottom: 12px
-  
+  @media all and (max-width: 1000px)
+      padding-bottom: 8px
+  @media all and (max-width: 640px)
+      padding-bottom: 0px
+  @media all and (max-width: 620px)
+    font-size: 15px 
+    line-height: 120% 
+
 .credentials
   p
     padding-bottom: 5px
-    
-
-.footer__downs
-  display: flex
-  flex-direction: row
-  justify-content: space-between
-  align-items: flex-end 
-  padding-bottom: 85px
- 
-
-._footer-menu
-  padding: 0
-  padding-bottom: 15px
-  flex-grow: 2
-  padding-left: 120px
-  line-height: 140%
+    @media all and (max-width: 1000px)
+      padding-bottom: 7px
+    @media all and (max-width: 640px)
+      padding-bottom: 10px
   
 
-.logo-footer
-  position: relative
-  font-size: 10px
-  max-width: 82px
-  max-height: 52px
-  border: 1px solid #FFFFFF
-  border-radius: 2px
-  margin-right: 30px
-  
-.logo_title-footer
-  font-family: 'Roboto' 
-  font-style: normal 
-  font-weight: 300 
-  font-size: 1.19rem //19.0145px 
-  line-height: 1.43rem //120% or 23px
-  text-align: center 
-  color: #FFFFFF 
-  padding: 0.55px 4.75px 6.55px 4.75px
-  position: relative
-
-   
- 
-.bamboo-footer
-  position: absolute
-  bottom: 0.7em
-  left: 0.5rem
-
-/*._twitter:before
-  content: ''
-  background: url('../../../assets/icons/icon_twitter.svg') no-repeat center
-  display: inline-block
-  width: 26px
-  height: 26px
-  margin-right: 15px
-  position: relative
-  top: 5px
-
-/*._fb:before
-  content: ''
-  background: url('../../../assets/icons/icon_fb.svg') no-repeat center
-  display: inline-block
-  width: 26px
-  height: 26px
-  margin-right: 15px
-  position: relative
-  top: 5px
-
-/*._insta:before
-  content: ''
-  background: url('../../../assets/icons/icon_insta.svg') no-repeat center
-  display: inline-block
-  width: 26px
-  height: 26px
-  margin-right: 15px
-  position: relative
-  top: 5px
-
-/*._youtube:before
-  content: ''
-  background: url('../../../assets/icons/icon_youtube.svg') no-repeat center
-  display: inline-block
-  width: 26px
-  height: 26px
-  margin-right: 15px
-  position: relative
-  top: 5px
 
 
 //donate-page
@@ -923,6 +1545,26 @@ progress
   background-position: center center
   position: relative
   background-size: cover
+  @media all and (max-width: 1000px)
+    height: 390px
+    background-position: -170px center
+  @media all and (max-width: 640px)
+    height: 334px
+    background-size: 220% auto
+    background-position: 37% bottom
+    padding-top: 35px
+  @media all and (max-width: 625px)
+    height: 185px
+    background-size: 180% auto
+    background-position: 37% bottom
+    padding-top: 35px
+  @media all and (max-width: 430px)
+    background-size: cover
+  @media all and (max-width: 320px)
+    padding-top: 36px
+    background-size: 240% auto
+    background-position: 34% bottom
+
 
 .donate__intro-title,.donate__introtext
   font-family: 'Roboto' 
@@ -932,7 +1574,18 @@ progress
   line-height: 130% 
   color: #FFFFFF 
   padding-top: 40px
-
+  @media all and (max-width: 1000px)
+    padding-right: 15vw
+  @media all and (max-width: 950px)
+    padding-left: 2vw
+    padding-right: 2vw
+  @media all and (max-width: 640px)
+    font-size: 24px 
+    line-height: 120% 
+    padding-top: 30px
+    padding-left: 0
+    padding-right: 0
+ 
 
 .donate__introtext
   font-weight: 400 
@@ -940,17 +1593,40 @@ progress
   line-height: 140% 
   padding-top: 10px
   padding-right: 10px
+  @media all and (max-width: 1000px)
+    padding-top: 30px
+  @media all and (max-width: 640px)
+    padding-top: 20px
+    padding-right: 5px
 
 ._big
   color: #FE9013
   padding-top: 45px
   margin-bottom: 60px
+  @media all and (max-width: 1000px)
+    margin-bottom: 40px
+  @media all and (max-width: 640px)
+    margin-bottom: 30px
+    padding-top: 30px
+    font-size: 36px 
+  @media all and (max-width: 320px)
+    margin-bottom: 29px
+    padding-top: 26px
+    font-size: 24px 
 
 .donate
   background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%)  
   opacity: 0.9  
   padding-bottom: 180px
-  
+  @media all and (max-width: 1000px)
+    padding-bottom: 30px
+  @media all and (max-width: 640px)
+    padding-bottom: 47px
+  @media all and (max-width: 320px)
+    padding-bottom: 21px
+    
+
+
 %font-donate
   font-family: 'Roboto' 
   font-style: normal 
@@ -963,7 +1639,29 @@ progress
   @extend %font-donate
 
 .diet-amount
-  padding-top: 19%
+  @media all and (max-width: 320px)
+    font-size: 9px 
+
+.diet-progress
+  p
+    @media all and (max-width: 1000px)
+      padding-left: 65px
+      padding-top: 5px
+    @media all and (max-width: 900px)
+      padding-left: 5vw
+    @media all and (max-width: 640px)
+      padding-left: 10px
+      padding-top: 15px
+    @media all and (max-width: 320px)
+      padding-left: 0px
+      padding-top: 0px
+      
+      
+
+.diet-amount
+  padding-top: 105px//19%
+  @media all and (max-width: 320px)
+    padding-top: 60px
   
 
 
@@ -973,43 +1671,20 @@ progress
   border-radius: 20px  
   padding-bottom: 60px
   padding-top: 40px
+  @media all and (max-width: 1000px)
+    padding-top: 20px
+    padding-bottom: 45px
+  @media all and (max-width: 640px)
+    padding-top: 30px
+    padding-bottom: 30px
+  @media all and (max-width: 320px)
+    padding-top: 20px
+    padding-bottom: 20px
 
 .pick-container
   max-width: 976px
   margin: 0 auto
 
-.number
-  font-family: 'Roboto' 
-  font-style: normal 
-  font-weight: 500 
-  font-size: 72px 
-  line-height: 80% 
-  text-align: center 
-  text-transform: uppercase 
-  color: #000000 
-  padding-bottom: 11px
- 
-
-.diet-wrapper
-  padding-top: 20px
-  max-width: 545px
-  margin: 0 auto
-  display: flex
-  flex-direction: row
-  padding-bottom: 41px
-
-.diet-wrapper > img
-  display: inline-block
-  max-height: 240px
-  
-
-.x-icon
-  background: url('../../../assets/icons/x_icon.svg') no-repeat
-  width: 24px
-  background-position-x: 10px
-  background-position-y: 127px
-  margin-right: 66px
-    
 
 .pick-todonate__title
   font-family: 'Roboto' 
@@ -1019,11 +1694,24 @@ progress
   line-height: 120% 
   text-align: left
   color: #FE9013 
-  padding-bottom: 0.5em
+  padding-bottom: 20px
   padding-left: 340px
+  @media all and (max-width: 1400px)
+    padding-left: 0px
+    text-align: center
+  @media all and (max-width: 1000px)
+    text-align: justify
+    padding-left: 24.5%
+    padding-bottom: 10px
+  @media all and (max-width: 640px)
+    padding-left: 0
+    text-align: center
+    padding-bottom: 25px
+  @media all and (max-width: 320px)
+    font-size: 24px 
+    padding-bottom: 10px
+    
   
-  
-
 .pick-todonate__subtitle
   font-family: 'Roboto' 
   font-style: normal 
@@ -1037,22 +1725,104 @@ progress
   color: #333B41 
   padding-bottom: 2.5rem
   text-align: left
+  @media all and (max-width: 1400px)
+    text-align: center
+  @media all and (max-width: 640px)
+    padding-bottom: 27px
+  @media all and (max-width: 320px)
+    font-size: 16px 
+    line-height: 140% 
+    padding-bottom: 10px
+
+.number
+  font-family: 'Roboto' 
+  font-style: normal 
+  font-weight: 500 
+  font-size: 72px 
+  line-height: 80% 
+  text-align: center 
+  text-transform: uppercase 
+  color: #000000 
+  padding-bottom: 11px
+  @media all and (max-width: 320px)
+    font-size: 40px 
+    padding-bottom: 7px
  
+
+.diet-wrapper
+  padding-top: 20px
+  max-width: 545px
+  margin: 0 auto
+  display: flex
+  flex-direction: row
+  padding-bottom: 45px//41px
+  @media all and (max-width: 1000px)
+    padding-bottom: 41px
+  @media all and (max-width: 640px)
+    padding-bottom: 24px
+  @media all and (max-width: 320px)
+    max-width: 300px
+    padding-top: 0px
+    padding-bottom: 0px
+
+.diet-wrapper > img
+  display: inline-block
+  max-height: 240px
+ 
+.animal-icon 
+  img
+    width: 100%
+    height: auto
+    @media all and (max-width: 475px)
+      max-width: 160px
+    
+    
+
+.x-icon
+  background: url('../../../assets/icons/x_icon.svg') no-repeat
+  width: 24px
+  background-position-x: 10px
+  background-position-y: 127px
+  margin-right: 66px
+  @media all and (max-width: 550px)
+    margin-right: 4%
+    background-size: 15px 15px
+    width: 50px
+  @media all and (max-width: 475px)
+    margin-right: 0px
+    background-position-x: 0px
+    background-position-y: 77px
+    
+  @media all and (max-width: 320px)
+    width: 50px
+    background-size: 10px 10px
+    background-position-y: 72px
+    background-position-x: 5px
+
+
 .payment-wrapper
   width: 298px
 
 .cash
-   display: block
-   width: 87%
-   background-color: transparent
-   border: 0.7px solid #929699
-   border-radius: 2px 
-   padding-top: 16px 
-   padding-bottom: 16px 
-   display: block
-   margin: 0 auto
-   margin-bottom: 25px
-
+  display: block
+  width: 87%
+  background-color: transparent
+  border: 0.7px solid #929699
+  border-radius: 2px 
+  padding-top: 16px 
+  padding-bottom: 16px 
+  display: block
+  margin: 0 auto
+  margin-bottom: 25px
+  @media all and (max-width: 640px)
+    width: 175px
+    padding-top: 10px 
+    padding-bottom: 11px 
+    margin-bottom: 31px
+  @media all and (max-width: 320px)
+    padding-top: 12px 
+    margin-bottom: 25px
+  
 .cash:hover
    background-color: transparent
    border: 0.7px solid #FE9013
@@ -1079,16 +1849,16 @@ progress
   height: 20px
   right: 26px
   top: 16px
-  
-
-.period
-  display: inline-block
-  margin-right: 5px
+  @media all and (max-width: 640px)
+    right: 70px
+    top: 10px
   
 
 .pay-period
   padding-left: 42px
   padding-bottom: 28px
+  @media all and (max-width: 640px)
+    padding-bottom: 25px
 
 
 .pay-period  > label
@@ -1106,7 +1876,12 @@ progress
   color: #333B41 
   padding-left: 37.2%
   padding-top: 30px
-
+  @media all and (max-width: 1000px)
+    padding-left: 0
+    text-align: center
+  @media all and (max-width: 320px)
+    text-align: left
+    width: 301px
 .period
   appearance: none
   font: inherit 
@@ -1116,6 +1891,11 @@ progress
   border: 0.15em solid #FE9013
   border-radius: 50% 
   transform: translateY(-0.004rem)
+  display: inline-block
+  margin-right: 5px
+  @media all and (max-width: 640px)
+    width: 16px
+    height: 16px
   
 .period:checked
   background-color: #FE9013
@@ -1128,7 +1908,14 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .progress__bar
   padding-top: 18px
   padding-bottom: 25px
-
+  @media all and (max-width: 1000px)
+    padding-top: 15px
+  @media all and (max-width: 640px)
+    padding-top: 6px
+    padding-bottom: 30px
+  @media all and (max-width: 320px)
+    padding-top: 9px
+    padding-bottom: 6px
 
 .progress_wrap 
   background: #404950
@@ -1136,6 +1923,21 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   width: 976px
   position: relative
   border-radius: 2px
+  @media all and (max-width: 1400px)
+    max-width: 900px
+    margin: 0 auto
+  @media all and (max-width: 1000px)
+    max-width: 810px
+  @media all and (max-width: 900px)
+    max-width: 686px
+  @media all and (max-width: 768px)
+    max-width: 600px
+  @media all and (max-width: 621px)
+    width: 100%
+    max-width: 500px
+  @media all and (max-width: 320px)
+    max-width: 300px
+    height: 13px
    
 .progress-line
   background: #72828E
@@ -1144,6 +1946,21 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   position: absolute
   top: 12px
   left: 30px
+  @media all and (max-width: 1000px)
+    width: 96.9%
+    left: 16px
+  @media all and (max-width: 640px)
+    width: 520px
+    left: 41px
+  @media all and (max-width: 621px)
+    width: 90%
+    max-width: 500px
+    left: 25px
+  @media all and (max-width: 320px)
+    max-width: 262px
+    top: 6px
+    left: 20px
+    height: 1px
 
 .chose-amount-container
   width: 94%
@@ -1158,7 +1975,37 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   align-items: center
   justify-items: center
   column-gap: 90px
- 
+  @media all and (max-width: 1400px)
+    column-gap: 9.5%
+  @media all and (max-width: 1000px)
+    left: -4px
+    grid-template-columns: repeat(7, 40px)
+    column-gap: 90px    
+  @media all and (max-width: 900px)
+    column-gap: 70px  
+  @media all and (max-width: 768px)
+    column-gap: 56px
+  @media all and (max-width: 640px)
+    left: 0px
+    width: 530px
+    margin-left: 20px
+    grid-template-columns: repeat(5, 40px)
+    column-gap: 90px
+  @media all and (max-width: 621px)
+    width: 100%
+    column-gap: 35px
+    margin-left: 0px
+    
+
+  @media all and (max-width: 320px)
+    height: 20px
+    max-width: 300px
+    column-gap: 0px
+    top: -14px
+    margin-left: 0px
+    
+    
+  
 
 .chose-amount-item
   appearance: none
@@ -1167,6 +2014,21 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   height: 10px 
   border-radius: 50% 
   position: relative
+  @media all and (max-width: 1000px)
+    &:first-child
+      display: none
+  @media all and (max-width: 640px)
+    &:nth-child(3), &:nth-child(2)
+      display: none
+    &:nth-child(6)
+      background: url('../../../assets/icons/roller_icon.png') no-repeat center,  url('../../../assets/icons/ellipse.png') no-repeat center
+      width: 40px
+      height: 40px
+  @media all and (max-width: 320px)
+    width: 5px 
+    height: 5px 
+    &:nth-child(6)
+      background-size: 20px 20px, 5px 5px 
   
   
   &:hover
@@ -1174,11 +2036,12 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
     background-color: #4B9200
 
 
-  &:checked
+  &:checked, .chosen
     background: url('../../../assets/icons/roller_icon.png') no-repeat center,  url('../../../assets/icons/ellipse.png') no-repeat center
     width: 40px
     height: 40px
- 
+    @media all and (max-width: 320px)
+      background-size: 20px 20px, 5px 5px 
     
   
 .value_list 
@@ -1196,6 +2059,36 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   justify-items: center
   justify-content: space-between
   padding: 12px 20px 25px 0px
+  @media all and (max-width: 1400px)
+    padding: 15px 15px 25px 15px
+  @media all and (max-width: 1000px)
+    max-width: 88%
+    margin: 0 auto
+    grid-template-columns: repeat(7, 70px)
+    padding: 13px 15px 25px 20px
+  @media all and (max-width: 900px)
+    max-width: 686px
+    grid-template-columns: repeat(7, 50px)
+  @media all and (max-width: 768px)
+    max-width: 600px
+  @media all and (max-width: 640px)
+    max-width: 550px
+    grid-template-columns: repeat(5, 40px)
+    padding: 12px 0px 20px 0px
+  @media all and (max-width: 621px)
+    max-width: 500px
+    padding-left: 5px
+    padding-top: 5px
+    padding-right: 10px
+
+  @media all and (max-width: 320px)
+    max-width: 300px
+    font-size: 13px
+    padding-left: 2px
+    padding-top: 5px
+    padding-right: 10px
+ 
+ 
 
 .value_list > li:before
   content: ''
@@ -1205,11 +2098,30 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   height: 20px
   top: 7px
   left: 0px
-  
+  @media all and (max-width: 1000px)
+    top: 7px
+    left: 5px
+  @media all and (max-width: 320px)
+    width: 5px
+    height: 10px
+    background-size: contain
+    top: 3px
+    left: 0px
+
+#fiveD
+  @media all and (max-width: 1000px)
+    display: none
     
+#twoD, #oneD
+  @media all and (max-width: 640px)
+    display: none
+
+
 .value_list > li
   position: relative
   padding-left: 15px
+  @media all and (max-width: 320px)
+    padding-left: 5px
   
 .value_list > li:first-child, li:nth-child(2)
   justify-self: start
