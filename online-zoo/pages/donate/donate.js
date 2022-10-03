@@ -28,3 +28,4 @@ burgerBg.addEventListener('click', (event)=> {
     closeBurger();
   }
 })
+

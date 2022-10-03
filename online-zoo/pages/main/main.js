@@ -29,3 +29,17 @@ burgerBg.addEventListener('click', (event)=> {
   }
 })
 
+//слайдер отзывов
+const progressbar = document.querySelector('.range');
+
+function changeFeedback () {
+  let progressbarValue = progressbar.value;
+  let testimonialsContainer = document.querySelector('.testimonials-wrapper');
+  let widthItem = parseInt(getComputedStyle(document.querySelector('.item__background')).width.replace('px',''));
+  let gap = parseInt((getComputedStyle(testimonialsContainer).gridColumnGap).replace('px','')); 
+  let moveStep = widthItem + gap + 2; //находим шаг сдвига: ширина отзыва плюч гэп плюс погрешность за счет неровных значений
+  testimonialsContainer.style.left = -(progressbarValue * moveStep) + 'px';
+  
+}
+
+progressbar.addEventListener("input", changeFeedback);

@@ -1147,31 +1147,40 @@ SASS SYNTAX
 
 .testimonials-wrapper
   display: grid
-  grid-template-columns: repeat(4, 268px)
+  grid-template-columns: repeat(11, 268px)
   gap: 0 30px
   justify-content: space-between
   padding-bottom: 14px
   position: relative
+  left: 0px
+  grid-template-rows: 1fr
+  grid-auto-rows: 0
   @media all and (max-width: 1399px)
-    grid-template-columns: repeat(3, 1fr)
-    gap: 10px 40px
+    grid-template-columns: repeat(11, 293px)
+    gap: 10px 30px
     grid-template-rows: 1fr
     grid-auto-rows: 0
-    overflow-y: hidden
   @media all and (max-width: 1000px)
     gap: 10px 30px
     padding-bottom: 4px
+  @media all and (max-width: 999px)
+    grid-template-columns: repeat(11, 32%)
+    gap: 10px 15px
   @media all and (max-width: 640px)
     grid-template-columns: 1fr
     grid-template-rows: repeat(3, 109px)
+    max-height: 345px
+    overflow: hidden
     gap: 15px 0px
-    padding-bottom: 25px
+    padding-bottom: 15px
+    margin-bottom: 37px
   @media all and (max-width: 320px)
     padding-bottom: 15px
+    margin-bottom: 27px
   
     
 
-.item__background:last-child
+/*.item__background:last-child
   @media all and (max-width: 1399px)
     visibility: hidden
 
@@ -1183,7 +1192,7 @@ SASS SYNTAX
   position: relative
   z-index: -1
   height: 390px
-  width: 99.5%
+  width: 99.3%
   padding: 0
   border-radius: 20px 
   overflow: hidden
@@ -1528,9 +1537,6 @@ SASS SYNTAX
 
 
 //donate-page
-
-
-
 
 .donation__bg
   height: 386px
