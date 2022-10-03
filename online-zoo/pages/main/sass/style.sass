@@ -40,7 +40,11 @@ $fontdefault: 16px
 body
   margin: 0 auto
   
-
+.disableScroll
+  overflow: hidden
+  height: 100vh
+  width: 100%  
+  
 
 ._content
   max-width: 1160px
@@ -1198,6 +1202,7 @@ SASS SYNTAX
   overflow: hidden
   @media all and (max-width: 640px)
     height: 109px
+    cursor: pointer
     
 
 .testimonials__item
@@ -1211,6 +1216,7 @@ SASS SYNTAX
   height: 100%
   @media all and (max-width: 640px)
     height: 92%
+    cursor: pointer
   @media all and (max-width: 320px)
     height: 93.5%
     
@@ -2083,7 +2089,6 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
     padding-left: 5px
     padding-top: 5px
     padding-right: 10px
-
   @media all and (max-width: 320px)
     max-width: 300px
     font-size: 13px
@@ -2111,6 +2116,9 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
     top: 3px
     left: 0px
 
+
+  
+
 #fiveD
   @media all and (max-width: 1000px)
     display: none
@@ -2123,9 +2131,10 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .value_list > li
   position: relative
   padding-left: 15px
+  cursor: pointer
   @media all and (max-width: 320px)
     padding-left: 5px
-  
+
 .value_list > li:first-child, li:nth-child(2)
   justify-self: start
 
@@ -2133,6 +2142,11 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .value_list > li:nth-child(6),li:nth-child(7), li:nth-child(8)
   justify-self: end
 
+.value_list 
+  li.chosen-sum
+    color: #FE9013 
+  li.chosen-sum:before
+    background: url('../../../assets/icons/dollar_orange.svg') no-repeat center
 
 //burger
 
