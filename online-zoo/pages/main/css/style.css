@@ -3419,26 +3419,17 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #fff;
-  width: 50%;
+  width: 100%;
   position: absolute;
   top: 0;
-  right: 0;
   z-index: 5;
   padding: 10px 10px 40px 10px;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
   position: fixed;
-  right: -50%;
+  right: -100%;
   -webkit-transition: ease 2s;
   transition: ease 2s;
-}
-@media all and (max-width: 320px) {
-  .burger-container {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    width: 100%;
-    right: -100%;
-  }
 }
 
 .open-burger {
@@ -3506,10 +3497,12 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  -webkit-transition: all ease-in 1s;
-  transition: all ease-in 1s;
+  -webkit-transition: ease 2s;
+  transition: ease 2s;
 }
 
 .burger-wrap.active {
   visibility: visible;
+  -webkit-transition: ease 2s;
+  transition: ease 2s;
 }
