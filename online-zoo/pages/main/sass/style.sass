@@ -755,6 +755,16 @@ body
   @media all and (max-width: 550px)
     left: 35%
 
+.fade
+  animation-name: fade
+  animation-duration: 1.5s
+
+@keyframes fade 
+  from 
+    opacity: .4
+  to
+    opacity: 1
+
 .choose
   display: block
   max-width: 298px
@@ -1159,6 +1169,7 @@ SASS SYNTAX
   left: 0px
   grid-template-rows: 1fr
   grid-auto-rows: 0
+  transition: ease 2s
   @media all and (max-width: 1399px)
     grid-template-columns: repeat(11, 293px)
     gap: 10px 30px
@@ -1170,7 +1181,7 @@ SASS SYNTAX
   @media all and (max-width: 999px)
     grid-template-columns: repeat(11, 32%)
     gap: 10px 15px
-  @media all and (max-width: 640px)
+  /*@media all and (max-width: 640px)
     grid-template-columns: 1fr
     grid-template-rows: repeat(3, 109px)
     max-height: 345px
@@ -1178,15 +1189,22 @@ SASS SYNTAX
     gap: 15px 0px
     padding-bottom: 15px
     margin-bottom: 37px
+    cursor: pointer
+
+  @media all and (max-width: 640px)
+    display: flex
+    flex-direction: column
+    gap: 15px 
+    padding-bottom: 15px
+    margin-bottom: 37px
+   
   @media all and (max-width: 320px)
     padding-bottom: 15px
     margin-bottom: 27px
+     cursor: pointer
   
     
 
-/*.item__background:last-child
-  @media all and (max-width: 1399px)
-    visibility: hidden
 
 @import mixin
 
@@ -1203,7 +1221,11 @@ SASS SYNTAX
   @media all and (max-width: 640px)
     height: 109px
     cursor: pointer
-    
+  
+.item__background:nth-child(n+4)
+  @media all and (max-width: 640px)
+    display: none      
+
 
 .testimonials__item
   background: #F1F3F2 
@@ -1215,7 +1237,7 @@ SASS SYNTAX
   max-height: 382px
   height: 100%
   @media all and (max-width: 640px)
-    height: 92%
+    height: 93%
     cursor: pointer
   @media all and (max-width: 320px)
     height: 93.5%
@@ -1226,6 +1248,7 @@ SASS SYNTAX
   margin: 0 auto
   padding-top: 4px
   padding-bottom: 27px
+  transition: ease 3s
   @media all and (max-width: 1000px)
     width: 390px
     margin-left: 269px
@@ -1238,7 +1261,7 @@ SASS SYNTAX
 
 .range
   @include slider-bar
-  transition: all ease 0.3s
+  transition: ease 3s
 
 .feedback__btn
   padding-bottom: 146px
@@ -1366,10 +1389,12 @@ SASS SYNTAX
   border-color: #D31414
   color: #D31414 
 
-.email:valid 
+.email:valid, .email:hover
   border-color: rgba(249, 128, 75, 1) 
 
-
+.email:focus
+  outline: 0
+  border-color: green
 
 .email::placeholder
   font-family: 'Roboto' 
@@ -1497,7 +1522,7 @@ SASS SYNTAX
 .social_media > li > a:hover, a:active 
   color: #4B9200
   @media all and (max-width: 640px)
-  color: transparent
+    color: transparent
  
 .media
   img
@@ -1859,7 +1884,12 @@ SASS SYNTAX
   @media all and (max-width: 640px)
     right: 70px
     top: 10px
-  
+
+.cash:focus
+  border-color: #4B9200
+  outline: 0
+  color: #4B9200
+
 
 .pay-period
   padding-left: 42px
@@ -2029,15 +2059,9 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   @media all and (max-width: 640px)
     &:nth-child(3), &:nth-child(2)
       display: none
-    &:nth-child(6)
-      background: url('../../../assets/icons/roller_icon.png') no-repeat center,  url('../../../assets/icons/ellipse.png') no-repeat center
-      width: 40px
-      height: 40px
   @media all and (max-width: 320px)
     width: 5px 
     height: 5px 
-    &:nth-child(6)
-      background-size: 20px 20px, 5px 5px 
   
   
   &:hover

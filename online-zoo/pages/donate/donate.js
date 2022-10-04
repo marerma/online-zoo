@@ -67,10 +67,20 @@ amountItem.addEventListener('change', () => {
 })
 
 moneySum.forEach(item => {item.addEventListener('click', (event)=> {
+   changeClasses(event.target.textContent)
+  moneyDots.find(item => item.value === event.target.textContent).checked = true
+})
+})
+
+
+moneyDots.forEach(item => {item.addEventListener('change', () => {
+   changeClasses(item.value)
+  })
+})
+
+
+function changeClasses (amount) {
   moneySum.forEach(item => {item.classList.remove('chosen-sum')})
-  let amount = event.target.textContent
   moneySum.find(item => item.textContent === amount).classList.add('chosen-sum')
-  moneyDots.find(item => item.value === amount).checked = true
   amountItem.value = amount
-})
-})
+}
