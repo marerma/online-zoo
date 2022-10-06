@@ -43,6 +43,16 @@ $contentWidth2: 1160px
 
 $fontdefault: 16px
 
+%dark-background
+  visibility: hidden
+  position: fixed
+  z-index: 6
+  top: 0
+  width: 100%
+  height: 100vh
+  background-color: rgba(0, 0, 0, 0.5)
+  transition: ease 2s
+
 body
   margin: 0 auto
   
@@ -1226,12 +1236,12 @@ SASS SYNTAX
   color: #ABABAB
   padding: 0px 10px 0px 15px
   overflow: hidden
-  @media all and (max-width: 1000px)
+  /*@media all and (max-width: 1000px)
    display: -webkit-box
    -webkit-line-clamp: 16 
            line-clamp: 16 
-   -webkit-box-orient: vertical
-   @media all and (max-width: 640px)
+   -webkit-box-orient: vertical*/
+  @media all and (max-width: 640px)
     -webkit-line-clamp: 2 
            line-clamp: 2 
   
@@ -1259,23 +1269,12 @@ SASS SYNTAX
   @media all and (max-width: 999px)
     grid-template-columns: repeat(11, 32%)
     gap: 10px 15px
-  /*@media all and (max-width: 640px)
-    grid-template-columns: 1fr
-    grid-template-rows: repeat(3, 109px)
-    max-height: 345px
-    overflow: hidden
-    gap: 15px 0px
-    padding-bottom: 15px
-    margin-bottom: 37px
-    cursor: pointer
-
   @media all and (max-width: 640px)
     display: flex
     flex-direction: column
     gap: 15px 
     padding-bottom: 15px
     margin-bottom: 37px
-   
   @media all and (max-width: 320px)
     padding-bottom: 15px
     margin-bottom: 27px
@@ -1290,7 +1289,7 @@ SASS SYNTAX
 .item__background  
   @include gradientBorder($direction, $list)
   position: relative
-  z-index: -1
+  z-index: 1
   height: 390px
   width: 99.3%
   padding: 0
@@ -1306,21 +1305,69 @@ SASS SYNTAX
 
 
 .testimonials__item
+  z-index: 2
   background: #F1F3F2 
   border-radius: 18px 
   border: 2px solid transparent
   margin: 2px
-  overflow: hidden
+  overflow-y: scroll
+  overflow-x: hidden
+  scrollbar-width: none
   position: absolute
   max-height: 382px
   height: 100%
+  &::-webkit-scrollbar 
+    width: 0
+    height: 0
   @media all and (max-width: 640px)
     height: 93%
     cursor: pointer
   @media all and (max-width: 320px)
     height: 93.5%
     
+.popUp-testimonial
+  box-sizing: border-box
+  width: 320px
+  height:428px 
+  background: url('../../../assets/icons/x_icon_orange.svg') no-repeat, #F5F7F6
+  background-size: 14px 14px
+  background-position: 96% 12px
+  position: relative
+  top: 20%
+  left: 22%
+  z-index: 7
+  padding: 20px 30px 17px 17px
+  .item__background
+    height:100%
+  .testimonials__item
+    height: 100%
+    overflow-y: scroll
+  .testimonials__item__text
+    display: block
   
+
+.pop_up-bg
+  @extend %dark-background
+  visibility: hidden
+  transition: ease-in 0.5s
+  animation-name: fade-out
+  animation-duration: 0.5s
+  cursor: pointer
+
+.pop_up-bg.visible
+  visibility: visible
+  overflow: hidden
+  transition: ease-in 0.5s
+ 
+
+@keyframes fade-out
+  0%
+    opacity: 1
+  50%
+    opacity: 0.5
+  100%
+    opacity: 0
+    
 .progress
   width: 599px
   margin: 0 auto
@@ -2322,16 +2369,8 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   text-decoration: underline
 
 .burger-wrap
-  visibility: hidden
-  position: fixed
-  z-index: 6
-  top: 0
-  width: 100%
-  height: 100vh
-  background-color: rgba(0, 0, 0, 0.5)
-  transition: ease 2s
+  @extend %dark-background  
 
 .burger-wrap.active
   visibility: visible
   transition: ease 2s
-  

@@ -51,16 +51,44 @@ function enableScroll () {
 const progressbar = document.querySelector('.range');
 const testimonialItem = document.querySelector('.item__background');
 const testimonialsContainer = document.querySelector('.testimonials-wrapper');
+const popUpBg = document.querySelector('.pop_up-bg');
 
 window.addEventListener('resize', changeAttributesResize)
+window.addEventListener('load', changeAttributesResize)
 
 function changeAttributesResize () {
   if (document.body.clientWidth < 1400 ) {
     progressbar.max = 8
   } else progressbar.max = 7
-
 }
 
+if (document.body.clientWidth < 641) {
+  testimonialsContainer.addEventListener('click', (e) => {
+    let targetFeedback = e.target.closest('.item__background')
+    if (targetFeedback) {
+       createPopUp(targetFeedback)
+     
+    } else return
+   
+  })
+}
+
+
+function createPopUp (targetBlock) {
+  popUpBg.classList.add('visible')
+  let popUp = document.createElement('div')
+  popUp.className = 'popUp-testimonial'
+  popUp.prepend(targetBlock.cloneNode(true))
+  popUpBg.append(popUp)
+  disableScroll ()
+  popUpBg.addEventListener('click', ()=> {
+    popUpBg.classList.remove('visible')
+    setTimeout(() => {
+      popUp.remove()
+    }, 500)
+    enableScroll ()
+  })
+}
 
 
 function changeFeedback () {

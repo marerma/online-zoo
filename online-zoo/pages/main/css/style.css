@@ -33,6 +33,18 @@ html {
   font-size: 16px;
 }
 
+.burger-wrap, .pop_up-bg {
+  visibility: hidden;
+  position: fixed;
+  z-index: 6;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: ease 2s;
+  transition: ease 2s;
+}
+
 body {
   margin: 0 auto;
 }
@@ -1925,16 +1937,13 @@ body {
   color: #ABABAB;
   padding: 0px 10px 0px 15px;
   overflow: hidden;
+  /*@media all and (max-width: 1000px)
+  * display: -webkit-box
+  * -webkit-line-clamp: 16 
+  *       line-clamp: 16 
+  * -webkit-box-orient: vertical*/
 }
-@media all and (max-width: 1000px) {
-  .testimonials__item__text {
-    display: -webkit-box;
-    -webkit-line-clamp: 16;
-    -webkit-line-clamp-line-clamp: 16;
-    -webkit-box-orient: vertical;
-  }
-}
-@media all and (max-width: 1000px) and (max-width: 640px) {
+@media all and (max-width: 640px) {
   .testimonials__item__text {
     -webkit-line-clamp: 2;
     -webkit-line-clamp-line-clamp: 2;
@@ -1958,15 +1967,6 @@ body {
   grid-auto-rows: 0;
   -webkit-transition: ease 2s;
   transition: ease 2s;
-  /*@media all and (max-width: 640px)
-  * grid-template-columns: 1fr
-  * grid-template-rows: repeat(3, 109px)
-  * max-height: 345px
-  * overflow: hidden
-  * gap: 15px 0px
-  * padding-bottom: 15px
-  * margin-bottom: 37px
-  * cursor: pointer */
 }
 
 .testimonials-wrapper > *:nth-child(1) {
@@ -2115,7 +2115,7 @@ body {
 .item__background {
   background: linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
   position: relative;
-  z-index: -1;
+  z-index: 1;
   height: 390px;
   width: 99.3%;
   padding: 0;
@@ -2136,14 +2136,21 @@ body {
 }
 
 .testimonials__item {
+  z-index: 2;
   background: #F1F3F2;
   border-radius: 18px;
   border: 2px solid transparent;
   margin: 2px;
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
   position: absolute;
   max-height: 382px;
   height: 100%;
+}
+.testimonials__item::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 @media all and (max-width: 640px) {
   .testimonials__item {
@@ -2157,6 +2164,72 @@ body {
   }
 }
 
+.popUp-testimonial {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 320px;
+  height: 428px;
+  background: url("../../../assets/icons/x_icon_orange.svg") no-repeat, #F5F7F6;
+  background-size: 14px 14px;
+  background-position: 96% 12px;
+  position: relative;
+  top: 20%;
+  left: 22%;
+  z-index: 7;
+  padding: 20px 30px 17px 17px;
+}
+.popUp-testimonial .item__background {
+  height: 100%;
+}
+.popUp-testimonial .testimonials__item {
+  height: 100%;
+  overflow-y: scroll;
+}
+.popUp-testimonial .testimonials__item__text {
+  display: block;
+}
+
+.pop_up-bg {
+  visibility: hidden;
+  -webkit-transition: ease-in 0.5s;
+  transition: ease-in 0.5s;
+  -webkit-animation-name: fade-out;
+          animation-name: fade-out;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  cursor: pointer;
+}
+
+.pop_up-bg.visible {
+  visibility: visible;
+  overflow: hidden;
+  -webkit-transition: ease-in 0.5s;
+  transition: ease-in 0.5s;
+}
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .progress {
   width: 599px;
   margin: 0 auto;
@@ -3775,18 +3848,6 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .burger-list > li:hover {
   color: #FE9013;
   text-decoration: underline;
-}
-
-.burger-wrap {
-  visibility: hidden;
-  position: fixed;
-  z-index: 6;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  -webkit-transition: ease 2s;
-  transition: ease 2s;
 }
 
 .burger-wrap.active {
