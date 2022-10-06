@@ -52,6 +52,17 @@ const progressbar = document.querySelector('.range');
 const testimonialItem = document.querySelector('.item__background');
 const testimonialsContainer = document.querySelector('.testimonials-wrapper');
 
+window.addEventListener('resize', changeAttributesResize)
+
+function changeAttributesResize () {
+  if (document.body.clientWidth < 1400 ) {
+    progressbar.max = 8
+  } else progressbar.max = 7
+
+}
+
+
+
 function changeFeedback () {
   let progressbarValue = progressbar.value;
   let widthItem = parseInt(getComputedStyle(testimonialItem).width.replace('px',''));
@@ -66,8 +77,12 @@ progressbar.addEventListener("input", changeFeedback);
 //слайдер животных
 const sliderBtnLeft = document.querySelector('.arrow-left')
 const sliderBtnRight = document.querySelector('.arrow-right')
-const slider = document.querySelector('.slider')
 let isEnabled = false
+const sliderWrapper = document.querySelector('.slider-wrapper')
+
+let currentIndex = 0 
+let sortedPets = pets
+let numberNewSlides
 
 //функция сортировки по Фишеру
 function sortPets (array) {
@@ -81,12 +96,18 @@ function sortPets (array) {
     return array;
    }
 
+//слайдер с простым переключением, без пролистывания 
+
+/*const slide = document.querySelectorAll('.slide')   
 function addHTML () {
   let sortedPets = sortPets(pets)
   let text = ''
-  let n = 6
+  let n 
   if (document.body.clientWidth > 320 && document.body.clientWidth <= 640) {
     n = 4
+  }
+  if (document.body.clientWidth > 640) {
+    n = 6
   }
   for (let i = 0; i < n; i++) {
     text += `<div class="pets__item ${sortedPets[i].food}">
@@ -99,9 +120,9 @@ function addHTML () {
 </div>`
   }
   return text
-}
+}*/
 
-sliderBtnRight.addEventListener('click', ()=> {
+/*sliderBtnRight.addEventListener('click', ()=> {
   changeImages()})
 
 sliderBtnLeft.addEventListener('click', ()=> {
@@ -115,5 +136,115 @@ function changeImages () {
   slider.addEventListener('animationend', ()=> {
     slider.classList.remove('fade')
   })
+}*/
+
+// new slider carousel
+
+function NewPet(arrow, i) {
+  this.name = arrow[i].name
+  this.food = arrow[i].food
+  this.img = arrow[i].img
+  this.alt = arrow[i].name
+  this.place = arrow[i].place
 }
 
+
+window.addEventListener('load', ()=> {
+  sliderWrapper.insertAdjacentElement("afterbegin", createNewSlide (sortedPets, numberNewSlides)) 
+}) //формируем карточки при загрузке окна
+
+//определяем, сколько карточек нам нужно генерить в зависимости от ширины окна
+
+if (document.body.clientWidth > 320 && document.body.clientWidth <= 640) {
+  numberNewSlides = 4
+  }
+if (document.body.clientWidth > 640) {
+  numberNewSlides = 6
+  } 
+
+//функция пермещения слайда (6 или 4 карточки)
+function moveSlides (direction) {
+  if (direction === 'right') {
+    nextSlide()
+  } else {
+    previousSlide() }
+
+  changeSliderPosition (direction) //после окончания анимации удалаяем класс смещения
+  setTimeout(()=> {
+    deleteSliderPosition(direction)
+  }, 2500) 
+  
+}
+
+
+function createNewSlide (array, number){
+  sortPets(array)
+  let newSlide = document.createElement('div')
+  newSlide.className = 'slide _content'
+
+  for (let i = 0; i < number; i++) {
+    let generatedPet = new NewPet (array, i)
+    let newPetSlide = document.createElement('div')
+    newPetSlide.className = `pets__item ${generatedPet.food}`
+    newPetSlide.innerHTML = `<div class="pets__item__pic">
+      <img src=${generatedPet.img} alt="${generatedPet.name}">
+    </div>
+    <div class="item__text"></div>
+    <div class="item__name"><p>${generatedPet.name}</p></div>
+    <div class="item__place"><p>${generatedPet.place}</p></div>
+  </div>`
+  newSlide.insertAdjacentElement("afterbegin", newPetSlide)
+  }
+  return newSlide
+}
+
+function nextSlide () {
+  if (isEnabled) {
+    return false
+  } //если флаг анимации поднят, то не даем выполнять функцию
+
+  sliderWrapper.insertAdjacentElement("beforeend", createNewSlide (sortedPets, numberNewSlides)) 
+  setTimeout(()=> {
+    sliderWrapper.children[currentIndex].remove() //смотрим живую коллекцию детей и их количество, первого удаляем
+  }, 2500) 
+}
+
+
+function previousSlide () { 
+  if (isEnabled) {
+    return false //если флаг анимации поднят, то не даем выполнять функцию
+  }
+  sliderWrapper.insertAdjacentElement("afterbegin", createNewSlide (sortedPets, numberNewSlides)) 
+  let length = sliderWrapper.children.length //смотрим живую коллекцию детей и их количество, последнего удаляем
+  setTimeout(()=> {
+    sliderWrapper.children[length - 1].remove()
+  }, 2500) 
+}
+
+function changeSliderPosition (classMove){
+  let slides = sliderWrapper.children
+  Array.from(slides).forEach(el => {
+    el.classList.add(`move-${classMove}`)
+  })
+  isEnabled = true
+  setTimeout(() => { 
+    isEnabled = false
+  }, 2500)
+  }
+   
+function deleteSliderPosition (classMove){
+    let slides = sliderWrapper.children
+    Array.from(slides).forEach(el => {
+      el.classList.remove(`move-${classMove}`)
+    })
+    isEnabled = false
+    }
+
+sliderBtnRight.addEventListener('click', () => {
+  moveSlides('right')}
+  )
+
+sliderBtnLeft.addEventListener('click', () => {
+  moveSlides('left')}
+  )
+    

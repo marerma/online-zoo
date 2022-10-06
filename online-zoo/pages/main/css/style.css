@@ -877,10 +877,43 @@ body {
   }
 }
 
-.slider {
+.slider-wrapper {
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin: 0;
+  max-width: 1160px;
+  gap: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+@media all and (max-width: 640px) {
+  .slider-wrapper {
+    gap: 20px;
+    padding-left: 20px;
+  }
+}
+@media all and (max-width: 320px) {
+  .slider-wrapper {
+    gap: 0px;
+    padding-left: 10px;
+  }
+}
+
+.slide {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -890,25 +923,59 @@ body {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  min-width: 1160px;
+  -ms-flex-negative: 2;
+      flex-shrink: 2;
   gap: 25px 10px;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 @media all and (max-width: 1399px) {
-  .slider {
+  .slide {
     gap: 100px 10px;
+    min-width: 950px;
   }
 }
 @media all and (max-width: 1000px) {
-  .slider {
+  .slide {
+    min-width: 940px;
     gap: 92px 0px;
   }
 }
+@media all and (max-width: 950px) {
+  .slide {
+    min-width: 900px;
+  }
+}
+@media all and (max-width: 768px) {
+  .slide {
+    min-width: 760px;
+  }
+}
 @media all and (max-width: 640px) {
-  .slider {
+  .slide {
+    min-width: 600px;
     gap: 95px 0px;
   }
 }
+@media all and (max-width: 620px) {
+  .slide {
+    min-width: 550px;
+  }
+}
+@media all and (max-width: 550px) {
+  .slide {
+    min-width: 500px;
+  }
+}
+@media all and (max-width: 430px) {
+  .slide {
+    min-width: 400px;
+  }
+}
 @media all and (max-width: 320px) {
-  .slider {
+  .slide {
+    min-width: 300px;
     gap: 20px 0px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -1170,6 +1237,7 @@ body {
 @media all and (max-width: 1399px) {
   .arrow-left {
     left: 40%;
+    z-index: 2;
   }
 }
 @media all and (max-width: 1000px) {
@@ -1196,6 +1264,30 @@ body {
           animation-duration: 1.5s;
 }
 
+.hide-slide {
+  display: none;
+}
+
+.move-right {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-animation-name: move;
+          animation-name: move;
+  left: -20px;
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+}
+
+.move-left {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  left: 0px;
+  -webkit-animation-name: move-left;
+          animation-name: move-left;
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+}
+
 @-webkit-keyframes fade {
   from {
     opacity: 0.4;
@@ -1211,6 +1303,46 @@ body {
   }
   to {
     opacity: 1;
+  }
+}
+@-webkit-keyframes move {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+@keyframes move {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes move-left {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes move-left {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 .choose {
@@ -1976,7 +2108,7 @@ body {
   .testimonials-wrapper {
     padding-bottom: 15px;
     margin-bottom: 27px;
-    margin-bottom-cursor: pointer;
+    cursor: pointer;
   }
 }
 

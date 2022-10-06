@@ -35,6 +35,12 @@ html
   
 
 $contentWidth: 1160px
+$contentWidth2: 1160px
+@media all and (max-width: 1399px)
+  $contentWidth2: 950px
+@media all and (max-width: 1000px)
+  $contentWidth2: 940px
+
 $fontdefault: 16px
 
 body
@@ -45,6 +51,7 @@ body
   height: 100vh
   width: 100%  
   
+
 
 ._content
   max-width: 1160px
@@ -566,21 +573,60 @@ body
      width: 100%
      padding: 0px
 
-.slider
-  display: flex 
+.slider-wrapper
+  overflow: hidden
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+  margin: 0
+  max-width: 1160px
+  gap: 20px
+  justify-content: space-between
+  position: relative
+  @media all and (max-width: 640px)
+    gap: 20px
+    padding-left: 20px
+  @media all and (max-width: 320px)
+    gap: 0px
+    padding-left: 10px
+ 
+
+
+.slide
+  position: relative
+  display: inline-flex 
   flex-direction: row 
   justify-content: space-between
   flex-wrap: wrap
+  min-width: $contentWidth
+  flex-shrink: 2
   gap: 25px 10px
+  transform: translateX(0)
   @media all and (max-width: 1399px)
     gap: 100px 10px
+    min-width: 950px
   @media all and (max-width: 1000px)
+    min-width: 940px
     gap: 92px 0px
+  @media all and (max-width: 950px)
+    min-width: 900px
+  @media all and (max-width: 768px)
+    min-width: 760px
   @media all and (max-width: 640px)
+    min-width: 600px
     gap: 95px 0px
+  @media all and (max-width: 620px)
+    min-width: 550px
+  @media all and (max-width: 550px)
+    min-width: 500px
+  @media all and (max-width: 430px)
+    min-width: 400px
   @media all and (max-width: 320px)
+    min-width: 300px
     gap: 20px 0px
     justify-content: center
+
+
 
 
 .pets__item 
@@ -747,6 +793,7 @@ body
   transform: rotate(180deg)
   @media all and (max-width: 1399px)
     left: 40%
+    z-index: 2
   @media all and (max-width: 1000px)
     left: 34.5%
   @media all and (max-width: 640px)
@@ -759,11 +806,42 @@ body
   animation-name: fade
   animation-duration: 1.5s
 
+.hide-slide 
+  display: none
+
+
+.move-right
+  transform: translateX(100%)
+  animation-name: move
+  left: -20px
+  animation-duration: 2.5s
+
+.move-left
+  transform: translateX(-100%)
+  left: 0px
+  animation-name: move-left
+  animation-duration: 2.5s
+
 @keyframes fade 
   from 
     opacity: .4
   to
     opacity: 1
+
+@keyframes move 
+  from 
+   transform: translateX(0)
+  to
+    transform: translateX(-100%)
+   
+
+@keyframes move-left
+  from 
+    //left: 100%
+    transform: translateX(-100%)
+  to
+    //left: 0
+    transform: translateX(0)
 
 .choose
   display: block
@@ -1201,7 +1279,7 @@ SASS SYNTAX
   @media all and (max-width: 320px)
     padding-bottom: 15px
     margin-bottom: 27px
-     cursor: pointer
+    cursor: pointer
   
     
 
