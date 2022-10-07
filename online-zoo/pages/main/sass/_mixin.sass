@@ -38,6 +38,7 @@ $list: $pink 30.06%, $purple 50.74%, $lightpink 80.49%, $white 127.9%, $white 14
   &::-webkit-slider-thumb 
     @include input_range_thumb($thumb_color)
     margin-top: 1px
+    transition: ease 2s
 
   &:focus 
       outline: none
@@ -62,8 +63,10 @@ $list: $pink 30.06%, $purple 50.74%, $lightpink 80.49%, $white 127.9%, $white 14
   border-radius: 5px
   background: $thumb_color
   border: 1px solid #FE9013
+  
   &:active 
     border: 1px solid green
+    cursor: pointer
   &:hover 
     background: green
     cursor: pointer

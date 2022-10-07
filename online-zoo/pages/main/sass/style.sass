@@ -35,10 +35,31 @@ html
   
 
 $contentWidth: 1160px
+$contentWidth2: 1160px
+@media all and (max-width: 1399px)
+  $contentWidth2: 950px
+@media all and (max-width: 1000px)
+  $contentWidth2: 940px
+
 $fontdefault: 16px
+
+%dark-background
+  visibility: hidden
+  position: fixed
+  z-index: 6
+  top: 0
+  width: 100%
+  height: 100vh
+  background-color: rgba(0, 0, 0, 0.5)
+  transition: ease 2s
 
 body
   margin: 0 auto
+  
+.disableScroll
+  overflow: hidden
+  height: 100vh
+  width: 100%  
   
 
 
@@ -75,7 +96,7 @@ body
   @media all and (max-width: 640px)
     position: fixed
     width: 100vw
-    z-index: 2
+    z-index: 5
   
 
 .navigation
@@ -185,6 +206,8 @@ body
 .logo_title, .logo_title-footer
   a:active
     color: white
+  a:hover 
+    color: #F9804B
 
 .bamboo
   position: absolute
@@ -562,21 +585,65 @@ body
      width: 100%
      padding: 0px
 
-.slider
-  display: flex 
+.slider-wrapper
+  overflow: hidden
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+  margin: 0
+  //max-width: 1160px
+  gap: 20px
+  justify-content: space-between
+  position: relative
+  @media all and (max-width: 640px)
+    gap: 20px
+    padding-left: 20px
+  @media all and (max-width: 639px)
+    padding-left: 3vw
+  @media all and (max-width: 320px)
+    gap: 0px
+    padding-left: 10px
+ 
+
+
+.slide
+  position: relative
+  display: inline-flex 
   flex-direction: row 
   justify-content: space-between
   flex-wrap: wrap
+  min-width: $contentWidth
+  max-width: 95%
+  flex-shrink: 2
   gap: 25px 10px
+  transform: translateX(0)
   @media all and (max-width: 1399px)
     gap: 100px 10px
+    min-width: 90%
+    //min-width: 950px
   @media all and (max-width: 1000px)
+    min-width: 100%
     gap: 92px 0px
+  /*@media all and (max-width: 950px)
+    min-width: 900px
+  /*@media all and (max-width: 768px)
+    min-width: 760px
   @media all and (max-width: 640px)
+    min-width: 600px
     gap: 95px 0px
+  @media all and (max-width: 639px)
+    min-width: 100%
+    left: 0
+  /*@media all and (max-width: 550px)
+    min-width: 500px
+  /*@media all and (max-width: 430px)
+    min-width: 400px
   @media all and (max-width: 320px)
+    min-width: 300px
     gap: 20px 0px
     justify-content: center
+
+
 
 
 .pets__item 
@@ -743,6 +810,7 @@ body
   transform: rotate(180deg)
   @media all and (max-width: 1399px)
     left: 40%
+    z-index: 2
   @media all and (max-width: 1000px)
     left: 34.5%
   @media all and (max-width: 640px)
@@ -750,6 +818,47 @@ body
     left: 38%
   @media all and (max-width: 550px)
     left: 35%
+
+.fade
+  animation-name: fade
+  animation-duration: 1.5s
+
+.hide-slide 
+  display: none
+
+
+.move-right
+  transform: translateX(100%)
+  animation-name: move
+  left: -20px
+  animation-duration: 2.5s
+
+.move-left
+  transform: translateX(-100%)
+  left: 0px
+  animation-name: move-left
+  animation-duration: 2.5s
+
+@keyframes fade 
+  from 
+    opacity: .4
+  to
+    opacity: 1
+
+@keyframes move 
+  from 
+   transform: translateX(0)
+  to
+    transform: translateX(-100%)
+   
+
+@keyframes move-left
+  from 
+    //left: 100%
+    transform: translateX(-100%)
+  to
+    //left: 0
+    transform: translateX(0)
 
 .choose
   display: block
@@ -1134,12 +1243,12 @@ SASS SYNTAX
   color: #ABABAB
   padding: 0px 10px 0px 15px
   overflow: hidden
-  @media all and (max-width: 1000px)
+  /*@media all and (max-width: 1000px)
    display: -webkit-box
    -webkit-line-clamp: 16 
            line-clamp: 16 
-   -webkit-box-orient: vertical
-   @media all and (max-width: 640px)
+   -webkit-box-orient: vertical*/
+  @media all and (max-width: 640px)
     -webkit-line-clamp: 2 
            line-clamp: 2 
   
@@ -1147,33 +1256,39 @@ SASS SYNTAX
 
 .testimonials-wrapper
   display: grid
-  grid-template-columns: repeat(4, 268px)
+  grid-template-columns: repeat(11, 268px)
   gap: 0 30px
   justify-content: space-between
   padding-bottom: 14px
   position: relative
+  left: 0px
+  grid-template-rows: 1fr
+  grid-auto-rows: 0
+  transition: ease 2s
   @media all and (max-width: 1399px)
-    grid-template-columns: repeat(3, 1fr)
-    gap: 10px 40px
+    grid-template-columns: repeat(11, 293px)
+    gap: 10px 30px
     grid-template-rows: 1fr
     grid-auto-rows: 0
-    overflow-y: hidden
   @media all and (max-width: 1000px)
     gap: 10px 30px
     padding-bottom: 4px
+  @media all and (max-width: 999px)
+    grid-template-columns: repeat(11, 32%)
+    gap: 10px 15px
   @media all and (max-width: 640px)
-    grid-template-columns: 1fr
-    grid-template-rows: repeat(3, 109px)
-    gap: 15px 0px
-    padding-bottom: 25px
+    display: flex
+    flex-direction: column
+    gap: 15px 
+    padding-bottom: 15px
+    margin-bottom: 37px
   @media all and (max-width: 320px)
     padding-bottom: 15px
+    margin-bottom: 27px
+    cursor: pointer
   
     
 
-.item__background:last-child
-  @media all and (max-width: 1399px)
-    visibility: hidden
 
 @import mixin
 
@@ -1181,36 +1296,91 @@ SASS SYNTAX
 .item__background  
   @include gradientBorder($direction, $list)
   position: relative
-  z-index: -1
+  z-index: 1
   height: 390px
-  width: 99.5%
+  width: 99.3%
   padding: 0
   border-radius: 20px 
   overflow: hidden
   @media all and (max-width: 640px)
     height: 109px
-    
+    cursor: pointer
+  
+.item__background:nth-child(n+4)
+  @media all and (max-width: 640px)
+    display: none      
+
 
 .testimonials__item
+  z-index: 2
   background: #F1F3F2 
   border-radius: 18px 
   border: 2px solid transparent
   margin: 2px
-  overflow: hidden
+  overflow-y: scroll
+  overflow-x: hidden
+  scrollbar-width: none
   position: absolute
   max-height: 382px
   height: 100%
+  &::-webkit-scrollbar 
+    width: 0
+    height: 0
   @media all and (max-width: 640px)
-    height: 92%
+    height: 93%
+    cursor: pointer
   @media all and (max-width: 320px)
     height: 93.5%
     
+.popUp-testimonial
+  box-sizing: border-box
+  width: 320px
+  height:428px 
+  background: url('../../../assets/icons/x_icon_orange.svg') no-repeat, #F5F7F6
+  background-size: 14px 14px
+  background-position: 96% 12px
+  position: relative
+  top: 20%
+  left: 22%
+  z-index: 7
+  padding: 20px 30px 17px 17px
+  .item__background
+    height:100%
+  .testimonials__item
+    height: 100%
+    overflow-y: scroll
+  .testimonials__item__text
+    display: block
   
+
+.pop_up-bg
+  @extend %dark-background
+  visibility: hidden
+  transition: ease-in 0.5s
+  animation-name: fade-out
+  animation-duration: 0.5s
+  cursor: pointer
+
+.pop_up-bg.visible
+  visibility: visible
+  overflow: hidden
+  transition: ease-in 0.5s
+ 
+
+@keyframes fade-out
+  0%
+    opacity: 1
+  50%
+    opacity: 0.5
+  100%
+    opacity: 0
+    
 .progress
   width: 599px
   margin: 0 auto
   padding-top: 4px
   padding-bottom: 27px
+  transition: ease 3s
   @media all and (max-width: 1000px)
     width: 390px
     margin-left: 269px
@@ -1223,7 +1393,7 @@ SASS SYNTAX
 
 .range
   @include slider-bar
-  transition: all ease 0.3s
+  transition: ease 3s
 
 .feedback__btn
   padding-bottom: 146px
@@ -1293,9 +1463,6 @@ SASS SYNTAX
     bottom: 4px
     left: 72px
 
-    
-    
- 
 
 
 .subscribe
@@ -1351,10 +1518,12 @@ SASS SYNTAX
   border-color: #D31414
   color: #D31414 
 
-.email:valid 
+.email:valid, .email:hover
   border-color: rgba(249, 128, 75, 1) 
 
-
+.email:focus
+  outline: 0
+  border-color: green
 
 .email::placeholder
   font-family: 'Roboto' 
@@ -1482,7 +1651,7 @@ SASS SYNTAX
 .social_media > li > a:hover, a:active 
   color: #4B9200
   @media all and (max-width: 640px)
-  color: transparent
+    color: transparent
  
 .media
   img
@@ -1497,7 +1666,8 @@ SASS SYNTAX
 
 .media
   img:hover
-    filter: invert(59%) sepia(72%) saturate(4911%) hue-rotate(58deg) brightness(89%) contrast(104%)
+    filter: saturate(100%) brightness(0)
+    filter: invert(38%) sepia(83%) saturate(1493%) hue-rotate(60deg) brightness(93%) contrast(103%)
 
 
 .credentials
@@ -1528,9 +1698,6 @@ SASS SYNTAX
 
 
 //donate-page
-
-
-
 
 .donation__bg
   height: 386px
@@ -1847,7 +2014,21 @@ SASS SYNTAX
   @media all and (max-width: 640px)
     right: 70px
     top: 10px
+
+.cash:focus
+  border-color: #4B9200
+  outline: 0
+  color: #4B9200
+
+.cash:focus .cash-wrapper:after
+  content: ''
+  background: url('../../../assets/icons/dollar_green.svg') no-repeat center
+
+
+.cash:focus.error
+  color: red
   
+
 
 .pay-period
   padding-left: 42px
@@ -2011,34 +2192,33 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   height: 10px 
   border-radius: 50% 
   position: relative
+  transition: ease 0.5s
   @media all and (max-width: 1000px)
     &:first-child
       display: none
   @media all and (max-width: 640px)
     &:nth-child(3), &:nth-child(2)
       display: none
-    &:nth-child(6)
-      background: url('../../../assets/icons/roller_icon.png') no-repeat center,  url('../../../assets/icons/ellipse.png') no-repeat center
-      width: 40px
-      height: 40px
   @media all and (max-width: 320px)
     width: 5px 
     height: 5px 
-    &:nth-child(6)
-      background-size: 20px 20px, 5px 5px 
+    transition: none
   
   
   &:hover
     cursor: pointer
     background-color: #4B9200
+    
 
 
   &:checked, .chosen
     background: url('../../../assets/icons/roller_icon.png') no-repeat center,  url('../../../assets/icons/ellipse.png') no-repeat center
     width: 40px
     height: 40px
+    transition: ease 0.5s
     @media all and (max-width: 320px)
       background-size: 20px 20px, 5px 5px 
+      transition: none
     
   
 .value_list 
@@ -2077,7 +2257,6 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
     padding-left: 5px
     padding-top: 5px
     padding-right: 10px
-
   @media all and (max-width: 320px)
     max-width: 300px
     font-size: 13px
@@ -2105,6 +2284,9 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
     top: 3px
     left: 0px
 
+
+  
+
 #fiveD
   @media all and (max-width: 1000px)
     display: none
@@ -2117,15 +2299,26 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .value_list > li
   position: relative
   padding-left: 15px
+  cursor: pointer
   @media all and (max-width: 320px)
     padding-left: 5px
-  
+
 .value_list > li:first-child, li:nth-child(2)
   justify-self: start
 
 
 .value_list > li:nth-child(6),li:nth-child(7), li:nth-child(8)
   justify-self: end
+
+.value_list 
+  li.chosen-sum
+    color: #FE9013 
+  li.chosen-sum:before
+    background: url('../../../assets/icons/dollar_orange.svg') no-repeat center
+    @media all and (max-width: 320px)
+      width: 5px
+      height: 10px
+      background-size: contain
 
 
 //burger
@@ -2142,24 +2335,24 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   width: 18px
   height: 10px
   cursor: pointer
+
+.burger_icon:hover
+  filter: brightness(0) saturate(100%)
+  filter: invert(53%) sepia(45%) saturate(1472%) hue-rotate(352deg) brightness(88%) contrast(105%)
  
 .burger-container
   box-sizing: border-box
   background-color: #fff
-  width: 50%
+  width: 100%
   position: absolute
   top:0
-  right: 0
   z-index: 5
   padding: 10px 10px 40px 10px
   animation-duration: 3s
   position: fixed
-  right: -50% 
+  right: -100% 
   transition: ease 2s
-  @media all and (max-width: 320px)
-    box-sizing: border-box
-    width: 100%
-    right: -100%
+ 
 
 .open-burger
   right: 0%
@@ -2204,15 +2397,8 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   text-decoration: underline
 
 .burger-wrap
-  visibility: hidden
-  position: fixed
-  z-index: 6
-  top: 0
-  width: 100%
-  height: 100vh
-  background-color: rgba(0, 0, 0, 0.5)
-  transition: all ease-in 1s
+  @extend %dark-background  
 
 .burger-wrap.active
   visibility: visible
-  
+  transition: ease 2s
