@@ -96,7 +96,7 @@ body
   @media all and (max-width: 640px)
     position: fixed
     width: 100vw
-    z-index: 2
+    z-index: 5
   
 
 .navigation
@@ -206,6 +206,8 @@ body
 .logo_title, .logo_title-footer
   a:active
     color: white
+  a:hover 
+    color: #F9804B
 
 .bamboo
   position: absolute
@@ -589,13 +591,15 @@ body
   flex-direction: row
   flex-wrap: nowrap
   margin: 0
-  max-width: 1160px
+  //max-width: 1160px
   gap: 20px
   justify-content: space-between
   position: relative
   @media all and (max-width: 640px)
     gap: 20px
     padding-left: 20px
+  @media all and (max-width: 639px)
+    padding-left: 3vw
   @media all and (max-width: 320px)
     gap: 0px
     padding-left: 10px
@@ -609,27 +613,30 @@ body
   justify-content: space-between
   flex-wrap: wrap
   min-width: $contentWidth
+  max-width: 95%
   flex-shrink: 2
   gap: 25px 10px
   transform: translateX(0)
   @media all and (max-width: 1399px)
     gap: 100px 10px
-    min-width: 950px
+    min-width: 90%
+    //min-width: 950px
   @media all and (max-width: 1000px)
-    min-width: 940px
+    min-width: 100%
     gap: 92px 0px
-  @media all and (max-width: 950px)
+  /*@media all and (max-width: 950px)
     min-width: 900px
-  @media all and (max-width: 768px)
+  /*@media all and (max-width: 768px)
     min-width: 760px
   @media all and (max-width: 640px)
     min-width: 600px
     gap: 95px 0px
-  @media all and (max-width: 620px)
-    min-width: 550px
-  @media all and (max-width: 550px)
+  @media all and (max-width: 639px)
+    min-width: 100%
+    left: 0
+  /*@media all and (max-width: 550px)
     min-width: 500px
-  @media all and (max-width: 430px)
+  /*@media all and (max-width: 430px)
     min-width: 400px
   @media all and (max-width: 320px)
     min-width: 300px
@@ -1456,9 +1463,6 @@ SASS SYNTAX
     bottom: 4px
     left: 72px
 
-    
-    
- 
 
 
 .subscribe
@@ -1662,7 +1666,8 @@ SASS SYNTAX
 
 .media
   img:hover
-    filter: invert(59%) sepia(72%) saturate(4911%) hue-rotate(58deg) brightness(89%) contrast(104%)
+    filter: saturate(100%) brightness(0)
+    filter: invert(38%) sepia(83%) saturate(1493%) hue-rotate(60deg) brightness(93%) contrast(103%)
 
 
 .credentials
@@ -2015,6 +2020,15 @@ SASS SYNTAX
   outline: 0
   color: #4B9200
 
+.cash:focus .cash-wrapper:after
+  content: ''
+  background: url('../../../assets/icons/dollar_green.svg') no-repeat center
+
+
+.cash:focus.error
+  color: red
+  
+
 
 .pay-period
   padding-left: 42px
@@ -2178,6 +2192,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   height: 10px 
   border-radius: 50% 
   position: relative
+  transition: ease 0.5s
   @media all and (max-width: 1000px)
     &:first-child
       display: none
@@ -2187,19 +2202,23 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   @media all and (max-width: 320px)
     width: 5px 
     height: 5px 
+    transition: none
   
   
   &:hover
     cursor: pointer
     background-color: #4B9200
+    
 
 
   &:checked, .chosen
     background: url('../../../assets/icons/roller_icon.png') no-repeat center,  url('../../../assets/icons/ellipse.png') no-repeat center
     width: 40px
     height: 40px
+    transition: ease 0.5s
     @media all and (max-width: 320px)
       background-size: 20px 20px, 5px 5px 
+      transition: none
     
   
 .value_list 
@@ -2296,6 +2315,11 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
     color: #FE9013 
   li.chosen-sum:before
     background: url('../../../assets/icons/dollar_orange.svg') no-repeat center
+    @media all and (max-width: 320px)
+      width: 5px
+      height: 10px
+      background-size: contain
+
 
 //burger
 
@@ -2311,6 +2335,10 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   width: 18px
   height: 10px
   cursor: pointer
+
+.burger_icon:hover
+  filter: brightness(0) saturate(100%)
+  filter: invert(53%) sepia(45%) saturate(1472%) hue-rotate(352deg) brightness(88%) contrast(105%)
  
 .burger-container
   box-sizing: border-box

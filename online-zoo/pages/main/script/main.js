@@ -190,8 +190,13 @@ if (document.body.clientWidth > 640) {
   numberNewSlides = 6
   } 
 
+
 //функция пермещения слайда (6 или 4 карточки)
 function moveSlides (direction) {
+  if (isEnabled) {
+    return false
+  } //если флаг анимации поднят, то не даем выполнять функцию
+
   if (direction === 'right') {
     nextSlide()
   } else {
@@ -227,10 +232,7 @@ function createNewSlide (array, number){
 }
 
 function nextSlide () {
-  if (isEnabled) {
-    return false
-  } //если флаг анимации поднят, то не даем выполнять функцию
-
+  
   sliderWrapper.insertAdjacentElement("beforeend", createNewSlide (sortedPets, numberNewSlides)) 
   setTimeout(()=> {
     sliderWrapper.children[currentIndex].remove() //смотрим живую коллекцию детей и их количество, первого удаляем
@@ -239,13 +241,10 @@ function nextSlide () {
 
 
 function previousSlide () { 
-  if (isEnabled) {
-    return false //если флаг анимации поднят, то не даем выполнять функцию
-  }
   sliderWrapper.insertAdjacentElement("afterbegin", createNewSlide (sortedPets, numberNewSlides)) 
   let length = sliderWrapper.children.length //смотрим живую коллекцию детей и их количество, последнего удаляем
   setTimeout(()=> {
-    sliderWrapper.children[length - 1].remove()
+    sliderWrapper.children[length - 1].remove() // удаляем последний слайд после перемотки
   }, 2500) 
 }
 

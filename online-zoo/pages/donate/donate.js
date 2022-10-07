@@ -62,9 +62,19 @@ function changeDot (typedValue) {
 amountItem.addEventListener('change', () => {
   if (amountItem.value.length > 4) {
     amountItem.value = amountItem.value.slice(0, 4)
+    amountItem.classList.remove('error')  
   }
   changeDot()
 })
+
+amountItem.addEventListener('input', ()=> {
+  if (amountItem.value.length > 4 && amountItem.matches(':focus')){
+   amountItem.classList.add('error')
+   amountItem.setAttribute('title', 'Please enter a 4-digit sum')
+ } else 
+ amountItem.classList.remove('error') 
+})
+ 
 
 moneySum.forEach(item => {item.addEventListener('click', (event)=> {
    changeClasses(event.target.textContent)
@@ -84,3 +94,5 @@ function changeClasses (amount) {
   moneySum.find(item => item.textContent === amount).classList.add('chosen-sum')
   amountItem.value = amount
 }
+
+

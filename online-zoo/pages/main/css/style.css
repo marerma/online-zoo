@@ -121,7 +121,7 @@ body {
   .header {
     position: fixed;
     width: 100vw;
-    z-index: 2;
+    z-index: 5;
   }
 }
 
@@ -295,6 +295,9 @@ body {
 
 .logo_title a:active, .logo_title-footer a:active {
   color: white;
+}
+.logo_title a:hover, .logo_title-footer a:hover {
+  color: #F9804B;
 }
 
 .bamboo {
@@ -901,7 +904,6 @@ body {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   margin: 0;
-  max-width: 1160px;
   gap: 20px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -912,6 +914,11 @@ body {
   .slider-wrapper {
     gap: 20px;
     padding-left: 20px;
+  }
+}
+@media all and (max-width: 639px) {
+  .slider-wrapper {
+    padding-left: 3vw;
   }
 }
 @media all and (max-width: 320px) {
@@ -936,32 +943,31 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   min-width: 1160px;
+  max-width: 95%;
   -ms-flex-negative: 2;
       flex-shrink: 2;
   gap: 25px 10px;
   -webkit-transform: translateX(0);
           transform: translateX(0);
+  /*@media all and (max-width: 950px)
+  * min-width: 900px */
+  /*@media all and (max-width: 768px)
+  * min-width: 760px */
+  /*@media all and (max-width: 550px)
+  * min-width: 500px */
+  /*@media all and (max-width: 430px)
+  * min-width: 400px */
 }
 @media all and (max-width: 1399px) {
   .slide {
     gap: 100px 10px;
-    min-width: 950px;
+    min-width: 90%;
   }
 }
 @media all and (max-width: 1000px) {
   .slide {
-    min-width: 940px;
+    min-width: 100%;
     gap: 92px 0px;
-  }
-}
-@media all and (max-width: 950px) {
-  .slide {
-    min-width: 900px;
-  }
-}
-@media all and (max-width: 768px) {
-  .slide {
-    min-width: 760px;
   }
 }
 @media all and (max-width: 640px) {
@@ -970,19 +976,10 @@ body {
     gap: 95px 0px;
   }
 }
-@media all and (max-width: 620px) {
+@media all and (max-width: 639px) {
   .slide {
-    min-width: 550px;
-  }
-}
-@media all and (max-width: 550px) {
-  .slide {
-    min-width: 500px;
-  }
-}
-@media all and (max-width: 430px) {
-  .slide {
-    min-width: 400px;
+    min-width: 100%;
+    left: 0;
   }
 }
 @media all and (max-width: 320px) {
@@ -2780,8 +2777,10 @@ body {
 }
 
 .media img:hover {
-  -webkit-filter: invert(59%) sepia(72%) saturate(4911%) hue-rotate(58deg) brightness(89%) contrast(104%);
-          filter: invert(59%) sepia(72%) saturate(4911%) hue-rotate(58deg) brightness(89%) contrast(104%);
+  -webkit-filter: saturate(100%) brightness(0);
+          filter: saturate(100%) brightness(0);
+  -webkit-filter: invert(38%) sepia(83%) saturate(1493%) hue-rotate(60deg) brightness(93%) contrast(103%);
+          filter: invert(38%) sepia(83%) saturate(1493%) hue-rotate(60deg) brightness(93%) contrast(103%);
 }
 
 .credentials {
@@ -3315,6 +3314,15 @@ body {
   color: #4B9200;
 }
 
+.cash:focus .cash-wrapper:after {
+  content: "";
+  background: url("../../../assets/icons/dollar_green.svg") no-repeat center;
+}
+
+.cash:focus.error {
+  color: red;
+}
+
 .pay-period {
   padding-left: 42px;
   padding-bottom: 28px;
@@ -3590,6 +3598,8 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   height: 10px;
   border-radius: 50%;
   position: relative;
+  -webkit-transition: ease 0.5s;
+  transition: ease 0.5s;
 }
 @media all and (max-width: 1000px) {
   .chose-amount-item:first-child {
@@ -3605,6 +3615,8 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   .chose-amount-item {
     width: 5px;
     height: 5px;
+    -webkit-transition: none;
+    transition: none;
   }
 }
 .chose-amount-item:hover {
@@ -3615,10 +3627,14 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   background: url("../../../assets/icons/roller_icon.png") no-repeat center, url("../../../assets/icons/ellipse.png") no-repeat center;
   width: 40px;
   height: 40px;
+  -webkit-transition: ease 0.5s;
+  transition: ease 0.5s;
 }
 @media all and (max-width: 320px) {
   .chose-amount-item:checked, .chose-amount-item .chosen {
     background-size: 20px 20px, 5px 5px;
+    -webkit-transition: none;
+    transition: none;
   }
 }
 
@@ -3759,6 +3775,13 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .value_list li.chosen-sum:before {
   background: url("../../../assets/icons/dollar_orange.svg") no-repeat center;
 }
+@media all and (max-width: 320px) {
+  .value_list li.chosen-sum:before {
+    width: 5px;
+    height: 10px;
+    background-size: contain;
+  }
+}
 
 .burger_bg {
   display: none;
@@ -3774,6 +3797,13 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   width: 18px;
   height: 10px;
   cursor: pointer;
+}
+
+.burger_icon:hover {
+  -webkit-filter: brightness(0) saturate(100%);
+          filter: brightness(0) saturate(100%);
+  -webkit-filter: invert(53%) sepia(45%) saturate(1472%) hue-rotate(352deg) brightness(88%) contrast(105%);
+          filter: invert(53%) sepia(45%) saturate(1472%) hue-rotate(352deg) brightness(88%) contrast(105%);
 }
 
 .burger-container {
