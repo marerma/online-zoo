@@ -190,6 +190,15 @@ if (document.body.clientWidth > 640) {
   numberNewSlides = 6
   } 
 
+window.addEventListener('resize', ()=> {
+  if (document.body.clientWidth > 320 && document.body.clientWidth <= 640) {
+    numberNewSlides = 4
+    }
+  if (document.body.clientWidth > 640) {
+    numberNewSlides = 6
+    } 
+  
+})
 
 //функция пермещения слайда (6 или 4 карточки)
 function moveSlides (direction) {

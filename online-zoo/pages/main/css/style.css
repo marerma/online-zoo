@@ -2077,7 +2077,7 @@ body {
 @media all and (max-width: 1000px) {
   .testimonials-wrapper {
     gap: 10px 30px;
-    padding-bottom: 4px;
+    padding-bottom: 15px;
   }
 }
 @media all and (max-width: 999px) {
@@ -2097,14 +2097,12 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 15px;
-    padding-bottom: 15px;
-    margin-bottom: 37px;
+    margin-bottom: 25px;
   }
 }
 @media all and (max-width: 320px) {
   .testimonials-wrapper {
-    padding-bottom: 15px;
-    margin-bottom: 27px;
+    margin-bottom: 15px;
     cursor: pointer;
   }
 }
