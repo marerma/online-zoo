@@ -2169,7 +2169,7 @@ body {
   background-position: 96% 12px;
   position: relative;
   top: 20%;
-  left: 22%;
+  margin: auto auto;
   z-index: 7;
   padding: 20px 30px 17px 17px;
 }
