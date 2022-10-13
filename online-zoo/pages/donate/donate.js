@@ -59,21 +59,21 @@ function changeDot (typedValue) {
  }
 
 
-amountItem.addEventListener('change', () => {
+amountItem.addEventListener('input', () => {
   if (amountItem.value.length > 4) {
     amountItem.value = amountItem.value.slice(0, 4)
-    amountItem.classList.remove('error')  
   }
+  amountItem.value = amountItem.value.slice(0, 4)
   changeDot()
 })
 
-amountItem.addEventListener('input', ()=> {
+/*amountItem.addEventListener('input', ()=> {
   if (amountItem.value.length > 4 && amountItem.matches(':focus')){
    amountItem.classList.add('error')
    amountItem.setAttribute('title', 'Please enter a 4-digit sum')
  } else 
  amountItem.classList.remove('error') 
-})
+})*/
  
 
 moneySum.forEach(item => {item.addEventListener('click', (event)=> {
