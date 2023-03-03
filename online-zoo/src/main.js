@@ -1,4 +1,6 @@
-import pets from "./pets.js"
+import './style/normalize.css';
+import './style/sass/style.sass';
+import pets from "./pets.js";
 
 const burgerClosemark = document.querySelector('.close-icon')
 const burgerOpenmark = document.querySelector('.burger_icon')
@@ -124,47 +126,6 @@ function sortPets (array) {
     return array;
    }
 
-//слайдер с простым переключением, без пролистывания 
-
-/*const slide = document.querySelectorAll('.slide')   
-function addHTML () {
-  let sortedPets = sortPets(pets)
-  let text = ''
-  let n 
-  if (document.body.clientWidth > 320 && document.body.clientWidth <= 640) {
-    n = 4
-  }
-  if (document.body.clientWidth > 640) {
-    n = 6
-  }
-  for (let i = 0; i < n; i++) {
-    text += `<div class="pets__item ${sortedPets[i].food}">
-  <div class="pets__item__pic">
-    <img src=${sortedPets[i].img} alt="${sortedPets[i].name}">
-  </div>
-  <div class="item__text"></div>
-  <div class="item__name"><p>${sortedPets[i].name}</p></div>
-  <div class="item__place"><p>${sortedPets[i].place}</p></div>
-</div>`
-  }
-  return text
-}*/
-
-/*sliderBtnRight.addEventListener('click', ()=> {
-  changeImages()})
-
-sliderBtnLeft.addEventListener('click', ()=> {
-  changeImages()
-})
- 
-
-function changeImages () {
-  slider.innerHTML = addHTML()
-  slider.classList.add('fade')
-  slider.addEventListener('animationend', ()=> {
-    slider.classList.remove('fade')
-  })
-}*/
 
 // new slider carousel
 

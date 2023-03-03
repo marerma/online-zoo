@@ -1,32 +1,6 @@
-@font-face 
-  font-family: 'Recoleta'
-  font-style: normal
-  src: url("../../../assets/fonts/Recoleta-Regular.ttf")
+@import "../fonts.css"
 
-@font-face 
-  font-family: 'Roboto'
-  font-weight: 100
-  src: url("../../../assets/fonts/Roboto-Thin.ttf")
-
-@font-face 
-  font-family: 'Roboto'
-  font-weight: 300
-  src: url("../../../assets/fonts/Roboto-Light.ttf")
-
-@font-face 
-  font-family: 'Roboto'
-  font-weight: 400
-  src: url("../../../assets/fonts/Roboto-Regular.ttf")
-
-@font-face 
-  font-family: 'Roboto'
-  font-weight: 500
-  src: url("../../../assets/fonts/Roboto-Medium.ttf")
-
-@font-face 
-  font-family: 'Roboto'
-  font-weight: 700
-  src: url("../../../assets/fonts/Roboto-Bold.ttf")
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap')
 
 
 html
@@ -225,7 +199,7 @@ body
 
 .watch-wrap
   margin: 0 auto
-  background: url('../../../assets/img/giant_panda.jpg') no-repeat
+  background: url('../../assets/img/giant_panda.jpg') no-repeat
   background-position: 0px -80px
   position: relative
   background-size: cover
@@ -249,14 +223,14 @@ body
 
 .watch-online
   @media all and (max-width: 320px)
-    background: url('../../../assets/img/flower_foto1.png') no-repeat
+    background: url('../../assets/img/flower_foto1.png') no-repeat
     background-size: 105px 217px
     background-position-x: 289px
     background-position-y: 260px
   
 
 .watch_text
-  max-width: 500px /$contentWidth *100% 
+  max-width: calc(500px /$contentWidth *100%)
   position: relative
   left: 57%
   @media all and (max-width: 1000px)
@@ -281,7 +255,7 @@ body
   font-family: 'Roboto' 
   font-style: normal 
   font-weight: 700 
-  font-size: 106.5px /$fontdefault * 100%
+  font-size: calc(106.5px /$fontdefault * 100%)
   line-height: 75% 
   text-align: center 
   text-transform: uppercase 
@@ -420,7 +394,7 @@ body
   border-radius: 5px
 
 .backstage
-  background: url('../../../assets/img/flower_foto1.png') no-repeat
+  background: url('../../assets/img/flower_foto1.png') no-repeat
   background-position-x: 106.8%
   background-position-y: 13%
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
@@ -428,7 +402,7 @@ body
   @media all and (max-width: 1399px)
      background: none
   @media all and (max-width: 640px)
-    background: url('../../../assets/img/flower_foto1.png') no-repeat
+    background: url('../../assets/img/flower_foto1.png') no-repeat
     background-position-x: 125%
     background-position-y: -10%
     background-size: 231px 476px
@@ -478,7 +452,7 @@ body
     
 
 .backstage-img
-  background: url('../../../assets/img/bamboo-cap.jpg') no-repeat center
+  background: url('../../assets/img/bamboo-cap.jpg') no-repeat center
   background-size: cover
   min-width: 609px
   @media all and (max-width: 1599px)
@@ -555,9 +529,9 @@ body
     padding-top: 21px
 
 .pets
-  background: url("../../../assets/img/palm_foto.jpg") no-repeat bottom left, url("../../../assets/img/flower_2.jpg") no-repeat bottom right 
+  background: url("../../assets/img/palm_foto.jpg") no-repeat bottom left, url("../../assets/img/flower_2.jpg") no-repeat bottom right 
   @media all and (max-width: 1599px)
-    background: url("../../../assets/img/palm_foto_small_desktop.jpg") no-repeat bottom left, url("../../../assets/img/flower_2_small_desktop.jpg") no-repeat bottom right 
+    background: url("../../assets/img/palm_foto_small_desktop.jpg") no-repeat bottom left, url("../../assets/img/flower_2_small_desktop.jpg") no-repeat bottom right 
   @media all and (max-width: 640px)
     background-size: auto 202px, 175px auto
     background-position: -60px bottom, bottom right
@@ -591,7 +565,6 @@ body
   flex-direction: row
   flex-wrap: nowrap
   margin: 0
-  //max-width: 1160px
   gap: 20px
   justify-content: space-between
   position: relative
@@ -603,8 +576,6 @@ body
   @media all and (max-width: 320px)
     gap: 0px
     padding-left: 10px
- 
-
 
 .slide
   position: relative
@@ -619,25 +590,16 @@ body
   transform: translateX(0)
   @media all and (max-width: 1399px)
     gap: 100px 10px
-    min-width: 90%
-    //min-width: 950px
+    min-width: 100%
   @media all and (max-width: 1000px)
     min-width: 100%
     gap: 92px 0px
-  /*@media all and (max-width: 950px)
-    min-width: 900px
-  /*@media all and (max-width: 768px)
-    min-width: 760px
   @media all and (max-width: 640px)
     min-width: 600px
     gap: 95px 0px
   @media all and (max-width: 639px)
     min-width: 100%
     left: 0
-  /*@media all and (max-width: 550px)
-    min-width: 500px
-  /*@media all and (max-width: 430px)
-    min-width: 400px
   @media all and (max-width: 320px)
     min-width: 300px
     gap: 20px 0px
@@ -696,7 +658,7 @@ body
 
 
 ._veggy
-  background: url('../../../assets/icons/veggy.svg') no-repeat
+  background: url('../../assets/icons/veggy.svg') no-repeat
   background-position-x: 96% 
   background-position-y: 97% 
   @media all and (max-width: 1000px)
@@ -710,7 +672,7 @@ body
     background-position-y: 97% 
 
 ._meat 
-  background: url('../../../assets/icons/meat.svg') no-repeat
+  background: url('../../assets/icons/meat.svg') no-repeat
   background-position-x: 97% 
   background-position-y: 97% 
   @media all and (max-width: 1000px)
@@ -761,7 +723,8 @@ body
   opacity: 0.7
   top: 0
 
-.pets__item:hover .item__name, .pets__item:hover .item__place
+.pets__item:hover .item__name, 
+.pets__item:hover .item__place
   transform: translateY(-150%)
   transition: all ease-in 0.3s
   color: white
@@ -771,11 +734,12 @@ body
   transition: all ease-in 0.3s
 
 
-.arrow-left, .arrow-right 
+.arrow-left,
+.arrow-right 
   border: none
   height: 62px 
   width: 62px
-  background: url("../../../assets/icons/slider-arrow.svg") no-repeat center 
+  background: url("../../assets/icons/slider-arrow.svg") no-repeat center 
   background-color: #F9804B
   border-radius: 100%
   align-self: center
@@ -802,7 +766,8 @@ body
     display: none
   
 
-.arrow-left:hover, .arrow-right:hover 
+.arrow-left:hover, 
+.arrow-right:hover 
   background-color: #4B9200
   cursor: pointer
 
@@ -854,10 +819,8 @@ body
 
 @keyframes move-left
   from 
-    //left: 100%
     transform: translateX(-100%)
   to
-    //left: 0
     transform: translateX(0)
 
 .choose
@@ -1062,7 +1025,7 @@ SASS SYNTAX
 
 .hiw__item:after
   content:''
-  background: url('../../../assets/icons/arrow.png') no-repeat center
+  background: url('../../assets/icons/arrow.png') no-repeat center
   display: block
   width: 69px
   height: 39px
@@ -1074,7 +1037,7 @@ SASS SYNTAX
     width: 49px
     right: -40%
   @media all and (max-width: 640px)
-    background: url('../../../assets/icons/arrow-green.svg') no-repeat center
+    background: url('../../assets/icons/arrow-green.svg') no-repeat center
     width: 89px
     right: -32%
     top: -8.5%
@@ -1129,15 +1092,15 @@ SASS SYNTAX
        
 
 ._pay
-  background: url("../../../assets/icons/pay.svg") no-repeat center, #FFFFFF
+  background: url("../../assets/icons/pay.svg") no-repeat center, #FFFFFF
   background-size: 108px 60px
 
 ._zoo
-  background: url("../../../assets/icons/zoo.png") no-repeat center, #FFFFFF
+  background: url("../../assets/icons/zoo.png") no-repeat center, #FFFFFF
   background-size: 85px 95px
 
 ._anim
-  background: url("../../../assets/icons/monkey.svg") no-repeat center, #FFFFFF
+  background: url("../../assets/icons/monkey.svg") no-repeat center, #FFFFFF
   background-size: 124px 71px
 
 .feed__btn
@@ -1149,16 +1112,16 @@ SASS SYNTAX
 
 .testimonials
   padding-top: 80px
-  background: url('../../../assets/img/leav_foto.jpg') no-repeat
+  background: url('../../assets/img/leav_foto.jpg') no-repeat
   background-position-x: 100%
   background-position-y: 125%
   @media all and (max-width: 1599px)
     padding-top: 30px
-    background: url('../../../assets/img/leav_foto_small_desktop.jpg') no-repeat
+    background: url('../../assets/img/leav_foto_small_desktop.jpg') no-repeat
     background-position-x: 100%
     background-position-y: 116.5%
   @media all and (max-width: 640px)
-    background: url('../../../assets/img/leav_foto.png') no-repeat
+    background: url('../../assets/img/leav_foto.png') no-repeat
     background-position-x: 100%
     background-position-y: 114.5%
     padding-top: 0px
@@ -1221,7 +1184,8 @@ SASS SYNTAX
     left: 6px
     
 
-.testimonials__item__subtitle,.testimonials__item__text
+.testimonials__item__subtitle,
+.testimonials__item__text
   font-family: 'Roboto' 
   font-style: normal 
   font-weight: 300 
@@ -1243,11 +1207,6 @@ SASS SYNTAX
   color: #ABABAB
   padding: 0px 10px 0px 15px
   overflow: hidden
-  /*@media all and (max-width: 1000px)
-   display: -webkit-box
-   -webkit-line-clamp: 16 
-           line-clamp: 16 
-   -webkit-box-orient: vertical*/
   @media all and (max-width: 640px)
     -webkit-line-clamp: 2 
            line-clamp: 2 
@@ -1334,7 +1293,7 @@ SASS SYNTAX
   box-sizing: border-box
   width: 320px
   height:428px 
-  background: url('../../../assets/icons/x_icon_orange.svg') no-repeat, #F5F7F6
+  background: url('../../assets/icons/x_icon_orange.svg') no-repeat, #F5F7F6
   background-size: 14px 14px
   background-position: 96% 12px
   position: relative
@@ -1418,8 +1377,6 @@ SASS SYNTAX
 
 .footer__wrapper
   padding-top: 40px
-  @media all and (max-width: 1000px)
-    //padding-left: 25px
   @media all and (max-width: 640px)
     padding-left: 0px
     padding-top: 12px
@@ -1700,7 +1657,7 @@ SASS SYNTAX
 .donation__bg
   height: 386px
   margin: 0 auto
-  background: url('../../../assets/img/panda_bg.jpg') no-repeat
+  background: url('../../assets/img/panda_bg.jpg') no-repeat
   background-position: center center
   position: relative
   background-size: cover
@@ -1725,7 +1682,8 @@ SASS SYNTAX
     background-position: 34% bottom
 
 
-.donate__intro-title,.donate__introtext
+.donate__intro-title,
+.donate__introtext
   font-family: 'Roboto' 
   font-style: normal 
   font-weight: 400 
@@ -1794,7 +1752,9 @@ SASS SYNTAX
   line-height: 140% 
   color: #000000 
 
-.diet-amount, .diet-progress, .payment-wrapper
+.diet-amount, 
+.diet-progress,
+.payment-wrapper
   @extend %font-donate
 
 .diet-amount
@@ -1938,7 +1898,7 @@ SASS SYNTAX
     
 
 .x-icon
-  background: url('../../../assets/icons/x_icon.svg') no-repeat
+  background: url('../../assets/icons/x_icon.svg') no-repeat
   width: 24px
   background-position-x: 10px
   background-position-y: 127px
@@ -2003,7 +1963,7 @@ SASS SYNTAX
 
 .cash-wrapper:after
   content: ''
-  background: url('../../../assets/icons/dollar_light.svg') no-repeat center
+  background: url('../../assets/icons/dollar_light.svg') no-repeat center
   position: absolute
   width: 10px
   height: 20px
@@ -2020,7 +1980,7 @@ SASS SYNTAX
 
 .cash:focus .cash-wrapper:after
   content: ''
-  background: url('../../../assets/icons/dollar_green.svg') no-repeat center
+  background: url('../../assets/icons/dollar_green.svg') no-repeat center
 
 
 .cash:focus.error
@@ -2056,6 +2016,7 @@ SASS SYNTAX
   @media all and (max-width: 320px)
     text-align: left
     width: 301px
+
 .period
   appearance: none
   font: inherit 
@@ -2076,8 +2037,6 @@ SASS SYNTAX
   
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button
   -webkit-appearance: none
-
-
 
 .progress__bar
   padding-top: 18px
@@ -2210,7 +2169,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 
 
   &:checked, .chosen
-    background: url('../../../assets/icons/roller_icon.png') no-repeat center,  url('../../../assets/icons/ellipse.png') no-repeat center
+    background: url('../../assets/icons/roller_icon.png') no-repeat center,  url('../../assets/icons/ellipse.png') no-repeat center
     width: 40px
     height: 40px
     transition: ease 0.5s
@@ -2266,7 +2225,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 
 .value_list > li:before
   content: ''
-  background: url('../../../assets/icons/dollar.svg') no-repeat center
+  background: url('../../assets/icons/dollar.svg') no-repeat center
   position: absolute
   width: 10px
   height: 20px
@@ -2312,7 +2271,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   li.chosen-sum
     color: #FE9013 
   li.chosen-sum:before
-    background: url('../../../assets/icons/dollar_orange.svg') no-repeat center
+    background: url('../../assets/icons/dollar_orange.svg') no-repeat center
     @media all and (max-width: 320px)
       width: 5px
       height: 10px
@@ -2329,7 +2288,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 
 
 .burger_icon
-  background: url('../../../assets/icons/burger_menu.png') no-repeat center
+  background: url('../../assets/icons/burger_menu.png') no-repeat center
   width: 18px
   height: 10px
   cursor: pointer
@@ -2357,7 +2316,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   transition: ease 2s
 
 .burger-logo
-  background: url('../../../assets/icons/logo_burger.png') no-repeat center
+  background: url('../../assets/icons/logo_burger.png') no-repeat center
   background-size: cover
   width: 65px
   height: 41px 
@@ -2368,7 +2327,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
     height: 100%
   
 .close-icon  
-  background: url('../../../assets/icons/x_icon.svg') no-repeat center
+  background: url('../../assets/icons/x_icon.svg') no-repeat center
   width: 10px
   height: 10px
   display: inline-block
@@ -2376,7 +2335,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   cursor: pointer
 
 .close-icon:hover
-   background: url('../../../assets/icons/x_icon_orange.svg') no-repeat center
+   background: url('../../assets/icons/x_icon_orange.svg') no-repeat center
 
 .burger-list
   font-family: 'Roboto'
@@ -2398,5 +2357,5 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   @extend %dark-background  
 
 .burger-wrap.active
-  visibility: visible
+  visibility visible
   transition: ease 2s

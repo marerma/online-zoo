@@ -1,3 +1,6 @@
+import './style/normalize.css';
+import './style/sass/style.sass';
+
 const burgerClosemark = document.querySelector('.close-icon')
 const burgerOpenmark = document.querySelector('.burger_icon')
 const burgerContainer = document.querySelector('.burger-container')
