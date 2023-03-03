@@ -1,3 +1,4 @@
+// @ts-nocheck
 import './style/normalize.css';
 import './style/sass/style.sass';
 import pets from "./pets.js";
